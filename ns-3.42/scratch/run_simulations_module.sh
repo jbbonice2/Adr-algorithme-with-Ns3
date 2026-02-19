@@ -43,7 +43,7 @@ NS3_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
 SIMULATION_NAME="lorawan-adr-simulation-module"
 
 # Nombre de messages par device par combinaison
-NUM_MESSAGES=100
+NUM_MESSAGES=110
 
 # Nombre de répétitions par configuration
 NUM_RUNS=1
@@ -53,7 +53,7 @@ RESULTS_DIR="$NS3_DIR/resultsfinal"
 RESULTS_SUMMARIES_DIR="$RESULTS_DIR/summaries"
 
 # Algorithmes ADR à tester
-ADR_ALGOS=("No-ADR" "ADR-MAX" "ADR-AVG" "ADR-Lite")
+ADR_ALGOS=("No-ADR" "ADR-MAX" "ADR-AVG" "ADR-MIN" "ADR-Lite")
 
 # Compteur de progression
 current_sim=0

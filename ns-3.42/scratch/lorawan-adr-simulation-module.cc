@@ -369,6 +369,7 @@ main(int argc, char* argv[])
     //   No-ADR   : ADR disabled, SF (7-12) and TxPower (2-14 dBm) randomly assigned to each device
     //   ADR-MAX  : Uses maximum SNR from packet history (ns3::AdrComponent)
     //   ADR-AVG  : Uses average SNR from packet history (ns3::AdrComponent) - standard LoRaWAN ADR
+    //   ADR-MIN  : Uses minimum SNR from packet history (ns3::AdrComponent) - conservative approach
     //   ADR-Lite : Binary search based ADR without packet history (ns3::AdrLiteComponent)
     
     bool adrEnabled = (adrAlgoStr != "No-ADR");
@@ -383,6 +384,10 @@ main(int argc, char* argv[])
         adrTypeId = "ns3::AdrComponent";
     } else if (adrAlgoStr == "ADR-AVG") {
         snrCombiningMethod = "avg";
+        historyRange = 20;
+        adrTypeId = "ns3::AdrComponent";
+    } else if (adrAlgoStr == "ADR-MIN") {
+        snrCombiningMethod = "min";
         historyRange = 20;
         adrTypeId = "ns3::AdrComponent";
     } else if (adrAlgoStr == "ADR-Lite") {
