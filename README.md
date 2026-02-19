@@ -4,15 +4,17 @@ Simulation NS-3 pour comparer les performances de différents algorithmes ADR (A
 
 ## 📋 Prérequis
 
-- NS-3.42 avec le module LoRaWAN installé
+- NS-3.42 avec le module LoRaWAN installé pas besoin de les installé
 - Bash (Linux/macOS)
-- Installer gcc et cmake si vous en posseder pas
+- Installer g++ et cmake si vous en posseder pas
 
 ## 🔧 Compilation
 
 ```bash
 cd ns-3.42
 ./ns3 clean     # pour supprimer le build car il vous faut ce qui a été construit sur votre machine
+sudo apt install cmake # pour installer cmake
+sudo apt install g++ build-essential  # pour installer le compilateur
 ./ns3 configure --enable-examples --enable-tests  # pour configurer le projet
 ./ns3 build  # pour builder le projet
 ```
