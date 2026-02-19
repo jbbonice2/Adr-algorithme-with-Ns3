@@ -1,0 +1,36 @@
+# Fichiers de build NS-3
+build/
+*.so
+*.o
+*.a
+
+# Fichiers de résultats de simulation
+*_results/
+*_results_*/
+*.csv
+*.log
+*.dat
+*.pcap
+*.tr
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*~
+.DS_Store
+
+# Fichiers Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Fichiers de configuration IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
