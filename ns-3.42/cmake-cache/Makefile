@@ -6114,19 +6114,6 @@ scratch_lorawan-adr-simulation-module/fast:
 .PHONY : scratch_lorawan-adr-simulation-module/fast
 
 #=============================================================================
-# Target rules for targets named scratch_lorawan-adr-simulationfinal
-
-# Build rule for target.
-scratch_lorawan-adr-simulationfinal: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch_lorawan-adr-simulationfinal
-.PHONY : scratch_lorawan-adr-simulationfinal
-
-# fast build rule for target.
-scratch_lorawan-adr-simulationfinal/fast:
-	$(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/build.make scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/build
-.PHONY : scratch_lorawan-adr-simulationfinal/fast
-
-#=============================================================================
 # Target rules for targets named scratch_subdir_scratch-subdir
 
 # Build rule for target.
@@ -6593,7 +6580,6 @@ help:
 	@echo "... sample-simulator"
 	@echo "... scratch-nested-subdir-lib"
 	@echo "... scratch_lorawan-adr-simulation-module"
-	@echo "... scratch_lorawan-adr-simulationfinal"
 	@echo "... scratch_nested-subdir_scratch-nested-subdir-executable"
 	@echo "... scratch_subdir_scratch-subdir"
 	@echo "... second"

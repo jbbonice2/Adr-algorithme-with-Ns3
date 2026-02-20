@@ -1148,7 +1148,6 @@
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/examples/wireless/CMakeFiles/install/local.dir
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/examples/wireless/CMakeFiles/install/strip.dir
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/scratch/CMakeFiles/scratch_subdir_scratch-subdir.dir
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/scratch/CMakeFiles/test.dir
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/scratch/CMakeFiles/edit_cache.dir

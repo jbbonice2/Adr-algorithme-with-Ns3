@@ -163,6 +163,20 @@ class EndDeviceLorawanMac : public LorawanMac
     void SetTransmissionPowerDbm(double txPowerDbm);
 
     /**
+     * Set the coding rate this end device will use when transmitting.
+     *
+     * @param codingRate The coding rate (1=4/5, 2=4/6, 3=4/7, 4=4/8).
+     */
+    void SetCodingRate(uint8_t codingRate);
+
+    /**
+     * Get the coding rate this end device is set to use.
+     *
+     * @return The coding rate (1=4/5, 2=4/6, 3=4/7, 4=4/8).
+     */
+    uint8_t GetCodingRate() const;
+
+    /**
      * Set the network address of this device.
      *
      * @param address The address to set.
@@ -313,6 +327,14 @@ class EndDeviceLorawanMac : public LorawanMac
      * @param macCommand A pointer to the MAC command.
      */
     void AddMacCommand(Ptr<MacCommand> macCommand);
+
+    /**
+     * Get the frequency of the next channel to be used for transmission.
+     * This is a public accessor to the internally selected channel.
+     *
+     * @return The frequency in Hz, or 0 if no channel is selected.
+     */
+    double GetNextTxChannelFrequency();
 
   protected:
     /**

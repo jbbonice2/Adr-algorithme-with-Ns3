@@ -58,6 +58,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/drop-tail-queue.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/dynamic-queue-limits.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/end-device-lora-phy.h
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/end-device-lorawan-mac.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/energy-harvester-container.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/energy-harvester-helper.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/energy-harvester.h

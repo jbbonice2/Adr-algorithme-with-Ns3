@@ -187,20 +187,6 @@ scratch_lorawan-adr-simulation-module/fast:
 .PHONY : scratch_lorawan-adr-simulation-module/fast
 
 # Convenience name for target.
-scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/rule
-.PHONY : scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/rule
-
-# Convenience name for target.
-scratch_lorawan-adr-simulationfinal: scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/rule
-.PHONY : scratch_lorawan-adr-simulationfinal
-
-# fast build rule for target.
-scratch_lorawan-adr-simulationfinal/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/build.make scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/build
-.PHONY : scratch_lorawan-adr-simulationfinal/fast
-
-# Convenience name for target.
 scratch/CMakeFiles/scratch_subdir_scratch-subdir.dir/rule:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch/CMakeFiles/scratch_subdir_scratch-subdir.dir/rule
 .PHONY : scratch/CMakeFiles/scratch_subdir_scratch-subdir.dir/rule
@@ -237,30 +223,6 @@ lorawan-adr-simulation-module.s: lorawan-adr-simulation-module.cc.s
 lorawan-adr-simulation-module.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/build.make scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulation-module.cc.s
 .PHONY : lorawan-adr-simulation-module.cc.s
-
-lorawan-adr-simulationfinal.o: lorawan-adr-simulationfinal.cc.o
-.PHONY : lorawan-adr-simulationfinal.o
-
-# target to build an object file
-lorawan-adr-simulationfinal.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/build.make scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/lorawan-adr-simulationfinal.cc.o
-.PHONY : lorawan-adr-simulationfinal.cc.o
-
-lorawan-adr-simulationfinal.i: lorawan-adr-simulationfinal.cc.i
-.PHONY : lorawan-adr-simulationfinal.i
-
-# target to preprocess a source file
-lorawan-adr-simulationfinal.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/build.make scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/lorawan-adr-simulationfinal.cc.i
-.PHONY : lorawan-adr-simulationfinal.cc.i
-
-lorawan-adr-simulationfinal.s: lorawan-adr-simulationfinal.cc.s
-.PHONY : lorawan-adr-simulationfinal.s
-
-# target to generate assembly for a file
-lorawan-adr-simulationfinal.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/build.make scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/lorawan-adr-simulationfinal.cc.s
-.PHONY : lorawan-adr-simulationfinal.cc.s
 
 subdir/scratch-subdir-additional-header.o: subdir/scratch-subdir-additional-header.cc.o
 .PHONY : subdir/scratch-subdir-additional-header.o
@@ -324,14 +286,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... scratch_lorawan-adr-simulation-module"
-	@echo "... scratch_lorawan-adr-simulationfinal"
 	@echo "... scratch_subdir_scratch-subdir"
 	@echo "... lorawan-adr-simulation-module.o"
 	@echo "... lorawan-adr-simulation-module.i"
 	@echo "... lorawan-adr-simulation-module.s"
-	@echo "... lorawan-adr-simulationfinal.o"
-	@echo "... lorawan-adr-simulationfinal.i"
-	@echo "... lorawan-adr-simulationfinal.s"
 	@echo "... subdir/scratch-subdir-additional-header.o"
 	@echo "... subdir/scratch-subdir-additional-header.i"
 	@echo "... subdir/scratch-subdir-additional-header.s"

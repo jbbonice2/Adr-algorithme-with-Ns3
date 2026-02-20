@@ -14,6 +14,7 @@
 #include "ns3/basic-energy-source-helper.h"
 #include "ns3/building-penetration-loss.h"
 #include "ns3/class-a-end-device-lorawan-mac.h"
+#include "ns3/end-device-lorawan-mac.h"
 #include "ns3/command-line.h"
 #include "ns3/config.h"
 #include "ns3/constant-position-mobility-model.h"
@@ -124,9 +125,19 @@ OnEndDeviceSend(uint32_t deviceNodeId, Ptr<const Packet> packet)
     // Get device position and mobility type
     std::string posStr = "N/A";
     std::string mobilityType = "UNKNOWN";
+    
+    // Communication parameters: I_k = {SF_k, TP_k, CF_k, CR_k}
+    uint8_t sf = 0;
+    double txPower = 0.0;
+    double channelFreq = 0.0;
+    uint8_t codingRate = 0;
+    
     for (uint32_t i = 0; i < g_endDevices.GetN(); ++i) {
         if (g_endDevices.Get(i)->GetId() == deviceNodeId) {
-            Ptr<MobilityModel> mob = g_endDevices.Get(i)->GetObject<MobilityModel>();
+            Ptr<Node> node = g_endDevices.Get(i);
+            
+            // Get mobility info
+            Ptr<MobilityModel> mob = node->GetObject<MobilityModel>();
             if (mob) {
                 Vector pos = mob->GetPosition();
                 std::ostringstream oss;
@@ -140,6 +151,27 @@ OnEndDeviceSend(uint32_t deviceNodeId, Ptr<const Packet> packet)
                     mobilityType = "MOBILE";
                 }
             }
+            
+            // Get communication parameters from MAC layer
+            Ptr<LoraNetDevice> loraDevice = node->GetDevice(0)->GetObject<LoraNetDevice>();
+            if (loraDevice) {
+                Ptr<EndDeviceLorawanMac> mac = 
+                    DynamicCast<EndDeviceLorawanMac>(loraDevice->GetMac());
+                if (mac) {
+                    // Get Data Rate and convert to SF (EU868: DR0=SF12, DR5=SF7)
+                    uint8_t dr = mac->GetDataRate();
+                    sf = 12 - dr;  // EU868 mapping
+                    
+                    // Get Transmission Power (TP_k)
+                    txPower = mac->GetTransmissionPowerDbm();
+                    
+                    // Get Channel Frequency (CF_k)
+                    channelFreq = mac->GetNextTxChannelFrequency() / 1e6;  // Hz to MHz
+                    
+                    // Get Coding Rate (CR_k)
+                    codingRate = mac->GetCodingRate();
+                }
+            }
             break;
         }
     }
@@ -147,6 +179,10 @@ OnEndDeviceSend(uint32_t deviceNodeId, Ptr<const Packet> packet)
     NS_LOG_INFO("[TX] DeviceID=" << deviceNodeId 
                 << " | MsgNum=" << g_deviceMessageCount[deviceNodeId]
                 << " | PacketUID=" << packet->GetUid() 
+                << " | SF=" << (int)sf
+                << " | TP=" << std::fixed << std::setprecision(1) << txPower << "dBm"
+                << " | CF=" << std::fixed << std::setprecision(1) << channelFreq << "MHz"
+                << " | CR=4/" << (4 + codingRate)
                 << " | Position=" << posStr
                 << " | Mobility=" << mobilityType
                 << " | Size=" << packet->GetSize() << "B"
@@ -334,7 +370,7 @@ main(int argc, char* argv[])
     // --- Command line parameters (same as original simulation) ---
     int numDevices = 100;
     double mobilitySpeed = 0.0;           // km/h
-    double trafficInterval = 50.0;        // seconds
+    double trafficInterval = 60.0;        // seconds
     double maxRandomLossDb = 10.0;        // dB - replaces sigma for random loss
     std::string adrAlgoStr = "ADR-AVG";   // No-ADR, ADR-MAX, ADR-AVG, ADR-Lite
     int runNumber = 1;

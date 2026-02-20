@@ -9829,12 +9829,6 @@
 },
 {
   "directory": "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/scratch",
-  "command": "/usr/bin/c++ -DHAVE_LIBXML2 -DHAVE_PACKET_H -DHAVE_SQLITE3 -DHAVE_STDINT_H -DNS3_ASSERT_ENABLE -DNS3_BUILD_PROFILE_DEBUG -DNS3_LOG_ENABLE -DPROJECT_SOURCE_PATH=\\\"/home/bonice/Documents/ns-allinone-3.42/ns-3.42\\\" -DRAW_SOCK_CREATOR=\\\"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/src/fd-net-device/ns3.42-raw-sock-creator-default\\\" -DTAP_DEV_CREATOR=\\\"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/src/fd-net-device/ns3.42-tap-device-creator-default\\\" -D__LINUX__ -I/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include -I/usr -I/usr/include/libxml2 -Os -g -DNDEBUG -std=c++20 -fPIE   -fno-semantic-interposition -fdiagnostics-color=always -Wall -Wpedantic -o CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/lorawan-adr-simulationfinal.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulationfinal.cc",
-  "file": "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulationfinal.cc",
-  "output": "scratch/CMakeFiles/scratch_lorawan-adr-simulationfinal.dir/lorawan-adr-simulationfinal.cc.o"
-},
-{
-  "directory": "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/scratch",
   "command": "/usr/bin/c++ -DHAVE_LIBXML2 -DHAVE_PACKET_H -DHAVE_SQLITE3 -DHAVE_STDINT_H -DNS3_ASSERT_ENABLE -DNS3_BUILD_PROFILE_DEBUG -DNS3_LOG_ENABLE -DPROJECT_SOURCE_PATH=\\\"/home/bonice/Documents/ns-allinone-3.42/ns-3.42\\\" -DRAW_SOCK_CREATOR=\\\"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/src/fd-net-device/ns3.42-raw-sock-creator-default\\\" -DTAP_DEV_CREATOR=\\\"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/src/fd-net-device/ns3.42-tap-device-creator-default\\\" -D__LINUX__ -I/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include -I/usr -I/usr/include/libxml2 -Os -g -DNDEBUG -std=c++20 -fPIE   -fno-semantic-interposition -fdiagnostics-color=always -Wall -Wpedantic -o CMakeFiles/scratch_subdir_scratch-subdir.dir/subdir/scratch-subdir-additional-header.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/subdir/scratch-subdir-additional-header.cc",
   "file": "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/subdir/scratch-subdir-additional-header.cc",
   "output": "scratch/CMakeFiles/scratch_subdir_scratch-subdir.dir/subdir/scratch-subdir-additional-header.cc.o"

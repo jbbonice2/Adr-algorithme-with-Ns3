@@ -640,6 +640,8 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/building-penetration-loss.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/class-a-end-device-lorawan-mac.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/class-a-end-device-lorawan-mac.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/end-device-lorawan-mac.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/end-device-lorawan-mac.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/constant-position-mobility-model.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/mobility/model/constant-position-mobility-model.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/mobility/model/mobility-model.h \

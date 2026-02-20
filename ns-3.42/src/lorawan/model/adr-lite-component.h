@@ -35,29 +35,52 @@ namespace lorawan
  *
  * ADR-Lite: Low-complexity Adaptive Data Rate algorithm
  * 
- * This component implements the ADR-Lite algorithm which uses binary search
- * to find optimal transmission parameters. Unlike traditional ADR that uses
- * SNR history of 20 packets, ADR-Lite only considers the last transmission
- * result (success/failure) to adjust parameters.
+ * Implementation of Algorithm 1: ADR-Lite on NS
  * 
- * Key features:
- * - No packet history required (O(1) space complexity per device)
- * - Binary search for fast convergence
- * - Configurations sorted by energy consumption
- * - Adaptable to varying channel conditions
+ * Input:  k_u(t-1) = previous assigned config index
+ *         r_u(t)   = config index used in last received packet
+ * Output: k_u(t)   = new assigned config index
+ * 
+ * Algorithm:
+ *   Initialization:
+ *     - K = {I_1, I_2, ..., I_|K|} sorted ascending by Energy Consumption (EC)
+ *     - I_k = {SF_k, TP_k, CF_k, CR_k}
+ *     - k_u(0) = |K| (start with most robust config)
+ * 
+ *   For each received packet at iteration t:
+ *     if r_u(t) == k_u(t-1):    // success: device used assigned config
+ *         min_u = 1
+ *         max_u = k_u(t-1)
+ *     else:                      // failure: device used different config
+ *         min_u = k_u(t-1)
+ *         max_u = |K|
+ *     k_u(t) = floor((max_u + min_u) / 2)    // binary search
+ * 
+ * Note: Implementation uses 0-based indexing (indices 0 to |K|-1)
  */
 class AdrLiteComponent : public NetworkControllerComponent
 {
   public:
     /**
-     * Structure representing a LoRaWAN transmission configuration.
-     * Configurations are sorted by energy consumption (ToA).
+     * Structure representing a LoRaWAN transmission configuration I_k.
+     * 
+     * Full configuration: I_k = {SF_k, TP_k, CF_k, CR_k}
+     * All 4 parameters are dynamically adjusted:
+     *   - SF_k: Spreading Factor (7-12) - 6 values
+     *   - TP_k: Transmission Power (2-14 dBm) - 7 values
+     *   - CF_k: Channel Frequency index (0, 1, 2) - 3 values
+     *   - CR_k: Coding Rate (1=4/5, 2=4/6, 3=4/7, 4=4/8) - 4 values
+     * 
+     * Total configurations: 6 × 7 × 3 × 4 = 504 configurations
+     * Configurations are sorted ascending by Energy Consumption (EC).
      */
     struct Configuration
     {
-        uint8_t sf;          //!< Spreading Factor (7-12)
-        double txPowerDbm;   //!< Transmission power in dBm (2-14)
-        double energyIndex;  //!< Relative energy consumption index
+        uint8_t sf;          //!< SF_k: Spreading Factor (7-12)
+        double txPowerDbm;   //!< TP_k: Transmission power in dBm (2-14)
+        uint8_t channelFreq; //!< CF_k: Channel frequency index (0, 1, 2 = 868.1, 868.3, 868.5 MHz)
+        uint8_t codingRate;  //!< CR_k: Coding rate (1=4/5, 2=4/6, 3=4/7, 4=4/8)
+        double energyIndex;  //!< EC_k: Relative energy consumption index
         
         bool operator<(const Configuration& other) const
         {
@@ -70,11 +93,13 @@ class AdrLiteComponent : public NetworkControllerComponent
      */
     struct DeviceAdrState
     {
-        int currentConfigIndex;    //!< k_u(t-1): Current assigned configuration index
+        int currentConfigIndex;      //!< k_u(t-1): Current assigned configuration index
         int lastReceivedConfigIndex; //!< r_u(t): Config index of last received packet
-        bool initialized;          //!< Whether the device has been initialized
-        uint8_t lastAssignedSf;    //!< Last assigned SF
-        double lastAssignedTxPower; //!< Last assigned TxPower
+        bool initialized;            //!< Whether the device has been initialized
+        uint8_t lastAssignedSf;      //!< Last assigned SF_k
+        double lastAssignedTxPower;  //!< Last assigned TP_k
+        uint8_t lastAssignedCF;      //!< Last assigned CF_k (channel index)
+        uint8_t lastAssignedCR;      //!< Last assigned CR_k (coding rate)
     };
 
     /**
@@ -104,22 +129,24 @@ class AdrLiteComponent : public NetworkControllerComponent
     void InitializeConfigurationSpace();
 
     /**
-     * Calculate Time on Air for a given SF (used for energy ordering).
+     * Calculate Time on Air for a given SF and CR (used for energy ordering).
      * 
      * @param sf Spreading factor (7-12)
      * @param payloadBytes Payload size in bytes
+     * @param cr Coding rate (1=4/5, 2=4/6, 3=4/7, 4=4/8)
      * @return Time on Air in milliseconds
      */
-    double CalculateToA(uint8_t sf, int payloadBytes) const;
+    double CalculateToA(uint8_t sf, int payloadBytes, uint8_t cr) const;
 
     /**
-     * Calculate energy consumption index for a configuration.
+     * Calculate energy consumption index EC(I_k) for a configuration.
      * 
-     * @param sf Spreading factor
-     * @param txPowerDbm Transmission power in dBm
+     * @param sf Spreading factor SF_k
+     * @param txPowerDbm Transmission power TP_k in dBm
+     * @param cr Coding rate CR_k (1-4)
      * @return Energy consumption index
      */
-    double CalculateEnergyIndex(uint8_t sf, double txPowerDbm) const;
+    double CalculateEnergyIndex(uint8_t sf, double txPowerDbm, uint8_t cr) const;
 
     /**
      * Get or create device ADR state.
@@ -174,14 +201,15 @@ class AdrLiteComponent : public NetworkControllerComponent
     int m_minConfigIndex;      //!< Minimum configuration index (lowest energy)
     int m_maxConfigIndex;      //!< Maximum configuration index (highest energy/most robust)
     
-    // LoRa parameters
-    const int m_bandwidth = 125000;  //!< Bandwidth in Hz
-    const int m_preambleSymbols = 8; //!< Number of preamble symbols
-    const int m_payloadBytes = 20;   //!< Default payload size
-    const bool m_headerEnabled = true; //!< Whether header is enabled
-    const int m_codingRate = 1;      //!< Coding rate (1 = 4/5)
+    // LoRa PHY parameters for ToA calculation
+    const int m_bandwidth = 125000;    //!< Bandwidth in Hz (BW)
+    const int m_preambleSymbols = 8;   //!< Number of preamble symbols
+    const int m_payloadBytes = 20;     //!< Default payload size for ToA calculation
+    const bool m_headerEnabled = true; //!< Whether explicit header is enabled
 
     bool m_toggleTxPower;  //!< Whether to adjust transmission power
+    bool m_toggleCodingRate;  //!< Whether to adjust coding rate (CR)
+    bool m_toggleChannel;     //!< Whether to adjust channel frequency (CF)
 
     // SF-specific SNR thresholds for validation (dB)
     double m_snrThresholds[6] = {-20.0, -17.5, -15.0, -12.5, -10.0, -7.5};

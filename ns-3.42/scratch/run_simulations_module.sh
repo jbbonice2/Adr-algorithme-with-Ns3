@@ -43,7 +43,7 @@ NS3_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
 SIMULATION_NAME="lorawan-adr-simulation-module"
 
 # Nombre de messages par device par combinaison
-NUM_MESSAGES=110
+NUM_MESSAGES=4
 
 # Nombre de répétitions par configuration
 NUM_RUNS=1

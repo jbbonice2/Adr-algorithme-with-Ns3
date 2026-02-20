@@ -611,6 +611,40 @@ EndDeviceLorawanMac::GetTransmissionPowerDbm()
 }
 
 void
+EndDeviceLorawanMac::SetCodingRate(uint8_t codingRate)
+{
+    NS_LOG_FUNCTION(this << unsigned(codingRate));
+    // Valid coding rates: 1=4/5, 2=4/6, 3=4/7, 4=4/8
+    if (codingRate >= 1 && codingRate <= 4)
+    {
+        m_codingRate = codingRate;
+    }
+    else
+    {
+        NS_LOG_WARN("Invalid coding rate " << unsigned(codingRate) << ", keeping current value");
+    }
+}
+
+uint8_t
+EndDeviceLorawanMac::GetCodingRate() const
+{
+    NS_LOG_FUNCTION(this);
+    return m_codingRate;
+}
+
+double
+EndDeviceLorawanMac::GetNextTxChannelFrequency()
+{
+    NS_LOG_FUNCTION(this);
+    Ptr<LogicalLoraChannel> channel = GetChannelForTx();
+    if (channel)
+    {
+        return static_cast<double>(channel->GetFrequency());
+    }
+    return 0.0;
+}
+
+void
 EndDeviceLorawanMac::SetDeviceAddress(LoraDeviceAddress address)
 {
     NS_LOG_FUNCTION(this << address);

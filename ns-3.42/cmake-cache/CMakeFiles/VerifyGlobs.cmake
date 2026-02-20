@@ -7,7 +7,6 @@ file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/bonice/Documents/ns-allinone-3.4
 set(OLD_GLOB
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/CMakeLists.txt"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulation-module.cc"
-  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulationfinal.cc"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/nested-subdir"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/output"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/plot_adr_final.py"
@@ -25,7 +24,6 @@ endif()
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/[^.]*.cc")
 set(OLD_GLOB
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulation-module.cc"
-  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulationfinal.cc"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
