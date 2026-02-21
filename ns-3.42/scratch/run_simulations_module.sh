@@ -43,7 +43,8 @@ NS3_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && pwd)"
 SIMULATION_NAME="lorawan-adr-simulation-module"
 
 # Nombre de messages par device par combinaison
-NUM_MESSAGES=4
+# NUM_MESSAGES=4
+NUM_MESSAGES=110
 
 # Nombre de répétitions par configuration
 NUM_RUNS=1
@@ -214,6 +215,7 @@ run_scenario1() {
     init_scenario_summary "$summary_file"
 
     DENSITIES=(100 200 300 400 500 600 700 800 900 1000)
+    #  DENSITIES=(2 3 4)
     MOBILITIES_S1=(0 33.33 60)
     TRAFFIC_INTERVALS_S1=(3600 145 72)
     MAX_RANDOM_LOSS_S1=(0 3.96 7.92)
@@ -268,8 +270,10 @@ run_scenario2() {
     # Initialiser le fichier summary
     init_scenario_summary "$summary_file"
 
-    MOBILITIES=(0 6.67 13.33 20 26.67 33.33 40 46.67 53.33 60)
+    # MOBILITIES=(0 26.67 60)
+     MOBILITIES=(0 6.67 13.33 20 26.67 33.33 40 46.67 53.33 60)
     DENSITIES_S2=(100 550 1000)
+    # DENSITIES_S2=(4 6 8)
     TRAFFIC_INTERVALS_S2=(3600 145 72)
     MAX_RANDOM_LOSS_S2=(0 3.96 7.92)
 
@@ -324,7 +328,9 @@ run_scenario3() {
     init_scenario_summary "$summary_file"
 
     MAX_RANDOM_LOSS=(0 1.98 3.96 5.94 7.92)
+    #   MAX_RANDOM_LOSS=(0 1.98 3.96)
     DENSITIES_S3=(100 550 1000)
+    # DENSITIES_S3=(4 6 8)
     MOBILITIES_S3=(0 33.33 60)
     TRAFFIC_INTERVALS_S3=(3600 145 72)
 
@@ -380,6 +386,8 @@ run_scenario4() {
 
     TRAFFIC_INTERVALS=(3600 327 240 180 145 120 103 90 80 72)
     DENSITIES_S4=(100 550 1000)
+    #  TRAFFIC_INTERVALS=(3600 145 72)
+    # DENSITIES_S4=(4 6 8)
     MOBILITIES_S4=(0 33.33 60)
     MAX_RANDOM_LOSS_S4=(0 3.96 7.92)
 

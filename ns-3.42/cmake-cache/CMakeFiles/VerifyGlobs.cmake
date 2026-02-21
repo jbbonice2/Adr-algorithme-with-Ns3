@@ -6,6 +6,8 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/**")
 set(OLD_GLOB
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/CMakeLists.txt"
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/log.txt"
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/logscenarios1.txt"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulation-module.cc"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/nested-subdir"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/output"
