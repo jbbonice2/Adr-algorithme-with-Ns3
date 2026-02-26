@@ -99,8 +99,55 @@ NetworkStatus::OnReceivedPacket(Ptr<const Packet> packet, const Address& gwAddre
     frameHdr.SetAsUplink();
     myPacket->RemoveHeader(frameHdr);
 
-    // Update the correct EndDeviceStatus object
+    // Log packet parameters as seen by the network server and device MAC params
+    LoraTag tag;
+    Ptr<Packet> tagPkt = packet->Copy();
+    uint8_t pktSf = 0;
+    uint32_t pktFreq = 0;
+    double pktRxPower = 0.0;
+    uint8_t pktDr = 0;
+    if (tagPkt->PeekPacketTag(tag))
+    {
+        pktSf = tag.GetSpreadingFactor();
+        pktFreq = tag.GetFrequency();
+        pktRxPower = tag.GetReceivePower();
+        pktDr = tag.GetDataRate();
+    }
+
+    // Resolve end-device status if present so we can fetch device MAC params
     LoraDeviceAddress edAddr = frameHdr.GetAddress();
+    Ptr<EndDeviceStatus> edStatus = nullptr;
+    if (m_endDeviceStatuses.find(edAddr) != m_endDeviceStatuses.end())
+    {
+        edStatus = m_endDeviceStatuses.at(edAddr);
+    }
+
+    double devTxPower = 0.0;
+    uint8_t devCodingRate = 0;
+    uint32_t devNextTxFreq = 0;
+    if (edStatus != nullptr)
+    {
+        Ptr<ClassAEndDeviceLorawanMac> mac = edStatus->GetMac();
+        if (mac != nullptr)
+        {
+            devTxPower = mac->GetTransmissionPowerDbm();
+            devCodingRate = mac->GetCodingRate();
+            devNextTxFreq = mac->GetNextTxChannelFrequency();
+        }
+    }
+
+    // Print full info: per-packet + device MAC params (covers ADR-Lite and other ADR modes)
+    NS_LOG_UNCOND("NetworkStatus: RX packet from GW=" << gwAddress
+                  << " | PacketUID=" << packet->GetUid()
+                  << " | DevAddr=" << edAddr
+                  << " | SF=" << unsigned(pktSf)
+                  << " | Freq=" << pktFreq << " Hz"
+                  << " | DataRate=" << unsigned(pktDr)
+                  << " | RxPower=" << pktRxPower << " dBm"
+                  << " | DevTx=" << devTxPower << " dBm"
+                  << " | DevCR=4/" << (4 + unsigned(devCodingRate))
+                  << " | DevNextCF=" << devNextTxFreq << " Hz");
+
     NS_LOG_DEBUG("Node address: " << edAddr);
     m_endDeviceStatuses.at(edAddr)->InsertReceivedPacket(packet, gwAddress);
 }
@@ -183,6 +230,26 @@ NetworkStatus::GetReplyForDevice(LoraDeviceAddress edAddress, int windowNumber)
         tag.SetFrequency(edStatus->GetSecondReceiveWindowFrequency());
         break;
     }
+    // Log reply parameters that network server will use
+    // Also fetch device MAC params (Tx power, coding rate) to include in server log
+    double devTxPower = 0.0;
+    uint8_t devCodingRate = 0;
+    uint32_t devNextTxFreq = 0;
+    if (edStatus && edStatus->GetMac())
+    {
+        Ptr<ClassAEndDeviceLorawanMac> mac = edStatus->GetMac();
+        devTxPower = mac->GetTransmissionPowerDbm();
+        devCodingRate = mac->GetCodingRate();
+        devNextTxFreq = mac->GetNextTxChannelFrequency();
+    }
+
+    NS_LOG_UNCOND("NetworkStatus: Preparing reply for device " << edAddress
+                  << " | Window=" << windowNumber
+                  << " | Reply DataRate=" << unsigned(tag.GetDataRate())
+                  << " | Reply Freq=" << tag.GetFrequency() << " Hz"
+                  << " | DevTx=" << devTxPower << " dBm"
+                  << " | DevCR=4/" << (4 + unsigned(devCodingRate))
+                  << " | DevNextCF=" << devNextTxFreq << " Hz");
 
     packet->AddPacketTag(tag);
     return packet;

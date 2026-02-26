@@ -6101,6 +6101,19 @@ wifi-eht-network/fast:
 .PHONY : wifi-eht-network/fast
 
 #=============================================================================
+# Target rules for targets named scratch_dd
+
+# Build rule for target.
+scratch_dd: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch_dd
+.PHONY : scratch_dd
+
+# fast build rule for target.
+scratch_dd/fast:
+	$(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_dd.dir/build.make scratch/CMakeFiles/scratch_dd.dir/build
+.PHONY : scratch_dd/fast
+
+#=============================================================================
 # Target rules for targets named scratch_lorawan-adr-simulation-module
 
 # Build rule for target.
@@ -6579,6 +6592,7 @@ help:
 	@echo "... sample-show-progress"
 	@echo "... sample-simulator"
 	@echo "... scratch-nested-subdir-lib"
+	@echo "... scratch_dd"
 	@echo "... scratch_lorawan-adr-simulation-module"
 	@echo "... scratch_nested-subdir_scratch-nested-subdir-executable"
 	@echo "... scratch_subdir_scratch-subdir"

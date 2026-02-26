@@ -6,6 +6,7 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/**")
 set(OLD_GLOB
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/CMakeLists.txt"
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/dd.cc"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/log.txt"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/logscenarios1.txt"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulation-module.cc"
@@ -14,6 +15,7 @@ set(OLD_GLOB
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/plot_adr_final.py"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/run_simulations_adrfinal.sh"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/run_simulations_module.sh"
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/scenario.log"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/simulation_graphs"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/subdir"
   )
@@ -25,6 +27,7 @@ endif()
 # single_source_file_scratches at scratch/CMakeLists.txt:77 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/[^.]*.cc")
 set(OLD_GLOB
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/dd.cc"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulation-module.cc"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

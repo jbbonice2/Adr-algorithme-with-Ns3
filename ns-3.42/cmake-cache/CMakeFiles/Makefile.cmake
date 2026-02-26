@@ -796,6 +796,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "examples/wireless/CMakeFiles/wifi-wired-bridging.dir/DependInfo.cmake"
   "examples/wireless/CMakeFiles/wifi-ofdm-eht-validation.dir/DependInfo.cmake"
   "examples/wireless/CMakeFiles/wifi-eht-network.dir/DependInfo.cmake"
+  "scratch/CMakeFiles/scratch_dd.dir/DependInfo.cmake"
   "scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/DependInfo.cmake"
   "scratch/CMakeFiles/scratch_subdir_scratch-subdir.dir/DependInfo.cmake"
   "scratch/nested-subdir/CMakeFiles/scratch-nested-subdir-lib.dir/DependInfo.cmake"

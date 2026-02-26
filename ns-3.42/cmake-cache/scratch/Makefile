@@ -173,6 +173,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+scratch/CMakeFiles/scratch_dd.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch/CMakeFiles/scratch_dd.dir/rule
+.PHONY : scratch/CMakeFiles/scratch_dd.dir/rule
+
+# Convenience name for target.
+scratch_dd: scratch/CMakeFiles/scratch_dd.dir/rule
+.PHONY : scratch_dd
+
+# fast build rule for target.
+scratch_dd/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_dd.dir/build.make scratch/CMakeFiles/scratch_dd.dir/build
+.PHONY : scratch_dd/fast
+
+# Convenience name for target.
 scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/rule:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/rule
 .PHONY : scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/rule
@@ -199,6 +213,30 @@ scratch_subdir_scratch-subdir: scratch/CMakeFiles/scratch_subdir_scratch-subdir.
 scratch_subdir_scratch-subdir/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_subdir_scratch-subdir.dir/build.make scratch/CMakeFiles/scratch_subdir_scratch-subdir.dir/build
 .PHONY : scratch_subdir_scratch-subdir/fast
+
+dd.o: dd.cc.o
+.PHONY : dd.o
+
+# target to build an object file
+dd.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_dd.dir/build.make scratch/CMakeFiles/scratch_dd.dir/dd.cc.o
+.PHONY : dd.cc.o
+
+dd.i: dd.cc.i
+.PHONY : dd.i
+
+# target to preprocess a source file
+dd.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_dd.dir/build.make scratch/CMakeFiles/scratch_dd.dir/dd.cc.i
+.PHONY : dd.cc.i
+
+dd.s: dd.cc.s
+.PHONY : dd.s
+
+# target to generate assembly for a file
+dd.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f scratch/CMakeFiles/scratch_dd.dir/build.make scratch/CMakeFiles/scratch_dd.dir/dd.cc.s
+.PHONY : dd.cc.s
 
 lorawan-adr-simulation-module.o: lorawan-adr-simulation-module.cc.o
 .PHONY : lorawan-adr-simulation-module.o
@@ -285,8 +323,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... scratch_dd"
 	@echo "... scratch_lorawan-adr-simulation-module"
 	@echo "... scratch_subdir_scratch-subdir"
+	@echo "... dd.o"
+	@echo "... dd.i"
+	@echo "... dd.s"
 	@echo "... lorawan-adr-simulation-module.o"
 	@echo "... lorawan-adr-simulation-module.i"
 	@echo "... lorawan-adr-simulation-module.s"

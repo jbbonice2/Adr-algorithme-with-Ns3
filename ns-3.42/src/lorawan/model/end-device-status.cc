@@ -307,6 +307,37 @@ EndDeviceStatus::InsertReceivedPacket(Ptr<const Packet> receivedPacket, const Ad
         gwInfo.gwAddress = gwAddress;
         info.gwList.insert(std::pair<Address, PacketInfoPerGw>(gwAddress, gwInfo));
         m_receivedPacketList.emplace_back(receivedPacket, info);
+        uint8_t dr = 0;
+        if (myPacket)
+        {
+            // Try to extract LoraTag from the copied packet if present
+            LoraTag tagCopy;
+            Ptr<Packet> tmp = myPacket->Copy();
+            if (tmp->PeekPacketTag(tagCopy))
+            {
+                dr = tagCopy.GetDataRate();
+            }
+        }
+
+        NS_LOG_UNCOND("EndDeviceStatus: New RX packet for device " << m_endDeviceAddress
+                   << " | PacketUID=" << receivedPacket->GetUid()
+                   << " | SF=" << info.sf
+                   << " | Freq=" << info.frequencyHz << " Hz"
+                   << " | DataRate=" << unsigned(dr)
+                   << " | PacketSize=" << receivedPacket->GetSize() << " bytes"
+                   << " | RxPower=" << rcvPower << " dBm"
+                   << " | gateways=" << info.gwList.size());
+
+        if (m_mac)
+        {
+            uint8_t devDr = m_mac->GetDataRate();
+            uint8_t devSf = 12 - devDr; // EU868 mapping
+            NS_LOG_UNCOND("EndDeviceStatus: Device MAC params: TxPower=" << m_mac->GetTransmissionPowerDbm()
+                          << " dBm | DR=" << unsigned(devDr)
+                          << " | SF=" << unsigned(devSf)
+                          << " | CodingRate=" << unsigned(m_mac->GetCodingRate())
+                          << " | NextTxFreq=" << m_mac->GetNextTxChannelFrequency() << " Hz");
+        }
     }
     NS_LOG_DEBUG(*this);
 }
