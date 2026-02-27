@@ -376,7 +376,7 @@ main(int argc, char* argv[])
     int runNumber = 1;
     double simulationTime = 3600.0;       // seconds
     int scenario = 1;
-    double radiusMeters = 500.0;          // Deployment radius in meters
+    double radiusMeters = 1000.0;          // Deployment radius in meters
     bool initializeSF = true;             // Whether to initialize SFs
     bool enableEnergyModel = true;        // Whether to enable energy tracking
     bool verbose = false;
