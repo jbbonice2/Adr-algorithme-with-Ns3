@@ -16,6 +16,10 @@ set(OLD_GLOB
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/run_simulations_adrfinal.sh"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/run_simulations_module.sh"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/scenario.log"
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/scenario1.log"
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/scenario2.log"
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/scenario3.log"
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/scenario4.log"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/simulation_graphs"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/subdir"
   )
