@@ -226,6 +226,7 @@ run_scenario1() {
 
     # DENSITIES=(4 10)
     # MOBILITIES_S1=(0 )
+    
     # TRAFFIC_INTERVALS_S1=(3600 )
     # MAX_RANDOM_LOSS_S1=(0 )
 
