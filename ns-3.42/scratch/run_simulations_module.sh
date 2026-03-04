@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script d'automatisation pour les simulations LoRaWAN ADR avec le module lorawan officiel
-# Usage: ./run_simulations_module.sh [1|2|3|4]
+# Usage: ./run_simulations_module.sh [1|2|3|4|5]
 # Exemple: ./run_simulations_module.sh 1  (pour exécuter uniquement le scénario 1)
 # Exécution séquentielle (une simulation après l'autre)
 
@@ -15,21 +15,22 @@ NC='\033[0m' # No Color
 
 # Vérifier l'argument
 if [ $# -eq 0 ]; then
-    echo -e "${RED}Erreur: Veuillez spécifier le numéro du scénario (1, 2, 3 ou 4)${NC}"
-    echo -e "${YELLOW}Usage: $0 [1|2|3|4]${NC}"
+    echo -e "${RED}Erreur: Veuillez spécifier le numéro du scénario (1, 2, 3, 4 ou 5)${NC}"
+    echo -e "${YELLOW}Usage: $0 [1|2|3|4|5]${NC}"
     echo -e "${YELLOW}Exemples:${NC}"
     echo -e "  $0 1  # Exécute le scénario 1 (variation densité)"
     echo -e "  $0 2  # Exécute le scénario 2 (variation mobilité)"
     echo -e "  $0 3  # Exécute le scénario 3 (variation sigma/perte aléatoire)"
     echo -e "  $0 4  # Exécute le scénario 4 (variation intervalle d'envoi)"
+    echo -e "  $0 5  # Exécute le scénario 5 (variation densité × mobilité)"
     exit 1
 fi
 
 SCENARIO=$1
 
 # Valider le numéro de scénario
-if [[ ! "$SCENARIO" =~ ^[1-4]$ ]]; then
-    echo -e "${RED}Erreur: Le numéro de scénario doit être 1, 2, 3 ou 4${NC}"
+if [[ ! "$SCENARIO" =~ ^[1-5]$ ]]; then
+    echo -e "${RED}Erreur: Le numéro de scénario doit être 1, 2, 3, 4 ou 5${NC}"
     exit 1
 fi
 
@@ -337,7 +338,7 @@ run_scenario3() {
     MAX_RANDOM_LOSS=(0 1.98 3.96 5.94 7.92)
      DENSITIES_S3=(550)
     # DENSITIES_S3=(4 6 8)
-    MOBILITIES_S3=(33.33)
+    MOBILITIES_S3=(0)
     TRAFFIC_INTERVALS_S3=(145)
     #   MAX_RANDOM_LOSS=(0 1.98 3.96)
     # DENSITIES_S3=(100 550 1000)
@@ -395,12 +396,12 @@ run_scenario4() {
     # Initialiser le fichier summary
     init_scenario_summary "$summary_file"
 
-    TRAFFIC_INTERVALS=(3600 327 240 180 145 120 103 90 80 72)
+    TRAFFIC_INTERVALS=(3600 1800 1200 900 720 600 514 450 400 360)
     
      DENSITIES_S4=(550)
     #  TRAFFIC_INTERVALS=(3600 145 72)
     # DENSITIES_S4=(4 6 8)
-    MOBILITIES_S4=(33.33)
+    MOBILITIES_S4=(0)
     MAX_RANDOM_LOSS_S4=(7.92)
     # DENSITIES_S4=(100 550 1000)
     # #  TRAFFIC_INTERVALS=(3600 145 72)
@@ -444,6 +445,60 @@ run_scenario4() {
 }
 
 # ==============================================================================
+# SCENARIO 5: Variation densité × mobilité (intervalle et sigma fixés)
+# ==============================================================================
+run_scenario5() {
+    echo -e "\n${BLUE}========================================${NC}"
+    echo -e "${BLUE}  SCENARIO 5: Densité × Mobilité${NC}"
+    echo -e "${BLUE}========================================${NC}"
+
+    local scenario_name="densite_mobilite"
+    local summary_dir="$NS3_DIR/resultsfinal/summaries"
+    mkdir -p "$summary_dir"
+    local summary_file="$summary_dir/summary_scenario5.csv"
+
+    # Initialiser le fichier summary
+    init_scenario_summary "$summary_file"
+
+    # 10 valeurs de densité
+    DENSITIES_S5=(100 200 300 400 500 600 700 800 900 1000)
+    # 3 vitesses de mobilité : 0, 30, 60 km/h
+    MOBILITIES_S5=(0 30 60)
+    # Intervalle d'envoi fixé
+    TRAFFIC_INTERVALS_S5=(3600)
+    # Sigma (perte aléatoire) fixée
+    MAX_RANDOM_LOSS_S5=(3.96)
+
+    total_sims=$((${#DENSITIES_S5[@]} * ${#MOBILITIES_S5[@]} * ${#TRAFFIC_INTERVALS_S5[@]} * ${#MAX_RANDOM_LOSS_S5[@]} * ${#ADR_ALGOS[@]} * NUM_RUNS))
+    current_sim=0
+    scenario_start_time=$(date +%s)
+
+    echo -e "${YELLOW}Total simulations: $total_sims${NC}"
+    echo -e "${GREEN}Démarrage de l'exécution séquentielle...${NC}"
+    echo -e "${YELLOW}Heure de début: $(date '+%Y-%m-%d %H:%M:%S')${NC}"
+
+    for density in "${DENSITIES_S5[@]}"; do
+        for mobility in "${MOBILITIES_S5[@]}"; do
+            for traffic in "${TRAFFIC_INTERVALS_S5[@]}"; do
+                for maxLoss in "${MAX_RANDOM_LOSS_S5[@]}"; do
+                    for run in $(seq 1 $NUM_RUNS); do
+                        for adr_algo in "${ADR_ALGOS[@]}"; do
+                            run_single_simulation "$SCENARIO" "$density" "$mobility" "$traffic" "$maxLoss" "$adr_algo" "$run" "$scenario_name" "$summary_file"
+                        done
+                    done
+                done
+            done
+        done
+    done
+
+    local scenario_end_time=$(date +%s)
+    local total_elapsed=$((scenario_end_time - scenario_start_time))
+    echo -e "${GREEN}Scenario 5 completed!${NC}"
+    echo -e "${CYAN}Temps total: $(format_time $total_elapsed)${NC}"
+    echo -e "${GREEN}Summary: $summary_file${NC}"
+}
+
+# ==============================================================================
 # Exécution du scénario sélectionné
 # ==============================================================================
 case $SCENARIO in
@@ -458,6 +513,9 @@ case $SCENARIO in
         ;;
     4)
         run_scenario4
+        ;;
+    5)
+        run_scenario5
         ;;
 esac
 
@@ -475,6 +533,7 @@ rm -rf "$NS3_DIR/resultsfinal/summaries/density" 2>/dev/null
 rm -rf "$NS3_DIR/resultsfinal/summaries/mobilite" 2>/dev/null
 rm -rf "$NS3_DIR/resultsfinal/summaries/sigma" 2>/dev/null
 rm -rf "$NS3_DIR/resultsfinal/summaries/intervalle_d_envoie" 2>/dev/null
+rm -rf "$NS3_DIR/resultsfinal/summaries/densite_mobilite" 2>/dev/null
 
 echo -e "\n${CYAN}========================================${NC}"
 echo -e "${CYAN}  SIMULATION SCÉNARIO $SCENARIO TERMINÉE!${NC}"

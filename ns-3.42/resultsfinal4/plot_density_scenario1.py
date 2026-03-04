@@ -35,7 +35,7 @@ def get_unique_values(df):
     print(f"Algorithms: {df['Algorithm'].unique().tolist()}")
     print("=" * 45)
 
-def plot_comparison(df, mobility_speed, traffic_interval, max_random_loss, output_dir=None):
+def plot_comparison(df, mobility_speed, traffic_interval, max_random_loss, output_dir=None, x_var='NumDevices'):
     """
     Trace les graphiques de comparaison des algorithmes ADR.
     
@@ -56,39 +56,71 @@ def plot_comparison(df, mobility_speed, traffic_interval, max_random_loss, outpu
     
     title_suffix = f"(Mobilité={mobility_speed} km/h, Intervalle={traffic_interval}s, Perte={max_random_loss} dB)"
     
-    # --- Graphique 1: PDR vs NumDevices ---
+    # --- Graphique 1: PDR vs x_var ---
     ax1 = axes[0]
     for algo in algorithms:
-        algo_data = df[df['Algorithm'] == algo].sort_values('NumDevices')
+        algo_data = df[df['Algorithm'] == algo].sort_values(x_var)
         if not algo_data.empty:
-            ax1.plot(algo_data['NumDevices'], algo_data['PDR_Percent'], 
+            ax1.plot(algo_data[x_var], algo_data['PDR_Percent'], 
                     marker=markers[algo], color=colors[algo], 
                     label=algo, linewidth=2, markersize=8)
     
-    ax1.set_xlabel('Nombre de Devices', fontsize=12)
+    # X label depends on chosen x variable
+    xlabel_map = {
+        'NumDevices': 'Nombre de Devices',
+        'MobilitySpeed': 'Mobilité (km/h)',
+        'TrafficInterval': 'Intervalle de trafic (s)',
+        'MessagesParHeure': 'Messages par heure (msg/h)',
+        'MaxRandomLoss': 'Sigma / Perte aléatoire (dB)'
+    }
+    ax1.set_xlabel(xlabel_map.get(x_var, x_var), fontsize=12)
     ax1.set_ylabel('PDR (%)', fontsize=12)
     ax1.set_title(f'Taux de Livraison de Paquets (PDR)\n{title_suffix}', fontsize=11)
     ax1.legend(loc='best', fontsize=10)
     ax1.grid(True, alpha=0.3)
     ax1.set_ylim([0, 100])
     ax1.set_yticks(np.arange(0, 101, 10))
-    ax1.set_xticks(np.arange(100, 1001, 100))
+    # Set sensible x-ticks based on x_var
+    try:
+        unique_x = np.array(sorted(df[x_var].unique()))
+        if x_var == 'NumDevices':
+            ax1.set_xticks(np.arange(100, 1001, 100))
+        elif x_var == 'MessagesParHeure':
+            ax1.set_xticks(unique_x)
+            ax1.set_xticklabels([f'{v:.0f}' if v == int(v) else f'{v:.1f}' for v in unique_x], rotation=45, ha='right')
+        elif x_var == 'TrafficInterval':
+            ax1.set_xticks(unique_x)
+        else:
+            ax1.set_xticks(unique_x)
+    except Exception:
+        pass
     
-    # --- Graphique 2: Énergie vs NumDevices ---
+    # --- Graphique 2: Énergie vs x_var ---
     ax2 = axes[1]
     for algo in algorithms:
-        algo_data = df[df['Algorithm'] == algo].sort_values('NumDevices')
+        algo_data = df[df['Algorithm'] == algo].sort_values(x_var)
         if not algo_data.empty:
-            ax2.plot(algo_data['NumDevices'], algo_data['AvgEnergy_mJ'], 
+            ax2.plot(algo_data[x_var], algo_data['AvgEnergy_mJ'], 
                     marker=markers[algo], color=colors[algo], 
                     label=algo, linewidth=2, markersize=8)
     
-    ax2.set_xlabel('Nombre de Devices', fontsize=12)
+    ax2.set_xlabel(xlabel_map.get(x_var, x_var), fontsize=12)
     ax2.set_ylabel('Énergie Moyenne (mJ)', fontsize=12)
     ax2.set_title(f'Consommation Énergétique\n{title_suffix}', fontsize=11)
     ax2.legend(loc='best', fontsize=10)
     ax2.grid(True, alpha=0.3)
-    ax2.set_xticks(np.arange(100, 1001, 100))
+    try:
+        if x_var == 'NumDevices':
+            ax2.set_xticks(np.arange(100, 1001, 100))
+        elif x_var == 'MessagesParHeure':
+            ax2.set_xticks(unique_x)
+            ax2.set_xticklabels([f'{v:.0f}' if v == int(v) else f'{v:.1f}' for v in unique_x], rotation=45, ha='right')
+        elif x_var == 'TrafficInterval':
+            ax2.set_xticks(unique_x)
+        else:
+            ax2.set_xticks(unique_x)
+    except Exception:
+        pass
     
     plt.tight_layout()
     
@@ -102,7 +134,7 @@ def plot_comparison(df, mobility_speed, traffic_interval, max_random_loss, outpu
     
     plt.show()
 
-def plot_bar_comparison(df, mobility_speed, traffic_interval, max_random_loss, output_dir=None):
+def plot_bar_comparison(df, mobility_speed, traffic_interval, max_random_loss, output_dir=None, x_var='NumDevices'):
     """
     Trace des graphiques en courbes (remplace les diagrammes en barres).
     """
@@ -110,7 +142,7 @@ def plot_bar_comparison(df, mobility_speed, traffic_interval, max_random_loss, o
     colors = {'No-ADR': '#2196F3', 'ADR-MAX': '#4CAF50', 'ADR-AVG': '#FF9800', 'ADR-Lite': '#E91E63'}
     markers = {'No-ADR': 'o', 'ADR-MAX': 's', 'ADR-AVG': '^', 'ADR-Lite': 'D'}
 
-    num_devices_list = sorted(df['NumDevices'].unique())
+    num_devices_list = sorted(df[x_var].unique())
 
     fig, axes = plt.subplots(1, 2, figsize=(16, 6))
     title_suffix = f"(Mobilité={mobility_speed} km/h, Intervalle={traffic_interval}s, Perte={max_random_loss} dB)"
@@ -118,17 +150,31 @@ def plot_bar_comparison(df, mobility_speed, traffic_interval, max_random_loss, o
     # --- Graphique 1: PDR en courbes ---
     ax1 = axes[0]
     for algo in algorithms:
-        algo_data = df[df['Algorithm'] == algo].sort_values('NumDevices')
+        algo_data = df[df['Algorithm'] == algo].sort_values(x_var)
         if not algo_data.empty:
-            ax1.plot(algo_data['NumDevices'], algo_data['PDR_Percent'],
+            ax1.plot(algo_data[x_var], algo_data['PDR_Percent'],
                      marker=markers[algo], color=colors[algo],
                      label=algo, linewidth=2, markersize=8)
 
-    ax1.set_xlabel('Nombre de Devices', fontsize=12)
+    xlabel_map = {
+        'NumDevices': 'Nombre de Devices',
+        'MobilitySpeed': 'Mobilité (km/h)',
+        'TrafficInterval': 'Intervalle de trafic (s)',
+        'MessagesParHeure': 'Messages par heure (msg/h)',
+        'MaxRandomLoss': 'Sigma / Perte aléatoire (dB)'
+    }
+    ax1.set_xlabel(xlabel_map.get(x_var, x_var), fontsize=12)
     ax1.set_ylabel('PDR (%)', fontsize=12)
     ax1.set_title(f'Taux de Livraison de Paquets (PDR)\n{title_suffix}', fontsize=11)
-    ax1.set_xticks(num_devices_list)
-    ax1.set_xticklabels(num_devices_list)
+    if x_var == 'MessagesParHeure':
+        ax1.set_xticks(num_devices_list)
+        ax1.set_xticklabels([f'{v:.0f}' if v == int(v) else f'{v:.1f}' for v in num_devices_list], rotation=45, ha='right')
+    elif x_var == 'TrafficInterval':
+        ax1.set_xticks(num_devices_list)
+        ax1.set_xticklabels([str(x) for x in num_devices_list])
+    else:
+        ax1.set_xticks(num_devices_list)
+        ax1.set_xticklabels([str(x) for x in num_devices_list])
     ax1.legend(loc='best', fontsize=10)
     ax1.grid(True, alpha=0.3)
     ax1.set_ylim([max(0, df['PDR_Percent'].min() - 5), 102])
@@ -136,17 +182,24 @@ def plot_bar_comparison(df, mobility_speed, traffic_interval, max_random_loss, o
     # --- Graphique 2: Énergie en courbes ---
     ax2 = axes[1]
     for algo in algorithms:
-        algo_data = df[df['Algorithm'] == algo].sort_values('NumDevices')
+        algo_data = df[df['Algorithm'] == algo].sort_values(x_var)
         if not algo_data.empty:
-            ax2.plot(algo_data['NumDevices'], algo_data['AvgEnergy_mJ'],
+            ax2.plot(algo_data[x_var], algo_data['AvgEnergy_mJ'],
                      marker=markers[algo], color=colors[algo],
                      label=algo, linewidth=2, markersize=8)
 
-    ax2.set_xlabel('Nombre de Devices', fontsize=12)
+    ax2.set_xlabel(xlabel_map.get(x_var, x_var), fontsize=12)
     ax2.set_ylabel('Énergie Moyenne (mJ)', fontsize=12)
     ax2.set_title(f'Consommation Énergétique\n{title_suffix}', fontsize=11)
-    ax2.set_xticks(num_devices_list)
-    ax2.set_xticklabels(num_devices_list)
+    if x_var == 'MessagesParHeure':
+        ax2.set_xticks(num_devices_list)
+        ax2.set_xticklabels([f'{v:.0f}' if v == int(v) else f'{v:.1f}' for v in num_devices_list], rotation=45, ha='right')
+    elif x_var == 'TrafficInterval':
+        ax2.set_xticks(num_devices_list)
+        ax2.set_xticklabels([str(x) for x in num_devices_list])
+    else:
+        ax2.set_xticks(num_devices_list)
+        ax2.set_xticklabels([str(x) for x in num_devices_list])
     ax2.legend(loc='best', fontsize=10)
     ax2.grid(True, alpha=0.3)
 
@@ -175,7 +228,7 @@ def print_summary_table(df):
     print(pivot_energy.round(4).to_string())
     print()
 
-def generate_all_plots(df, mobility_speeds, traffic_intervals, max_random_losses, output_dir, include_bar=False):
+def generate_all_plots(df, mobility_speeds, traffic_intervals, max_random_losses, output_dir, include_bar=False, x_var='NumDevices'):
     """
     Génère tous les graphiques pour toutes les combinaisons de paramètres.
     """
@@ -201,12 +254,12 @@ def generate_all_plots(df, mobility_speeds, traffic_intervals, max_random_losses
                 print(f"[OK] Génération: mob={mobility}, interval={interval}, loss={loss}")
                 
                 # Graphique en lignes
-                plot_comparison(filtered_df, mobility, interval, loss, output_dir)
+                plot_comparison(filtered_df, mobility, interval, loss, output_dir, x_var=x_var)
                 plt.close('all')
                 
                 # Graphique en barres si demandé
                 if include_bar:
-                    plot_bar_comparison(filtered_df, mobility, interval, loss, output_dir)
+                    plot_bar_comparison(filtered_df, mobility, interval, loss, output_dir, x_var=x_var)
                     plt.close('all')
                 
                 generated += 1
@@ -215,6 +268,81 @@ def generate_all_plots(df, mobility_speeds, traffic_intervals, max_random_losses
     print(f"Graphiques générés: {generated}")
     print(f"Combinaisons ignorées (pas de données): {skipped}")
     print(f"Répertoire de sortie: {output_dir}")
+
+
+def plot_single_scenario(csv_path, output_base, include_bar=False):
+    """
+    Génère un seul graphique agrégé par scénario (moyennes par abscisse et algorithme).
+    """
+    import matplotlib
+    matplotlib.use('Agg')
+
+    if not os.path.exists(csv_path):
+        print(f"[SKIP] Fichier absent: {csv_path}")
+        return
+
+    df = load_data(csv_path)
+    if df.empty:
+        print(f"[SKIP] Aucun enregistrement dans: {csv_path}")
+        return
+
+    # Determine scenario name
+    if 'Scenario' in df.columns:
+        unique = df['Scenario'].unique()
+        scenario_name = unique[0] if len(unique) > 0 else os.path.splitext(os.path.basename(csv_path))[0]
+    else:
+        scenario_name = os.path.splitext(os.path.basename(csv_path))[0]
+
+    scen_lower = scenario_name.lower()
+    if 'density' in scen_lower:
+        x_var = 'NumDevices'
+    elif 'mobil' in scen_lower or 'mobilite' in scen_lower:
+        x_var = 'MobilitySpeed'
+    elif 'intervalle' in scen_lower or 'traf' in scen_lower or 'interval' in scen_lower:
+        # Convertir TrafficInterval (secondes) en messages/heure
+        df['MessagesParHeure'] = 3600.0 / df['TrafficInterval']
+        x_var = 'MessagesParHeure'
+    elif 'sigma' in scen_lower:
+        x_var = 'MaxRandomLoss'
+    else:
+        x_var = 'NumDevices'
+
+    # Agrégation: moyenne par (x_var, Algorithm)
+    try:
+        agg = df.groupby([x_var, 'Algorithm']).agg({'PDR_Percent': 'mean', 'AvgEnergy_mJ': 'mean'}).reset_index()
+    except Exception as e:
+        print(f"[ERROR] Impossible d'agréger les données pour {csv_path}: {e}")
+        return
+
+    out_dir = os.path.join(output_base, scenario_name)
+    os.makedirs(out_dir, exist_ok=True)
+    print(f"[OK] Génération agrégée: {scenario_name} (abscisse={x_var}) -> {out_dir}")
+
+    # Use 'all' markers for title fields (they are only used for the subtitle)
+    plot_comparison(agg, mobility_speed='all', traffic_interval='all', max_random_loss='all', output_dir=out_dir, x_var=x_var)
+    plt.close('all')
+
+    if include_bar:
+        plot_bar_comparison(agg, mobility_speed='all', traffic_interval='all', max_random_loss='all', output_dir=out_dir, x_var=x_var)
+        plt.close('all')
+
+
+def generate_all_scenarios(csv_base_path, output_base, include_bar=False):
+    """
+    Parcourt les fichiers `summary_scenario1.csv` .. `summary_scenario4.csv` présents
+    dans le même dossier que `csv_base_path` et génère tous les graphiques pour
+    chaque fichier en utilisant les valeurs présentes dans chaque CSV.
+    """
+    base_dir = os.path.dirname(csv_base_path)
+    for i in range(1, 5):
+        csv_path = os.path.join(base_dir, f"summary_scenario{i}.csv")
+        if not os.path.exists(csv_path):
+            print(f"[SKIP] Fichier absent: {csv_path}")
+            continue
+
+        print(f"\n[SCENARIO] Chargement: {csv_path}")
+        # For each scenario file we produce a single aggregated plot
+        plot_single_scenario(csv_path, output_base, include_bar=include_bar)
 
 def main():
     parser = argparse.ArgumentParser(description='Tracer les graphiques du scénario de densité')
@@ -236,6 +364,8 @@ def main():
                         help='Ne pas afficher les graphiques (seulement sauvegarder)')
     parser.add_argument('--all', action='store_true',
                         help='Générer tous les graphiques pour toutes les combinaisons')
+    parser.add_argument('--all-scenarios', action='store_true',
+                        help='Générer les graphiques pour tous les fichiers summary_scenario1..4.csv')
     
     args = parser.parse_args()
     
@@ -259,6 +389,11 @@ def main():
         
         generate_all_plots(df, mobility_speeds, traffic_intervals, max_random_losses, 
                           args.output, include_bar=args.bar)
+        return
+
+    # Mode génération pour tous les scenarios (summary_scenario1..4.csv)
+    if args.all_scenarios:
+        generate_all_scenarios(args.csv, args.output, include_bar=args.bar)
         return
     
     # Filtrer les données
