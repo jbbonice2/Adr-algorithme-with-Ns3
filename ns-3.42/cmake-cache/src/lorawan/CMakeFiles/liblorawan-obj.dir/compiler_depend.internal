@@ -2673,7 +2673,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -2798,7 +2797,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h
@@ -4187,7 +4185,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-component.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -4300,7 +4297,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-component.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h
@@ -4814,7 +4810,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-lite-component.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -4927,7 +4922,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-lite-component.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h
@@ -15590,7 +15584,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-controller-components.cc
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -15703,7 +15696,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-controller-components.cc
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h
@@ -16216,7 +16208,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-controller.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -16329,7 +16320,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-controller.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h
@@ -16842,7 +16832,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-scheduler.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -16955,7 +16944,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-scheduler.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h
@@ -17470,7 +17458,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-server.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -17586,7 +17573,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-server.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h
@@ -18105,7 +18091,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-status.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -18219,7 +18204,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-status.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h

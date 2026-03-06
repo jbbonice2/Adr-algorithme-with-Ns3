@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -199,20 +189,6 @@ libenergy: src/energy/CMakeFiles/libenergy.dir/rule
 libenergy/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy.dir/build.make src/energy/CMakeFiles/libenergy.dir/build
 .PHONY : libenergy/fast
-
-# Convenience name for target.
-src/energy/CMakeFiles/libenergy-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/energy/CMakeFiles/libenergy-test.dir/rule
-.PHONY : src/energy/CMakeFiles/libenergy-test.dir/rule
-
-# Convenience name for target.
-libenergy-test: src/energy/CMakeFiles/libenergy-test.dir/rule
-.PHONY : libenergy-test
-
-# fast build rule for target.
-libenergy-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy-test.dir/build.make src/energy/CMakeFiles/libenergy-test.dir/build
-.PHONY : libenergy-test/fast
 
 helper/basic-energy-harvester-helper.o: helper/basic-energy-harvester-helper.cc.o
 .PHONY : helper/basic-energy-harvester-helper.o
@@ -670,54 +646,6 @@ model/simple-device-energy-model.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy-obj.dir/build.make src/energy/CMakeFiles/libenergy-obj.dir/model/simple-device-energy-model.cc.s
 .PHONY : model/simple-device-energy-model.cc.s
 
-test/basic-energy-harvester-test.o: test/basic-energy-harvester-test.cc.o
-.PHONY : test/basic-energy-harvester-test.o
-
-# target to build an object file
-test/basic-energy-harvester-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy-test.dir/build.make src/energy/CMakeFiles/libenergy-test.dir/test/basic-energy-harvester-test.cc.o
-.PHONY : test/basic-energy-harvester-test.cc.o
-
-test/basic-energy-harvester-test.i: test/basic-energy-harvester-test.cc.i
-.PHONY : test/basic-energy-harvester-test.i
-
-# target to preprocess a source file
-test/basic-energy-harvester-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy-test.dir/build.make src/energy/CMakeFiles/libenergy-test.dir/test/basic-energy-harvester-test.cc.i
-.PHONY : test/basic-energy-harvester-test.cc.i
-
-test/basic-energy-harvester-test.s: test/basic-energy-harvester-test.cc.s
-.PHONY : test/basic-energy-harvester-test.s
-
-# target to generate assembly for a file
-test/basic-energy-harvester-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy-test.dir/build.make src/energy/CMakeFiles/libenergy-test.dir/test/basic-energy-harvester-test.cc.s
-.PHONY : test/basic-energy-harvester-test.cc.s
-
-test/li-ion-energy-source-test.o: test/li-ion-energy-source-test.cc.o
-.PHONY : test/li-ion-energy-source-test.o
-
-# target to build an object file
-test/li-ion-energy-source-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy-test.dir/build.make src/energy/CMakeFiles/libenergy-test.dir/test/li-ion-energy-source-test.cc.o
-.PHONY : test/li-ion-energy-source-test.cc.o
-
-test/li-ion-energy-source-test.i: test/li-ion-energy-source-test.cc.i
-.PHONY : test/li-ion-energy-source-test.i
-
-# target to preprocess a source file
-test/li-ion-energy-source-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy-test.dir/build.make src/energy/CMakeFiles/libenergy-test.dir/test/li-ion-energy-source-test.cc.i
-.PHONY : test/li-ion-energy-source-test.cc.i
-
-test/li-ion-energy-source-test.s: test/li-ion-energy-source-test.cc.s
-.PHONY : test/li-ion-energy-source-test.s
-
-# target to generate assembly for a file
-test/li-ion-energy-source-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/energy/CMakeFiles/libenergy-test.dir/build.make src/energy/CMakeFiles/libenergy-test.dir/test/li-ion-energy-source-test.cc.s
-.PHONY : test/li-ion-energy-source-test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -730,10 +658,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libenergy"
 	@echo "... libenergy-obj"
-	@echo "... libenergy-test"
 	@echo "... helper/basic-energy-harvester-helper.o"
 	@echo "... helper/basic-energy-harvester-helper.i"
 	@echo "... helper/basic-energy-harvester-helper.s"
@@ -791,12 +717,6 @@ help:
 	@echo "... model/simple-device-energy-model.o"
 	@echo "... model/simple-device-energy-model.i"
 	@echo "... model/simple-device-energy-model.s"
-	@echo "... test/basic-energy-harvester-test.o"
-	@echo "... test/basic-energy-harvester-test.i"
-	@echo "... test/basic-energy-harvester-test.s"
-	@echo "... test/li-ion-energy-source-test.o"
-	@echo "... test/li-ion-energy-source-test.i"
-	@echo "... test/li-ion-energy-source-test.s"
 .PHONY : help
 
 

@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -200,20 +190,6 @@ libpoint-to-point/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/point-to-point/CMakeFiles/libpoint-to-point.dir/build.make src/point-to-point/CMakeFiles/libpoint-to-point.dir/build
 .PHONY : libpoint-to-point/fast
 
-# Convenience name for target.
-src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/rule
-.PHONY : src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/rule
-
-# Convenience name for target.
-libpoint-to-point-test: src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/rule
-.PHONY : libpoint-to-point-test
-
-# fast build rule for target.
-libpoint-to-point-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/build.make src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/build
-.PHONY : libpoint-to-point-test/fast
-
 helper/point-to-point-helper.o: helper/point-to-point-helper.cc.o
 .PHONY : helper/point-to-point-helper.o
 
@@ -310,30 +286,6 @@ model/ppp-header.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/point-to-point/CMakeFiles/libpoint-to-point-obj.dir/build.make src/point-to-point/CMakeFiles/libpoint-to-point-obj.dir/model/ppp-header.cc.s
 .PHONY : model/ppp-header.cc.s
 
-test/point-to-point-test.o: test/point-to-point-test.cc.o
-.PHONY : test/point-to-point-test.o
-
-# target to build an object file
-test/point-to-point-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/build.make src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/test/point-to-point-test.cc.o
-.PHONY : test/point-to-point-test.cc.o
-
-test/point-to-point-test.i: test/point-to-point-test.cc.i
-.PHONY : test/point-to-point-test.i
-
-# target to preprocess a source file
-test/point-to-point-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/build.make src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/test/point-to-point-test.cc.i
-.PHONY : test/point-to-point-test.cc.i
-
-test/point-to-point-test.s: test/point-to-point-test.cc.s
-.PHONY : test/point-to-point-test.s
-
-# target to generate assembly for a file
-test/point-to-point-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/build.make src/point-to-point/CMakeFiles/libpoint-to-point-test.dir/test/point-to-point-test.cc.s
-.PHONY : test/point-to-point-test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -346,10 +298,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libpoint-to-point"
 	@echo "... libpoint-to-point-obj"
-	@echo "... libpoint-to-point-test"
 	@echo "... helper/point-to-point-helper.o"
 	@echo "... helper/point-to-point-helper.i"
 	@echo "... helper/point-to-point-helper.s"
@@ -362,9 +312,6 @@ help:
 	@echo "... model/ppp-header.o"
 	@echo "... model/ppp-header.i"
 	@echo "... model/ppp-header.s"
-	@echo "... test/point-to-point-test.o"
-	@echo "... test/point-to-point-test.i"
-	@echo "... test/point-to-point-test.s"
 .PHONY : help
 
 

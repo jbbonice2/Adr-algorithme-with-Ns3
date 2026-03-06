@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -200,20 +190,6 @@ libtopology-read/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/topology-read/CMakeFiles/libtopology-read.dir/build.make src/topology-read/CMakeFiles/libtopology-read.dir/build
 .PHONY : libtopology-read/fast
 
-# Convenience name for target.
-src/topology-read/CMakeFiles/libtopology-read-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/topology-read/CMakeFiles/libtopology-read-test.dir/rule
-.PHONY : src/topology-read/CMakeFiles/libtopology-read-test.dir/rule
-
-# Convenience name for target.
-libtopology-read-test: src/topology-read/CMakeFiles/libtopology-read-test.dir/rule
-.PHONY : libtopology-read-test
-
-# fast build rule for target.
-libtopology-read-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/topology-read/CMakeFiles/libtopology-read-test.dir/build.make src/topology-read/CMakeFiles/libtopology-read-test.dir/build
-.PHONY : libtopology-read-test/fast
-
 helper/topology-reader-helper.o: helper/topology-reader-helper.cc.o
 .PHONY : helper/topology-reader-helper.o
 
@@ -334,30 +310,6 @@ model/topology-reader.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/topology-read/CMakeFiles/libtopology-read-obj.dir/build.make src/topology-read/CMakeFiles/libtopology-read-obj.dir/model/topology-reader.cc.s
 .PHONY : model/topology-reader.cc.s
 
-test/rocketfuel-topology-reader-test-suite.o: test/rocketfuel-topology-reader-test-suite.cc.o
-.PHONY : test/rocketfuel-topology-reader-test-suite.o
-
-# target to build an object file
-test/rocketfuel-topology-reader-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/topology-read/CMakeFiles/libtopology-read-test.dir/build.make src/topology-read/CMakeFiles/libtopology-read-test.dir/test/rocketfuel-topology-reader-test-suite.cc.o
-.PHONY : test/rocketfuel-topology-reader-test-suite.cc.o
-
-test/rocketfuel-topology-reader-test-suite.i: test/rocketfuel-topology-reader-test-suite.cc.i
-.PHONY : test/rocketfuel-topology-reader-test-suite.i
-
-# target to preprocess a source file
-test/rocketfuel-topology-reader-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/topology-read/CMakeFiles/libtopology-read-test.dir/build.make src/topology-read/CMakeFiles/libtopology-read-test.dir/test/rocketfuel-topology-reader-test-suite.cc.i
-.PHONY : test/rocketfuel-topology-reader-test-suite.cc.i
-
-test/rocketfuel-topology-reader-test-suite.s: test/rocketfuel-topology-reader-test-suite.cc.s
-.PHONY : test/rocketfuel-topology-reader-test-suite.s
-
-# target to generate assembly for a file
-test/rocketfuel-topology-reader-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/topology-read/CMakeFiles/libtopology-read-test.dir/build.make src/topology-read/CMakeFiles/libtopology-read-test.dir/test/rocketfuel-topology-reader-test-suite.cc.s
-.PHONY : test/rocketfuel-topology-reader-test-suite.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -370,10 +322,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libtopology-read"
 	@echo "... libtopology-read-obj"
-	@echo "... libtopology-read-test"
 	@echo "... helper/topology-reader-helper.o"
 	@echo "... helper/topology-reader-helper.i"
 	@echo "... helper/topology-reader-helper.s"
@@ -389,9 +339,6 @@ help:
 	@echo "... model/topology-reader.o"
 	@echo "... model/topology-reader.i"
 	@echo "... model/topology-reader.s"
-	@echo "... test/rocketfuel-topology-reader-test-suite.o"
-	@echo "... test/rocketfuel-topology-reader-test-suite.i"
-	@echo "... test/rocketfuel-topology-reader-test-suite.s"
 .PHONY : help
 
 

@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -199,20 +189,6 @@ libwimax: src/wimax/CMakeFiles/libwimax.dir/rule
 libwimax/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax.dir/build.make src/wimax/CMakeFiles/libwimax.dir/build
 .PHONY : libwimax/fast
-
-# Convenience name for target.
-src/wimax/CMakeFiles/libwimax-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/wimax/CMakeFiles/libwimax-test.dir/rule
-.PHONY : src/wimax/CMakeFiles/libwimax-test.dir/rule
-
-# Convenience name for target.
-libwimax-test: src/wimax/CMakeFiles/libwimax-test.dir/rule
-.PHONY : libwimax-test
-
-# fast build rule for target.
-libwimax-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/build
-.PHONY : libwimax-test/fast
 
 helper/wimax-helper.o: helper/wimax-helper.cc.o
 .PHONY : helper/wimax-helper.o
@@ -1366,174 +1342,6 @@ model/wimax-tlv.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-obj.dir/build.make src/wimax/CMakeFiles/libwimax-obj.dir/model/wimax-tlv.cc.s
 .PHONY : model/wimax-tlv.cc.s
 
-test/mac-messages-test.o: test/mac-messages-test.cc.o
-.PHONY : test/mac-messages-test.o
-
-# target to build an object file
-test/mac-messages-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/mac-messages-test.cc.o
-.PHONY : test/mac-messages-test.cc.o
-
-test/mac-messages-test.i: test/mac-messages-test.cc.i
-.PHONY : test/mac-messages-test.i
-
-# target to preprocess a source file
-test/mac-messages-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/mac-messages-test.cc.i
-.PHONY : test/mac-messages-test.cc.i
-
-test/mac-messages-test.s: test/mac-messages-test.cc.s
-.PHONY : test/mac-messages-test.s
-
-# target to generate assembly for a file
-test/mac-messages-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/mac-messages-test.cc.s
-.PHONY : test/mac-messages-test.cc.s
-
-test/phy-test.o: test/phy-test.cc.o
-.PHONY : test/phy-test.o
-
-# target to build an object file
-test/phy-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/phy-test.cc.o
-.PHONY : test/phy-test.cc.o
-
-test/phy-test.i: test/phy-test.cc.i
-.PHONY : test/phy-test.i
-
-# target to preprocess a source file
-test/phy-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/phy-test.cc.i
-.PHONY : test/phy-test.cc.i
-
-test/phy-test.s: test/phy-test.cc.s
-.PHONY : test/phy-test.s
-
-# target to generate assembly for a file
-test/phy-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/phy-test.cc.s
-.PHONY : test/phy-test.cc.s
-
-test/qos-test.o: test/qos-test.cc.o
-.PHONY : test/qos-test.o
-
-# target to build an object file
-test/qos-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/qos-test.cc.o
-.PHONY : test/qos-test.cc.o
-
-test/qos-test.i: test/qos-test.cc.i
-.PHONY : test/qos-test.i
-
-# target to preprocess a source file
-test/qos-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/qos-test.cc.i
-.PHONY : test/qos-test.cc.i
-
-test/qos-test.s: test/qos-test.cc.s
-.PHONY : test/qos-test.s
-
-# target to generate assembly for a file
-test/qos-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/qos-test.cc.s
-.PHONY : test/qos-test.cc.s
-
-test/ss-mac-test.o: test/ss-mac-test.cc.o
-.PHONY : test/ss-mac-test.o
-
-# target to build an object file
-test/ss-mac-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/ss-mac-test.cc.o
-.PHONY : test/ss-mac-test.cc.o
-
-test/ss-mac-test.i: test/ss-mac-test.cc.i
-.PHONY : test/ss-mac-test.i
-
-# target to preprocess a source file
-test/ss-mac-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/ss-mac-test.cc.i
-.PHONY : test/ss-mac-test.cc.i
-
-test/ss-mac-test.s: test/ss-mac-test.cc.s
-.PHONY : test/ss-mac-test.s
-
-# target to generate assembly for a file
-test/ss-mac-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/ss-mac-test.cc.s
-.PHONY : test/ss-mac-test.cc.s
-
-test/wimax-fragmentation-test.o: test/wimax-fragmentation-test.cc.o
-.PHONY : test/wimax-fragmentation-test.o
-
-# target to build an object file
-test/wimax-fragmentation-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-fragmentation-test.cc.o
-.PHONY : test/wimax-fragmentation-test.cc.o
-
-test/wimax-fragmentation-test.i: test/wimax-fragmentation-test.cc.i
-.PHONY : test/wimax-fragmentation-test.i
-
-# target to preprocess a source file
-test/wimax-fragmentation-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-fragmentation-test.cc.i
-.PHONY : test/wimax-fragmentation-test.cc.i
-
-test/wimax-fragmentation-test.s: test/wimax-fragmentation-test.cc.s
-.PHONY : test/wimax-fragmentation-test.s
-
-# target to generate assembly for a file
-test/wimax-fragmentation-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-fragmentation-test.cc.s
-.PHONY : test/wimax-fragmentation-test.cc.s
-
-test/wimax-service-flow-test.o: test/wimax-service-flow-test.cc.o
-.PHONY : test/wimax-service-flow-test.o
-
-# target to build an object file
-test/wimax-service-flow-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-service-flow-test.cc.o
-.PHONY : test/wimax-service-flow-test.cc.o
-
-test/wimax-service-flow-test.i: test/wimax-service-flow-test.cc.i
-.PHONY : test/wimax-service-flow-test.i
-
-# target to preprocess a source file
-test/wimax-service-flow-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-service-flow-test.cc.i
-.PHONY : test/wimax-service-flow-test.cc.i
-
-test/wimax-service-flow-test.s: test/wimax-service-flow-test.cc.s
-.PHONY : test/wimax-service-flow-test.s
-
-# target to generate assembly for a file
-test/wimax-service-flow-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-service-flow-test.cc.s
-.PHONY : test/wimax-service-flow-test.cc.s
-
-test/wimax-tlv-test.o: test/wimax-tlv-test.cc.o
-.PHONY : test/wimax-tlv-test.o
-
-# target to build an object file
-test/wimax-tlv-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-tlv-test.cc.o
-.PHONY : test/wimax-tlv-test.cc.o
-
-test/wimax-tlv-test.i: test/wimax-tlv-test.cc.i
-.PHONY : test/wimax-tlv-test.i
-
-# target to preprocess a source file
-test/wimax-tlv-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-tlv-test.cc.i
-.PHONY : test/wimax-tlv-test.cc.i
-
-test/wimax-tlv-test.s: test/wimax-tlv-test.cc.s
-.PHONY : test/wimax-tlv-test.s
-
-# target to generate assembly for a file
-test/wimax-tlv-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/wimax/CMakeFiles/libwimax-test.dir/build.make src/wimax/CMakeFiles/libwimax-test.dir/test/wimax-tlv-test.cc.s
-.PHONY : test/wimax-tlv-test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1546,10 +1354,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libwimax"
 	@echo "... libwimax-obj"
-	@echo "... libwimax-test"
 	@echo "... helper/wimax-helper.o"
 	@echo "... helper/wimax-helper.i"
 	@echo "... helper/wimax-helper.s"
@@ -1694,27 +1500,6 @@ help:
 	@echo "... model/wimax-tlv.o"
 	@echo "... model/wimax-tlv.i"
 	@echo "... model/wimax-tlv.s"
-	@echo "... test/mac-messages-test.o"
-	@echo "... test/mac-messages-test.i"
-	@echo "... test/mac-messages-test.s"
-	@echo "... test/phy-test.o"
-	@echo "... test/phy-test.i"
-	@echo "... test/phy-test.s"
-	@echo "... test/qos-test.o"
-	@echo "... test/qos-test.i"
-	@echo "... test/qos-test.s"
-	@echo "... test/ss-mac-test.o"
-	@echo "... test/ss-mac-test.i"
-	@echo "... test/ss-mac-test.s"
-	@echo "... test/wimax-fragmentation-test.o"
-	@echo "... test/wimax-fragmentation-test.i"
-	@echo "... test/wimax-fragmentation-test.s"
-	@echo "... test/wimax-service-flow-test.o"
-	@echo "... test/wimax-service-flow-test.i"
-	@echo "... test/wimax-service-flow-test.s"
-	@echo "... test/wimax-tlv-test.o"
-	@echo "... test/wimax-tlv-test.i"
-	@echo "... test/wimax-tlv-test.s"
 .PHONY : help
 
 

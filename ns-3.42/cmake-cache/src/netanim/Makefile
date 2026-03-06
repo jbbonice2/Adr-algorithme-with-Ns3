@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -200,20 +190,6 @@ libnetanim/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/netanim/CMakeFiles/libnetanim.dir/build.make src/netanim/CMakeFiles/libnetanim.dir/build
 .PHONY : libnetanim/fast
 
-# Convenience name for target.
-src/netanim/CMakeFiles/libnetanim-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/netanim/CMakeFiles/libnetanim-test.dir/rule
-.PHONY : src/netanim/CMakeFiles/libnetanim-test.dir/rule
-
-# Convenience name for target.
-libnetanim-test: src/netanim/CMakeFiles/libnetanim-test.dir/rule
-.PHONY : libnetanim-test
-
-# fast build rule for target.
-libnetanim-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/netanim/CMakeFiles/libnetanim-test.dir/build.make src/netanim/CMakeFiles/libnetanim-test.dir/build
-.PHONY : libnetanim-test/fast
-
 model/animation-interface.o: model/animation-interface.cc.o
 .PHONY : model/animation-interface.o
 
@@ -238,30 +214,6 @@ model/animation-interface.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/netanim/CMakeFiles/libnetanim-obj.dir/build.make src/netanim/CMakeFiles/libnetanim-obj.dir/model/animation-interface.cc.s
 .PHONY : model/animation-interface.cc.s
 
-test/netanim-test.o: test/netanim-test.cc.o
-.PHONY : test/netanim-test.o
-
-# target to build an object file
-test/netanim-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/netanim/CMakeFiles/libnetanim-test.dir/build.make src/netanim/CMakeFiles/libnetanim-test.dir/test/netanim-test.cc.o
-.PHONY : test/netanim-test.cc.o
-
-test/netanim-test.i: test/netanim-test.cc.i
-.PHONY : test/netanim-test.i
-
-# target to preprocess a source file
-test/netanim-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/netanim/CMakeFiles/libnetanim-test.dir/build.make src/netanim/CMakeFiles/libnetanim-test.dir/test/netanim-test.cc.i
-.PHONY : test/netanim-test.cc.i
-
-test/netanim-test.s: test/netanim-test.cc.s
-.PHONY : test/netanim-test.s
-
-# target to generate assembly for a file
-test/netanim-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/netanim/CMakeFiles/libnetanim-test.dir/build.make src/netanim/CMakeFiles/libnetanim-test.dir/test/netanim-test.cc.s
-.PHONY : test/netanim-test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -274,16 +226,11 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libnetanim"
 	@echo "... libnetanim-obj"
-	@echo "... libnetanim-test"
 	@echo "... model/animation-interface.o"
 	@echo "... model/animation-interface.i"
 	@echo "... model/animation-interface.s"
-	@echo "... test/netanim-test.o"
-	@echo "... test/netanim-test.i"
-	@echo "... test/netanim-test.s"
 .PHONY : help
 
 

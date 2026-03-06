@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -199,20 +189,6 @@ liblr-wpan: src/lr-wpan/CMakeFiles/liblr-wpan.dir/rule
 liblr-wpan/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan.dir/build
 .PHONY : liblr-wpan/fast
-
-# Convenience name for target.
-src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/rule
-.PHONY : src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/rule
-
-# Convenience name for target.
-liblr-wpan-test: src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/rule
-.PHONY : liblr-wpan-test
-
-# fast build rule for target.
-liblr-wpan-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build
-.PHONY : liblr-wpan-test/fast
 
 helper/lr-wpan-helper.o: helper/lr-wpan-helper.cc.o
 .PHONY : helper/lr-wpan-helper.o
@@ -574,270 +550,6 @@ model/lr-wpan-spectrum-value-helper.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-obj.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-obj.dir/model/lr-wpan-spectrum-value-helper.cc.s
 .PHONY : model/lr-wpan-spectrum-value-helper.cc.s
 
-test/lr-wpan-ack-test.o: test/lr-wpan-ack-test.cc.o
-.PHONY : test/lr-wpan-ack-test.o
-
-# target to build an object file
-test/lr-wpan-ack-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ack-test.cc.o
-.PHONY : test/lr-wpan-ack-test.cc.o
-
-test/lr-wpan-ack-test.i: test/lr-wpan-ack-test.cc.i
-.PHONY : test/lr-wpan-ack-test.i
-
-# target to preprocess a source file
-test/lr-wpan-ack-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ack-test.cc.i
-.PHONY : test/lr-wpan-ack-test.cc.i
-
-test/lr-wpan-ack-test.s: test/lr-wpan-ack-test.cc.s
-.PHONY : test/lr-wpan-ack-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-ack-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ack-test.cc.s
-.PHONY : test/lr-wpan-ack-test.cc.s
-
-test/lr-wpan-cca-test.o: test/lr-wpan-cca-test.cc.o
-.PHONY : test/lr-wpan-cca-test.o
-
-# target to build an object file
-test/lr-wpan-cca-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-cca-test.cc.o
-.PHONY : test/lr-wpan-cca-test.cc.o
-
-test/lr-wpan-cca-test.i: test/lr-wpan-cca-test.cc.i
-.PHONY : test/lr-wpan-cca-test.i
-
-# target to preprocess a source file
-test/lr-wpan-cca-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-cca-test.cc.i
-.PHONY : test/lr-wpan-cca-test.cc.i
-
-test/lr-wpan-cca-test.s: test/lr-wpan-cca-test.cc.s
-.PHONY : test/lr-wpan-cca-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-cca-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-cca-test.cc.s
-.PHONY : test/lr-wpan-cca-test.cc.s
-
-test/lr-wpan-collision-test.o: test/lr-wpan-collision-test.cc.o
-.PHONY : test/lr-wpan-collision-test.o
-
-# target to build an object file
-test/lr-wpan-collision-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-collision-test.cc.o
-.PHONY : test/lr-wpan-collision-test.cc.o
-
-test/lr-wpan-collision-test.i: test/lr-wpan-collision-test.cc.i
-.PHONY : test/lr-wpan-collision-test.i
-
-# target to preprocess a source file
-test/lr-wpan-collision-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-collision-test.cc.i
-.PHONY : test/lr-wpan-collision-test.cc.i
-
-test/lr-wpan-collision-test.s: test/lr-wpan-collision-test.cc.s
-.PHONY : test/lr-wpan-collision-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-collision-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-collision-test.cc.s
-.PHONY : test/lr-wpan-collision-test.cc.s
-
-test/lr-wpan-ed-test.o: test/lr-wpan-ed-test.cc.o
-.PHONY : test/lr-wpan-ed-test.o
-
-# target to build an object file
-test/lr-wpan-ed-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ed-test.cc.o
-.PHONY : test/lr-wpan-ed-test.cc.o
-
-test/lr-wpan-ed-test.i: test/lr-wpan-ed-test.cc.i
-.PHONY : test/lr-wpan-ed-test.i
-
-# target to preprocess a source file
-test/lr-wpan-ed-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ed-test.cc.i
-.PHONY : test/lr-wpan-ed-test.cc.i
-
-test/lr-wpan-ed-test.s: test/lr-wpan-ed-test.cc.s
-.PHONY : test/lr-wpan-ed-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-ed-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ed-test.cc.s
-.PHONY : test/lr-wpan-ed-test.cc.s
-
-test/lr-wpan-error-model-test.o: test/lr-wpan-error-model-test.cc.o
-.PHONY : test/lr-wpan-error-model-test.o
-
-# target to build an object file
-test/lr-wpan-error-model-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-error-model-test.cc.o
-.PHONY : test/lr-wpan-error-model-test.cc.o
-
-test/lr-wpan-error-model-test.i: test/lr-wpan-error-model-test.cc.i
-.PHONY : test/lr-wpan-error-model-test.i
-
-# target to preprocess a source file
-test/lr-wpan-error-model-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-error-model-test.cc.i
-.PHONY : test/lr-wpan-error-model-test.cc.i
-
-test/lr-wpan-error-model-test.s: test/lr-wpan-error-model-test.cc.s
-.PHONY : test/lr-wpan-error-model-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-error-model-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-error-model-test.cc.s
-.PHONY : test/lr-wpan-error-model-test.cc.s
-
-test/lr-wpan-ifs-test.o: test/lr-wpan-ifs-test.cc.o
-.PHONY : test/lr-wpan-ifs-test.o
-
-# target to build an object file
-test/lr-wpan-ifs-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ifs-test.cc.o
-.PHONY : test/lr-wpan-ifs-test.cc.o
-
-test/lr-wpan-ifs-test.i: test/lr-wpan-ifs-test.cc.i
-.PHONY : test/lr-wpan-ifs-test.i
-
-# target to preprocess a source file
-test/lr-wpan-ifs-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ifs-test.cc.i
-.PHONY : test/lr-wpan-ifs-test.cc.i
-
-test/lr-wpan-ifs-test.s: test/lr-wpan-ifs-test.cc.s
-.PHONY : test/lr-wpan-ifs-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-ifs-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-ifs-test.cc.s
-.PHONY : test/lr-wpan-ifs-test.cc.s
-
-test/lr-wpan-mac-test.o: test/lr-wpan-mac-test.cc.o
-.PHONY : test/lr-wpan-mac-test.o
-
-# target to build an object file
-test/lr-wpan-mac-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-mac-test.cc.o
-.PHONY : test/lr-wpan-mac-test.cc.o
-
-test/lr-wpan-mac-test.i: test/lr-wpan-mac-test.cc.i
-.PHONY : test/lr-wpan-mac-test.i
-
-# target to preprocess a source file
-test/lr-wpan-mac-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-mac-test.cc.i
-.PHONY : test/lr-wpan-mac-test.cc.i
-
-test/lr-wpan-mac-test.s: test/lr-wpan-mac-test.cc.s
-.PHONY : test/lr-wpan-mac-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-mac-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-mac-test.cc.s
-.PHONY : test/lr-wpan-mac-test.cc.s
-
-test/lr-wpan-packet-test.o: test/lr-wpan-packet-test.cc.o
-.PHONY : test/lr-wpan-packet-test.o
-
-# target to build an object file
-test/lr-wpan-packet-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-packet-test.cc.o
-.PHONY : test/lr-wpan-packet-test.cc.o
-
-test/lr-wpan-packet-test.i: test/lr-wpan-packet-test.cc.i
-.PHONY : test/lr-wpan-packet-test.i
-
-# target to preprocess a source file
-test/lr-wpan-packet-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-packet-test.cc.i
-.PHONY : test/lr-wpan-packet-test.cc.i
-
-test/lr-wpan-packet-test.s: test/lr-wpan-packet-test.cc.s
-.PHONY : test/lr-wpan-packet-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-packet-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-packet-test.cc.s
-.PHONY : test/lr-wpan-packet-test.cc.s
-
-test/lr-wpan-pd-plme-sap-test.o: test/lr-wpan-pd-plme-sap-test.cc.o
-.PHONY : test/lr-wpan-pd-plme-sap-test.o
-
-# target to build an object file
-test/lr-wpan-pd-plme-sap-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-pd-plme-sap-test.cc.o
-.PHONY : test/lr-wpan-pd-plme-sap-test.cc.o
-
-test/lr-wpan-pd-plme-sap-test.i: test/lr-wpan-pd-plme-sap-test.cc.i
-.PHONY : test/lr-wpan-pd-plme-sap-test.i
-
-# target to preprocess a source file
-test/lr-wpan-pd-plme-sap-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-pd-plme-sap-test.cc.i
-.PHONY : test/lr-wpan-pd-plme-sap-test.cc.i
-
-test/lr-wpan-pd-plme-sap-test.s: test/lr-wpan-pd-plme-sap-test.cc.s
-.PHONY : test/lr-wpan-pd-plme-sap-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-pd-plme-sap-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-pd-plme-sap-test.cc.s
-.PHONY : test/lr-wpan-pd-plme-sap-test.cc.s
-
-test/lr-wpan-slotted-csmaca-test.o: test/lr-wpan-slotted-csmaca-test.cc.o
-.PHONY : test/lr-wpan-slotted-csmaca-test.o
-
-# target to build an object file
-test/lr-wpan-slotted-csmaca-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-slotted-csmaca-test.cc.o
-.PHONY : test/lr-wpan-slotted-csmaca-test.cc.o
-
-test/lr-wpan-slotted-csmaca-test.i: test/lr-wpan-slotted-csmaca-test.cc.i
-.PHONY : test/lr-wpan-slotted-csmaca-test.i
-
-# target to preprocess a source file
-test/lr-wpan-slotted-csmaca-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-slotted-csmaca-test.cc.i
-.PHONY : test/lr-wpan-slotted-csmaca-test.cc.i
-
-test/lr-wpan-slotted-csmaca-test.s: test/lr-wpan-slotted-csmaca-test.cc.s
-.PHONY : test/lr-wpan-slotted-csmaca-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-slotted-csmaca-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-slotted-csmaca-test.cc.s
-.PHONY : test/lr-wpan-slotted-csmaca-test.cc.s
-
-test/lr-wpan-spectrum-value-helper-test.o: test/lr-wpan-spectrum-value-helper-test.cc.o
-.PHONY : test/lr-wpan-spectrum-value-helper-test.o
-
-# target to build an object file
-test/lr-wpan-spectrum-value-helper-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-spectrum-value-helper-test.cc.o
-.PHONY : test/lr-wpan-spectrum-value-helper-test.cc.o
-
-test/lr-wpan-spectrum-value-helper-test.i: test/lr-wpan-spectrum-value-helper-test.cc.i
-.PHONY : test/lr-wpan-spectrum-value-helper-test.i
-
-# target to preprocess a source file
-test/lr-wpan-spectrum-value-helper-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-spectrum-value-helper-test.cc.i
-.PHONY : test/lr-wpan-spectrum-value-helper-test.cc.i
-
-test/lr-wpan-spectrum-value-helper-test.s: test/lr-wpan-spectrum-value-helper-test.cc.s
-.PHONY : test/lr-wpan-spectrum-value-helper-test.s
-
-# target to generate assembly for a file
-test/lr-wpan-spectrum-value-helper-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/build.make src/lr-wpan/CMakeFiles/liblr-wpan-test.dir/test/lr-wpan-spectrum-value-helper-test.cc.s
-.PHONY : test/lr-wpan-spectrum-value-helper-test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -850,10 +562,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... liblr-wpan"
 	@echo "... liblr-wpan-obj"
-	@echo "... liblr-wpan-test"
 	@echo "... helper/lr-wpan-helper.o"
 	@echo "... helper/lr-wpan-helper.i"
 	@echo "... helper/lr-wpan-helper.s"
@@ -899,39 +609,6 @@ help:
 	@echo "... model/lr-wpan-spectrum-value-helper.o"
 	@echo "... model/lr-wpan-spectrum-value-helper.i"
 	@echo "... model/lr-wpan-spectrum-value-helper.s"
-	@echo "... test/lr-wpan-ack-test.o"
-	@echo "... test/lr-wpan-ack-test.i"
-	@echo "... test/lr-wpan-ack-test.s"
-	@echo "... test/lr-wpan-cca-test.o"
-	@echo "... test/lr-wpan-cca-test.i"
-	@echo "... test/lr-wpan-cca-test.s"
-	@echo "... test/lr-wpan-collision-test.o"
-	@echo "... test/lr-wpan-collision-test.i"
-	@echo "... test/lr-wpan-collision-test.s"
-	@echo "... test/lr-wpan-ed-test.o"
-	@echo "... test/lr-wpan-ed-test.i"
-	@echo "... test/lr-wpan-ed-test.s"
-	@echo "... test/lr-wpan-error-model-test.o"
-	@echo "... test/lr-wpan-error-model-test.i"
-	@echo "... test/lr-wpan-error-model-test.s"
-	@echo "... test/lr-wpan-ifs-test.o"
-	@echo "... test/lr-wpan-ifs-test.i"
-	@echo "... test/lr-wpan-ifs-test.s"
-	@echo "... test/lr-wpan-mac-test.o"
-	@echo "... test/lr-wpan-mac-test.i"
-	@echo "... test/lr-wpan-mac-test.s"
-	@echo "... test/lr-wpan-packet-test.o"
-	@echo "... test/lr-wpan-packet-test.i"
-	@echo "... test/lr-wpan-packet-test.s"
-	@echo "... test/lr-wpan-pd-plme-sap-test.o"
-	@echo "... test/lr-wpan-pd-plme-sap-test.i"
-	@echo "... test/lr-wpan-pd-plme-sap-test.s"
-	@echo "... test/lr-wpan-slotted-csmaca-test.o"
-	@echo "... test/lr-wpan-slotted-csmaca-test.i"
-	@echo "... test/lr-wpan-slotted-csmaca-test.s"
-	@echo "... test/lr-wpan-spectrum-value-helper-test.o"
-	@echo "... test/lr-wpan-spectrum-value-helper-test.i"
-	@echo "... test/lr-wpan-spectrum-value-helper-test.s"
 .PHONY : help
 
 

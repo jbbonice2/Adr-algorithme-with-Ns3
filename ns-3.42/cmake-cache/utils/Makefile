@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -171,20 +161,6 @@ depend:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(CMAKE_COMMAND) -P /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles/VerifyGlobs.cmake
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-utils/CMakeFiles/test-runner.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 utils/CMakeFiles/test-runner.dir/rule
-.PHONY : utils/CMakeFiles/test-runner.dir/rule
-
-# Convenience name for target.
-test-runner: utils/CMakeFiles/test-runner.dir/rule
-.PHONY : test-runner
-
-# fast build rule for target.
-test-runner/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f utils/CMakeFiles/test-runner.dir/build.make utils/CMakeFiles/test-runner.dir/build
-.PHONY : test-runner/fast
 
 # Convenience name for target.
 utils/CMakeFiles/bench-scheduler.dir/rule:
@@ -338,30 +314,6 @@ print-introspected-doxygen.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f utils/CMakeFiles/print-introspected-doxygen.dir/build.make utils/CMakeFiles/print-introspected-doxygen.dir/print-introspected-doxygen.cc.s
 .PHONY : print-introspected-doxygen.cc.s
 
-test-runner.o: test-runner.cc.o
-.PHONY : test-runner.o
-
-# target to build an object file
-test-runner.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f utils/CMakeFiles/test-runner.dir/build.make utils/CMakeFiles/test-runner.dir/test-runner.cc.o
-.PHONY : test-runner.cc.o
-
-test-runner.i: test-runner.cc.i
-.PHONY : test-runner.i
-
-# target to preprocess a source file
-test-runner.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f utils/CMakeFiles/test-runner.dir/build.make utils/CMakeFiles/test-runner.dir/test-runner.cc.i
-.PHONY : test-runner.cc.i
-
-test-runner.s: test-runner.cc.s
-.PHONY : test-runner.s
-
-# target to generate assembly for a file
-test-runner.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f utils/CMakeFiles/test-runner.dir/build.make utils/CMakeFiles/test-runner.dir/test-runner.cc.s
-.PHONY : test-runner.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -374,12 +326,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... bench-packets"
 	@echo "... bench-scheduler"
 	@echo "... perf-io"
 	@echo "... print-introspected-doxygen"
-	@echo "... test-runner"
 	@echo "... bench-packets.o"
 	@echo "... bench-packets.i"
 	@echo "... bench-packets.s"
@@ -392,9 +342,6 @@ help:
 	@echo "... print-introspected-doxygen.o"
 	@echo "... print-introspected-doxygen.i"
 	@echo "... print-introspected-doxygen.s"
-	@echo "... test-runner.o"
-	@echo "... test-runner.i"
-	@echo "... test-runner.s"
 .PHONY : help
 
 

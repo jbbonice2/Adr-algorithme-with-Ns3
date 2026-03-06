@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -199,20 +189,6 @@ libinternet-apps: src/internet-apps/CMakeFiles/libinternet-apps.dir/rule
 libinternet-apps/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps.dir/build
 .PHONY : libinternet-apps/fast
-
-# Convenience name for target.
-src/internet-apps/CMakeFiles/libinternet-apps-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/internet-apps/CMakeFiles/libinternet-apps-test.dir/rule
-.PHONY : src/internet-apps/CMakeFiles/libinternet-apps-test.dir/rule
-
-# Convenience name for target.
-libinternet-apps-test: src/internet-apps/CMakeFiles/libinternet-apps-test.dir/rule
-.PHONY : libinternet-apps-test
-
-# fast build rule for target.
-libinternet-apps-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build
-.PHONY : libinternet-apps-test/fast
 
 helper/dhcp-helper.o: helper/dhcp-helper.cc.o
 .PHONY : helper/dhcp-helper.o
@@ -502,78 +478,6 @@ model/v4traceroute.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-obj.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-obj.dir/model/v4traceroute.cc.s
 .PHONY : model/v4traceroute.cc.s
 
-test/dhcp-test.o: test/dhcp-test.cc.o
-.PHONY : test/dhcp-test.o
-
-# target to build an object file
-test/dhcp-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/dhcp-test.cc.o
-.PHONY : test/dhcp-test.cc.o
-
-test/dhcp-test.i: test/dhcp-test.cc.i
-.PHONY : test/dhcp-test.i
-
-# target to preprocess a source file
-test/dhcp-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/dhcp-test.cc.i
-.PHONY : test/dhcp-test.cc.i
-
-test/dhcp-test.s: test/dhcp-test.cc.s
-.PHONY : test/dhcp-test.s
-
-# target to generate assembly for a file
-test/dhcp-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/dhcp-test.cc.s
-.PHONY : test/dhcp-test.cc.s
-
-test/ipv6-radvd-test.o: test/ipv6-radvd-test.cc.o
-.PHONY : test/ipv6-radvd-test.o
-
-# target to build an object file
-test/ipv6-radvd-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/ipv6-radvd-test.cc.o
-.PHONY : test/ipv6-radvd-test.cc.o
-
-test/ipv6-radvd-test.i: test/ipv6-radvd-test.cc.i
-.PHONY : test/ipv6-radvd-test.i
-
-# target to preprocess a source file
-test/ipv6-radvd-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/ipv6-radvd-test.cc.i
-.PHONY : test/ipv6-radvd-test.cc.i
-
-test/ipv6-radvd-test.s: test/ipv6-radvd-test.cc.s
-.PHONY : test/ipv6-radvd-test.s
-
-# target to generate assembly for a file
-test/ipv6-radvd-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/ipv6-radvd-test.cc.s
-.PHONY : test/ipv6-radvd-test.cc.s
-
-test/ping-test.o: test/ping-test.cc.o
-.PHONY : test/ping-test.o
-
-# target to build an object file
-test/ping-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/ping-test.cc.o
-.PHONY : test/ping-test.cc.o
-
-test/ping-test.i: test/ping-test.cc.i
-.PHONY : test/ping-test.i
-
-# target to preprocess a source file
-test/ping-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/ping-test.cc.i
-.PHONY : test/ping-test.cc.i
-
-test/ping-test.s: test/ping-test.cc.s
-.PHONY : test/ping-test.s
-
-# target to generate assembly for a file
-test/ping-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/internet-apps/CMakeFiles/libinternet-apps-test.dir/build.make src/internet-apps/CMakeFiles/libinternet-apps-test.dir/test/ping-test.cc.s
-.PHONY : test/ping-test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -586,10 +490,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libinternet-apps"
 	@echo "... libinternet-apps-obj"
-	@echo "... libinternet-apps-test"
 	@echo "... helper/dhcp-helper.o"
 	@echo "... helper/dhcp-helper.i"
 	@echo "... helper/dhcp-helper.s"
@@ -626,15 +528,6 @@ help:
 	@echo "... model/v4traceroute.o"
 	@echo "... model/v4traceroute.i"
 	@echo "... model/v4traceroute.s"
-	@echo "... test/dhcp-test.o"
-	@echo "... test/dhcp-test.i"
-	@echo "... test/dhcp-test.s"
-	@echo "... test/ipv6-radvd-test.o"
-	@echo "... test/ipv6-radvd-test.i"
-	@echo "... test/ipv6-radvd-test.s"
-	@echo "... test/ping-test.o"
-	@echo "... test/ping-test.i"
-	@echo "... test/ping-test.s"
 .PHONY : help
 
 

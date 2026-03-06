@@ -87,9 +87,3 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     )
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lr-wpan/examples/cmake_install.cmake")
-
-endif()
-

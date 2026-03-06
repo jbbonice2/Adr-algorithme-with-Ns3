@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -199,20 +189,6 @@ libmobility: src/mobility/CMakeFiles/libmobility.dir/rule
 libmobility/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility.dir/build.make src/mobility/CMakeFiles/libmobility.dir/build
 .PHONY : libmobility/fast
-
-# Convenience name for target.
-src/mobility/CMakeFiles/libmobility-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/mobility/CMakeFiles/libmobility-test.dir/rule
-.PHONY : src/mobility/CMakeFiles/libmobility-test.dir/rule
-
-# Convenience name for target.
-libmobility-test: src/mobility/CMakeFiles/libmobility-test.dir/rule
-.PHONY : libmobility-test
-
-# fast build rule for target.
-libmobility-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/build
-.PHONY : libmobility-test/fast
 
 helper/group-mobility-helper.o: helper/group-mobility-helper.cc.o
 .PHONY : helper/group-mobility-helper.o
@@ -718,246 +694,6 @@ model/waypoint.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-obj.dir/build.make src/mobility/CMakeFiles/libmobility-obj.dir/model/waypoint.cc.s
 .PHONY : model/waypoint.cc.s
 
-test/box-line-intersection-test.o: test/box-line-intersection-test.cc.o
-.PHONY : test/box-line-intersection-test.o
-
-# target to build an object file
-test/box-line-intersection-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/box-line-intersection-test.cc.o
-.PHONY : test/box-line-intersection-test.cc.o
-
-test/box-line-intersection-test.i: test/box-line-intersection-test.cc.i
-.PHONY : test/box-line-intersection-test.i
-
-# target to preprocess a source file
-test/box-line-intersection-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/box-line-intersection-test.cc.i
-.PHONY : test/box-line-intersection-test.cc.i
-
-test/box-line-intersection-test.s: test/box-line-intersection-test.cc.s
-.PHONY : test/box-line-intersection-test.s
-
-# target to generate assembly for a file
-test/box-line-intersection-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/box-line-intersection-test.cc.s
-.PHONY : test/box-line-intersection-test.cc.s
-
-test/geo-to-cartesian-test.o: test/geo-to-cartesian-test.cc.o
-.PHONY : test/geo-to-cartesian-test.o
-
-# target to build an object file
-test/geo-to-cartesian-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/geo-to-cartesian-test.cc.o
-.PHONY : test/geo-to-cartesian-test.cc.o
-
-test/geo-to-cartesian-test.i: test/geo-to-cartesian-test.cc.i
-.PHONY : test/geo-to-cartesian-test.i
-
-# target to preprocess a source file
-test/geo-to-cartesian-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/geo-to-cartesian-test.cc.i
-.PHONY : test/geo-to-cartesian-test.cc.i
-
-test/geo-to-cartesian-test.s: test/geo-to-cartesian-test.cc.s
-.PHONY : test/geo-to-cartesian-test.s
-
-# target to generate assembly for a file
-test/geo-to-cartesian-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/geo-to-cartesian-test.cc.s
-.PHONY : test/geo-to-cartesian-test.cc.s
-
-test/geocentric-topocentric-conversion-test.o: test/geocentric-topocentric-conversion-test.cc.o
-.PHONY : test/geocentric-topocentric-conversion-test.o
-
-# target to build an object file
-test/geocentric-topocentric-conversion-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/geocentric-topocentric-conversion-test.cc.o
-.PHONY : test/geocentric-topocentric-conversion-test.cc.o
-
-test/geocentric-topocentric-conversion-test.i: test/geocentric-topocentric-conversion-test.cc.i
-.PHONY : test/geocentric-topocentric-conversion-test.i
-
-# target to preprocess a source file
-test/geocentric-topocentric-conversion-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/geocentric-topocentric-conversion-test.cc.i
-.PHONY : test/geocentric-topocentric-conversion-test.cc.i
-
-test/geocentric-topocentric-conversion-test.s: test/geocentric-topocentric-conversion-test.cc.s
-.PHONY : test/geocentric-topocentric-conversion-test.s
-
-# target to generate assembly for a file
-test/geocentric-topocentric-conversion-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/geocentric-topocentric-conversion-test.cc.s
-.PHONY : test/geocentric-topocentric-conversion-test.cc.s
-
-test/mobility-test-suite.o: test/mobility-test-suite.cc.o
-.PHONY : test/mobility-test-suite.o
-
-# target to build an object file
-test/mobility-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/mobility-test-suite.cc.o
-.PHONY : test/mobility-test-suite.cc.o
-
-test/mobility-test-suite.i: test/mobility-test-suite.cc.i
-.PHONY : test/mobility-test-suite.i
-
-# target to preprocess a source file
-test/mobility-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/mobility-test-suite.cc.i
-.PHONY : test/mobility-test-suite.cc.i
-
-test/mobility-test-suite.s: test/mobility-test-suite.cc.s
-.PHONY : test/mobility-test-suite.s
-
-# target to generate assembly for a file
-test/mobility-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/mobility-test-suite.cc.s
-.PHONY : test/mobility-test-suite.cc.s
-
-test/mobility-trace-test-suite.o: test/mobility-trace-test-suite.cc.o
-.PHONY : test/mobility-trace-test-suite.o
-
-# target to build an object file
-test/mobility-trace-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/mobility-trace-test-suite.cc.o
-.PHONY : test/mobility-trace-test-suite.cc.o
-
-test/mobility-trace-test-suite.i: test/mobility-trace-test-suite.cc.i
-.PHONY : test/mobility-trace-test-suite.i
-
-# target to preprocess a source file
-test/mobility-trace-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/mobility-trace-test-suite.cc.i
-.PHONY : test/mobility-trace-test-suite.cc.i
-
-test/mobility-trace-test-suite.s: test/mobility-trace-test-suite.cc.s
-.PHONY : test/mobility-trace-test-suite.s
-
-# target to generate assembly for a file
-test/mobility-trace-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/mobility-trace-test-suite.cc.s
-.PHONY : test/mobility-trace-test-suite.cc.s
-
-test/ns2-mobility-helper-test-suite.o: test/ns2-mobility-helper-test-suite.cc.o
-.PHONY : test/ns2-mobility-helper-test-suite.o
-
-# target to build an object file
-test/ns2-mobility-helper-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/ns2-mobility-helper-test-suite.cc.o
-.PHONY : test/ns2-mobility-helper-test-suite.cc.o
-
-test/ns2-mobility-helper-test-suite.i: test/ns2-mobility-helper-test-suite.cc.i
-.PHONY : test/ns2-mobility-helper-test-suite.i
-
-# target to preprocess a source file
-test/ns2-mobility-helper-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/ns2-mobility-helper-test-suite.cc.i
-.PHONY : test/ns2-mobility-helper-test-suite.cc.i
-
-test/ns2-mobility-helper-test-suite.s: test/ns2-mobility-helper-test-suite.cc.s
-.PHONY : test/ns2-mobility-helper-test-suite.s
-
-# target to generate assembly for a file
-test/ns2-mobility-helper-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/ns2-mobility-helper-test-suite.cc.s
-.PHONY : test/ns2-mobility-helper-test-suite.cc.s
-
-test/rand-cart-around-geo-test.o: test/rand-cart-around-geo-test.cc.o
-.PHONY : test/rand-cart-around-geo-test.o
-
-# target to build an object file
-test/rand-cart-around-geo-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/rand-cart-around-geo-test.cc.o
-.PHONY : test/rand-cart-around-geo-test.cc.o
-
-test/rand-cart-around-geo-test.i: test/rand-cart-around-geo-test.cc.i
-.PHONY : test/rand-cart-around-geo-test.i
-
-# target to preprocess a source file
-test/rand-cart-around-geo-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/rand-cart-around-geo-test.cc.i
-.PHONY : test/rand-cart-around-geo-test.cc.i
-
-test/rand-cart-around-geo-test.s: test/rand-cart-around-geo-test.cc.s
-.PHONY : test/rand-cart-around-geo-test.s
-
-# target to generate assembly for a file
-test/rand-cart-around-geo-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/rand-cart-around-geo-test.cc.s
-.PHONY : test/rand-cart-around-geo-test.cc.s
-
-test/rectangle-closest-border-test.o: test/rectangle-closest-border-test.cc.o
-.PHONY : test/rectangle-closest-border-test.o
-
-# target to build an object file
-test/rectangle-closest-border-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/rectangle-closest-border-test.cc.o
-.PHONY : test/rectangle-closest-border-test.cc.o
-
-test/rectangle-closest-border-test.i: test/rectangle-closest-border-test.cc.i
-.PHONY : test/rectangle-closest-border-test.i
-
-# target to preprocess a source file
-test/rectangle-closest-border-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/rectangle-closest-border-test.cc.i
-.PHONY : test/rectangle-closest-border-test.cc.i
-
-test/rectangle-closest-border-test.s: test/rectangle-closest-border-test.cc.s
-.PHONY : test/rectangle-closest-border-test.s
-
-# target to generate assembly for a file
-test/rectangle-closest-border-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/rectangle-closest-border-test.cc.s
-.PHONY : test/rectangle-closest-border-test.cc.s
-
-test/steady-state-random-waypoint-mobility-model-test.o: test/steady-state-random-waypoint-mobility-model-test.cc.o
-.PHONY : test/steady-state-random-waypoint-mobility-model-test.o
-
-# target to build an object file
-test/steady-state-random-waypoint-mobility-model-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/steady-state-random-waypoint-mobility-model-test.cc.o
-.PHONY : test/steady-state-random-waypoint-mobility-model-test.cc.o
-
-test/steady-state-random-waypoint-mobility-model-test.i: test/steady-state-random-waypoint-mobility-model-test.cc.i
-.PHONY : test/steady-state-random-waypoint-mobility-model-test.i
-
-# target to preprocess a source file
-test/steady-state-random-waypoint-mobility-model-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/steady-state-random-waypoint-mobility-model-test.cc.i
-.PHONY : test/steady-state-random-waypoint-mobility-model-test.cc.i
-
-test/steady-state-random-waypoint-mobility-model-test.s: test/steady-state-random-waypoint-mobility-model-test.cc.s
-.PHONY : test/steady-state-random-waypoint-mobility-model-test.s
-
-# target to generate assembly for a file
-test/steady-state-random-waypoint-mobility-model-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/steady-state-random-waypoint-mobility-model-test.cc.s
-.PHONY : test/steady-state-random-waypoint-mobility-model-test.cc.s
-
-test/waypoint-mobility-model-test.o: test/waypoint-mobility-model-test.cc.o
-.PHONY : test/waypoint-mobility-model-test.o
-
-# target to build an object file
-test/waypoint-mobility-model-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/waypoint-mobility-model-test.cc.o
-.PHONY : test/waypoint-mobility-model-test.cc.o
-
-test/waypoint-mobility-model-test.i: test/waypoint-mobility-model-test.cc.i
-.PHONY : test/waypoint-mobility-model-test.i
-
-# target to preprocess a source file
-test/waypoint-mobility-model-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/waypoint-mobility-model-test.cc.i
-.PHONY : test/waypoint-mobility-model-test.cc.i
-
-test/waypoint-mobility-model-test.s: test/waypoint-mobility-model-test.cc.s
-.PHONY : test/waypoint-mobility-model-test.s
-
-# target to generate assembly for a file
-test/waypoint-mobility-model-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mobility/CMakeFiles/libmobility-test.dir/build.make src/mobility/CMakeFiles/libmobility-test.dir/test/waypoint-mobility-model-test.cc.s
-.PHONY : test/waypoint-mobility-model-test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -970,10 +706,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libmobility"
 	@echo "... libmobility-obj"
-	@echo "... libmobility-test"
 	@echo "... helper/group-mobility-helper.o"
 	@echo "... helper/group-mobility-helper.i"
 	@echo "... helper/group-mobility-helper.s"
@@ -1037,36 +771,6 @@ help:
 	@echo "... model/waypoint.o"
 	@echo "... model/waypoint.i"
 	@echo "... model/waypoint.s"
-	@echo "... test/box-line-intersection-test.o"
-	@echo "... test/box-line-intersection-test.i"
-	@echo "... test/box-line-intersection-test.s"
-	@echo "... test/geo-to-cartesian-test.o"
-	@echo "... test/geo-to-cartesian-test.i"
-	@echo "... test/geo-to-cartesian-test.s"
-	@echo "... test/geocentric-topocentric-conversion-test.o"
-	@echo "... test/geocentric-topocentric-conversion-test.i"
-	@echo "... test/geocentric-topocentric-conversion-test.s"
-	@echo "... test/mobility-test-suite.o"
-	@echo "... test/mobility-test-suite.i"
-	@echo "... test/mobility-test-suite.s"
-	@echo "... test/mobility-trace-test-suite.o"
-	@echo "... test/mobility-trace-test-suite.i"
-	@echo "... test/mobility-trace-test-suite.s"
-	@echo "... test/ns2-mobility-helper-test-suite.o"
-	@echo "... test/ns2-mobility-helper-test-suite.i"
-	@echo "... test/ns2-mobility-helper-test-suite.s"
-	@echo "... test/rand-cart-around-geo-test.o"
-	@echo "... test/rand-cart-around-geo-test.i"
-	@echo "... test/rand-cart-around-geo-test.s"
-	@echo "... test/rectangle-closest-border-test.o"
-	@echo "... test/rectangle-closest-border-test.i"
-	@echo "... test/rectangle-closest-border-test.s"
-	@echo "... test/steady-state-random-waypoint-mobility-model-test.o"
-	@echo "... test/steady-state-random-waypoint-mobility-model-test.i"
-	@echo "... test/steady-state-random-waypoint-mobility-model-test.s"
-	@echo "... test/waypoint-mobility-model-test.o"
-	@echo "... test/waypoint-mobility-model-test.i"
-	@echo "... test/waypoint-mobility-model-test.s"
 .PHONY : help
 
 

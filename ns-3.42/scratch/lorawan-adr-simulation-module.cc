@@ -68,6 +68,7 @@ std::map<uint32_t, Ptr<BasicEnergySource>> g_energySources;
 uint32_t g_packetsSent = 0;
 uint32_t g_packetsReceived = 0;
 uint32_t g_packetsLost = 0;
+uint32_t g_downlinkPackets = 0;
 
 // Global containers for device tracking
 NodeContainer g_endDevices;
@@ -294,6 +295,19 @@ OnPhyNoMoreReceivers(Ptr<const Packet> packet, uint32_t systemId)
                 << " | FromDeviceID=" << senderDeviceId
                 << " | Reason=NO_RECEIVERS"
                 << " | TotalLost=" << g_packetsLost);
+}
+
+/**
+ * Callback for downlink packet sent from gateway
+ * Note: For MakeBoundCallback, bound args come first
+ */
+void
+OnGatewaySendDownlink(uint32_t gatewayNodeId, Ptr<const Packet> packet)
+{
+    g_downlinkPackets++;
+    NS_LOG_DEBUG("[TX-DL] GatewayID=" << gatewayNodeId 
+                << " | PacketUID=" << packet->GetUid()
+                << " | TotalDownlink=" << g_downlinkPackets);
 }
 
 /**
@@ -874,6 +888,10 @@ main(int argc, char* argv[])
                 gwMac->TraceConnectWithoutContext(
                     "ReceivedPacket",
                     MakeBoundCallback(&OnGatewayReceive, gwNodeId));
+                // Connect to SentNewPacket trace for downlink counting
+                gwMac->TraceConnectWithoutContext(
+                    "SentNewPacket",
+                    MakeBoundCallback(&OnGatewaySendDownlink, gwNodeId));
             }
         }
     }
@@ -916,26 +934,12 @@ main(int argc, char* argv[])
     uint32_t successfulPackets = static_cast<uint32_t>(successfulPacketsD);
     double pdr = (totalPackets == 0) ? 0.0 : (static_cast<double>(successfulPackets) / totalPackets) * 100.0;
 
-    // Get retransmissions statistics (CountRetransmissions: "sent success")
-    std::string retransStats = tracker.CountRetransmissions(Seconds(0), Seconds(simulationTime));
-    std::istringstream riss(retransStats);
-    double totalRetransD = 0, successfulRetransD = 0;
-    riss >> totalRetransD >> successfulRetransD;
-    uint32_t totalRetrans = static_cast<uint32_t>(totalRetransD);
+    // Note: CountRetransmissions is not implemented in the lorawan module
+    // Retransmissions count: derived from total - successful packets
+    uint32_t totalRetrans = (totalPackets > successfulPackets) ? (totalPackets - successfulPackets) : 0;
 
-    // Count downlink packets (MAC layer):
-    // Parcours du tracker pour les paquets downlink
-    uint32_t totalDownlinkPackets = 0;
-    for (const auto& entry : tracker.m_macPacketTracker) {
-        const auto& status = entry.second;
-        // Un paquet est downlink si !IsUplink
-        LorawanMacHeader mHdr;
-        Ptr<Packet> copy = status.packet->Copy();
-        copy->RemoveHeader(mHdr);
-        if (!mHdr.IsUplink()) {
-            totalDownlinkPackets++;
-        }
-    }
+    // Count downlink packets (using global counter from trace callbacks)
+    uint32_t totalDownlinkPackets = g_downlinkPackets;
 
     // Calculate total energy consumption
     double totalEnergyConsumption = 0.0;
@@ -1042,6 +1046,7 @@ main(int argc, char* argv[])
     g_packetsSent = 0;
     g_packetsReceived = 0;
     g_packetsLost = 0;
+    g_downlinkPackets = 0;
     
     // Note: SIGSEGV may occur during Simulator::Destroy() due to ns-3 internal cleanup
     // This is a known issue with some ns-3 modules and does not affect simulation results

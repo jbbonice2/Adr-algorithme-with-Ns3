@@ -35,8 +35,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/libcore-obj.dir/model/event-id.cc.o.d"
   "CMakeFiles/libcore-obj.dir/model/event-impl.cc.o"
   "CMakeFiles/libcore-obj.dir/model/event-impl.cc.o.d"
-  "CMakeFiles/libcore-obj.dir/model/example-as-test.cc.o"
-  "CMakeFiles/libcore-obj.dir/model/example-as-test.cc.o.d"
   "CMakeFiles/libcore-obj.dir/model/fatal-impl.cc.o"
   "CMakeFiles/libcore-obj.dir/model/fatal-impl.cc.o.d"
   "CMakeFiles/libcore-obj.dir/model/global-value.cc.o"

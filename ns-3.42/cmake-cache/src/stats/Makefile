@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -199,20 +189,6 @@ libstats: src/stats/CMakeFiles/libstats.dir/rule
 libstats/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats.dir/build.make src/stats/CMakeFiles/libstats.dir/build
 .PHONY : libstats/fast
-
-# Convenience name for target.
-src/stats/CMakeFiles/libstats-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/stats/CMakeFiles/libstats-test.dir/rule
-.PHONY : src/stats/CMakeFiles/libstats-test.dir/rule
-
-# Convenience name for target.
-libstats-test: src/stats/CMakeFiles/libstats-test.dir/rule
-.PHONY : libstats-test
-
-# fast build rule for target.
-libstats-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/build
-.PHONY : libstats-test/fast
 
 helper/file-helper.o: helper/file-helper.cc.o
 .PHONY : helper/file-helper.o
@@ -790,102 +766,6 @@ model/uinteger-8-probe.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-obj.dir/build.make src/stats/CMakeFiles/libstats-obj.dir/model/uinteger-8-probe.cc.s
 .PHONY : model/uinteger-8-probe.cc.s
 
-test/average-test-suite.o: test/average-test-suite.cc.o
-.PHONY : test/average-test-suite.o
-
-# target to build an object file
-test/average-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/average-test-suite.cc.o
-.PHONY : test/average-test-suite.cc.o
-
-test/average-test-suite.i: test/average-test-suite.cc.i
-.PHONY : test/average-test-suite.i
-
-# target to preprocess a source file
-test/average-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/average-test-suite.cc.i
-.PHONY : test/average-test-suite.cc.i
-
-test/average-test-suite.s: test/average-test-suite.cc.s
-.PHONY : test/average-test-suite.s
-
-# target to generate assembly for a file
-test/average-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/average-test-suite.cc.s
-.PHONY : test/average-test-suite.cc.s
-
-test/basic-data-calculators-test-suite.o: test/basic-data-calculators-test-suite.cc.o
-.PHONY : test/basic-data-calculators-test-suite.o
-
-# target to build an object file
-test/basic-data-calculators-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/basic-data-calculators-test-suite.cc.o
-.PHONY : test/basic-data-calculators-test-suite.cc.o
-
-test/basic-data-calculators-test-suite.i: test/basic-data-calculators-test-suite.cc.i
-.PHONY : test/basic-data-calculators-test-suite.i
-
-# target to preprocess a source file
-test/basic-data-calculators-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/basic-data-calculators-test-suite.cc.i
-.PHONY : test/basic-data-calculators-test-suite.cc.i
-
-test/basic-data-calculators-test-suite.s: test/basic-data-calculators-test-suite.cc.s
-.PHONY : test/basic-data-calculators-test-suite.s
-
-# target to generate assembly for a file
-test/basic-data-calculators-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/basic-data-calculators-test-suite.cc.s
-.PHONY : test/basic-data-calculators-test-suite.cc.s
-
-test/double-probe-test-suite.o: test/double-probe-test-suite.cc.o
-.PHONY : test/double-probe-test-suite.o
-
-# target to build an object file
-test/double-probe-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/double-probe-test-suite.cc.o
-.PHONY : test/double-probe-test-suite.cc.o
-
-test/double-probe-test-suite.i: test/double-probe-test-suite.cc.i
-.PHONY : test/double-probe-test-suite.i
-
-# target to preprocess a source file
-test/double-probe-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/double-probe-test-suite.cc.i
-.PHONY : test/double-probe-test-suite.cc.i
-
-test/double-probe-test-suite.s: test/double-probe-test-suite.cc.s
-.PHONY : test/double-probe-test-suite.s
-
-# target to generate assembly for a file
-test/double-probe-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/double-probe-test-suite.cc.s
-.PHONY : test/double-probe-test-suite.cc.s
-
-test/histogram-test-suite.o: test/histogram-test-suite.cc.o
-.PHONY : test/histogram-test-suite.o
-
-# target to build an object file
-test/histogram-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/histogram-test-suite.cc.o
-.PHONY : test/histogram-test-suite.cc.o
-
-test/histogram-test-suite.i: test/histogram-test-suite.cc.i
-.PHONY : test/histogram-test-suite.i
-
-# target to preprocess a source file
-test/histogram-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/histogram-test-suite.cc.i
-.PHONY : test/histogram-test-suite.cc.i
-
-test/histogram-test-suite.s: test/histogram-test-suite.cc.s
-.PHONY : test/histogram-test-suite.s
-
-# target to generate assembly for a file
-test/histogram-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/stats/CMakeFiles/libstats-test.dir/build.make src/stats/CMakeFiles/libstats-test.dir/test/histogram-test-suite.cc.s
-.PHONY : test/histogram-test-suite.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -898,10 +778,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libstats"
 	@echo "... libstats-obj"
-	@echo "... libstats-test"
 	@echo "... helper/file-helper.o"
 	@echo "... helper/file-helper.i"
 	@echo "... helper/file-helper.s"
@@ -974,18 +852,6 @@ help:
 	@echo "... model/uinteger-8-probe.o"
 	@echo "... model/uinteger-8-probe.i"
 	@echo "... model/uinteger-8-probe.s"
-	@echo "... test/average-test-suite.o"
-	@echo "... test/average-test-suite.i"
-	@echo "... test/average-test-suite.s"
-	@echo "... test/basic-data-calculators-test-suite.o"
-	@echo "... test/basic-data-calculators-test-suite.i"
-	@echo "... test/basic-data-calculators-test-suite.s"
-	@echo "... test/double-probe-test-suite.o"
-	@echo "... test/double-probe-test-suite.i"
-	@echo "... test/double-probe-test-suite.s"
-	@echo "... test/histogram-test-suite.o"
-	@echo "... test/histogram-test-suite.i"
-	@echo "... test/histogram-test-suite.s"
 .PHONY : help
 
 

@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -200,20 +190,6 @@ libolsr/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr.dir/build.make src/olsr/CMakeFiles/libolsr.dir/build
 .PHONY : libolsr/fast
 
-# Convenience name for target.
-src/olsr/CMakeFiles/libolsr-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/olsr/CMakeFiles/libolsr-test.dir/rule
-.PHONY : src/olsr/CMakeFiles/libolsr-test.dir/rule
-
-# Convenience name for target.
-libolsr-test: src/olsr/CMakeFiles/libolsr-test.dir/rule
-.PHONY : libolsr-test
-
-# fast build rule for target.
-libolsr-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/build
-.PHONY : libolsr-test/fast
-
 helper/olsr-helper.o: helper/olsr-helper.cc.o
 .PHONY : helper/olsr-helper.o
 
@@ -310,150 +286,6 @@ model/olsr-state.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-obj.dir/build.make src/olsr/CMakeFiles/libolsr-obj.dir/model/olsr-state.cc.s
 .PHONY : model/olsr-state.cc.s
 
-test/bug780-test.o: test/bug780-test.cc.o
-.PHONY : test/bug780-test.o
-
-# target to build an object file
-test/bug780-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/bug780-test.cc.o
-.PHONY : test/bug780-test.cc.o
-
-test/bug780-test.i: test/bug780-test.cc.i
-.PHONY : test/bug780-test.i
-
-# target to preprocess a source file
-test/bug780-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/bug780-test.cc.i
-.PHONY : test/bug780-test.cc.i
-
-test/bug780-test.s: test/bug780-test.cc.s
-.PHONY : test/bug780-test.s
-
-# target to generate assembly for a file
-test/bug780-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/bug780-test.cc.s
-.PHONY : test/bug780-test.cc.s
-
-test/hello-regression-test.o: test/hello-regression-test.cc.o
-.PHONY : test/hello-regression-test.o
-
-# target to build an object file
-test/hello-regression-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/hello-regression-test.cc.o
-.PHONY : test/hello-regression-test.cc.o
-
-test/hello-regression-test.i: test/hello-regression-test.cc.i
-.PHONY : test/hello-regression-test.i
-
-# target to preprocess a source file
-test/hello-regression-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/hello-regression-test.cc.i
-.PHONY : test/hello-regression-test.cc.i
-
-test/hello-regression-test.s: test/hello-regression-test.cc.s
-.PHONY : test/hello-regression-test.s
-
-# target to generate assembly for a file
-test/hello-regression-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/hello-regression-test.cc.s
-.PHONY : test/hello-regression-test.cc.s
-
-test/olsr-header-test-suite.o: test/olsr-header-test-suite.cc.o
-.PHONY : test/olsr-header-test-suite.o
-
-# target to build an object file
-test/olsr-header-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/olsr-header-test-suite.cc.o
-.PHONY : test/olsr-header-test-suite.cc.o
-
-test/olsr-header-test-suite.i: test/olsr-header-test-suite.cc.i
-.PHONY : test/olsr-header-test-suite.i
-
-# target to preprocess a source file
-test/olsr-header-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/olsr-header-test-suite.cc.i
-.PHONY : test/olsr-header-test-suite.cc.i
-
-test/olsr-header-test-suite.s: test/olsr-header-test-suite.cc.s
-.PHONY : test/olsr-header-test-suite.s
-
-# target to generate assembly for a file
-test/olsr-header-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/olsr-header-test-suite.cc.s
-.PHONY : test/olsr-header-test-suite.cc.s
-
-test/olsr-routing-protocol-test-suite.o: test/olsr-routing-protocol-test-suite.cc.o
-.PHONY : test/olsr-routing-protocol-test-suite.o
-
-# target to build an object file
-test/olsr-routing-protocol-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/olsr-routing-protocol-test-suite.cc.o
-.PHONY : test/olsr-routing-protocol-test-suite.cc.o
-
-test/olsr-routing-protocol-test-suite.i: test/olsr-routing-protocol-test-suite.cc.i
-.PHONY : test/olsr-routing-protocol-test-suite.i
-
-# target to preprocess a source file
-test/olsr-routing-protocol-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/olsr-routing-protocol-test-suite.cc.i
-.PHONY : test/olsr-routing-protocol-test-suite.cc.i
-
-test/olsr-routing-protocol-test-suite.s: test/olsr-routing-protocol-test-suite.cc.s
-.PHONY : test/olsr-routing-protocol-test-suite.s
-
-# target to generate assembly for a file
-test/olsr-routing-protocol-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/olsr-routing-protocol-test-suite.cc.s
-.PHONY : test/olsr-routing-protocol-test-suite.cc.s
-
-test/regression-test-suite.o: test/regression-test-suite.cc.o
-.PHONY : test/regression-test-suite.o
-
-# target to build an object file
-test/regression-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/regression-test-suite.cc.o
-.PHONY : test/regression-test-suite.cc.o
-
-test/regression-test-suite.i: test/regression-test-suite.cc.i
-.PHONY : test/regression-test-suite.i
-
-# target to preprocess a source file
-test/regression-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/regression-test-suite.cc.i
-.PHONY : test/regression-test-suite.cc.i
-
-test/regression-test-suite.s: test/regression-test-suite.cc.s
-.PHONY : test/regression-test-suite.s
-
-# target to generate assembly for a file
-test/regression-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/regression-test-suite.cc.s
-.PHONY : test/regression-test-suite.cc.s
-
-test/tc-regression-test.o: test/tc-regression-test.cc.o
-.PHONY : test/tc-regression-test.o
-
-# target to build an object file
-test/tc-regression-test.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/tc-regression-test.cc.o
-.PHONY : test/tc-regression-test.cc.o
-
-test/tc-regression-test.i: test/tc-regression-test.cc.i
-.PHONY : test/tc-regression-test.i
-
-# target to preprocess a source file
-test/tc-regression-test.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/tc-regression-test.cc.i
-.PHONY : test/tc-regression-test.cc.i
-
-test/tc-regression-test.s: test/tc-regression-test.cc.s
-.PHONY : test/tc-regression-test.s
-
-# target to generate assembly for a file
-test/tc-regression-test.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/olsr/CMakeFiles/libolsr-test.dir/build.make src/olsr/CMakeFiles/libolsr-test.dir/test/tc-regression-test.cc.s
-.PHONY : test/tc-regression-test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -466,10 +298,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libolsr"
 	@echo "... libolsr-obj"
-	@echo "... libolsr-test"
 	@echo "... helper/olsr-helper.o"
 	@echo "... helper/olsr-helper.i"
 	@echo "... helper/olsr-helper.s"
@@ -482,24 +312,6 @@ help:
 	@echo "... model/olsr-state.o"
 	@echo "... model/olsr-state.i"
 	@echo "... model/olsr-state.s"
-	@echo "... test/bug780-test.o"
-	@echo "... test/bug780-test.i"
-	@echo "... test/bug780-test.s"
-	@echo "... test/hello-regression-test.o"
-	@echo "... test/hello-regression-test.i"
-	@echo "... test/hello-regression-test.s"
-	@echo "... test/olsr-header-test-suite.o"
-	@echo "... test/olsr-header-test-suite.i"
-	@echo "... test/olsr-header-test-suite.s"
-	@echo "... test/olsr-routing-protocol-test-suite.o"
-	@echo "... test/olsr-routing-protocol-test-suite.i"
-	@echo "... test/olsr-routing-protocol-test-suite.s"
-	@echo "... test/regression-test-suite.o"
-	@echo "... test/regression-test-suite.i"
-	@echo "... test/regression-test-suite.s"
-	@echo "... test/tc-regression-test.o"
-	@echo "... test/tc-regression-test.i"
-	@echo "... test/tc-regression-test.s"
 .PHONY : help
 
 

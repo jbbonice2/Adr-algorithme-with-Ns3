@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -199,20 +189,6 @@ libtraffic-control: src/traffic-control/CMakeFiles/libtraffic-control.dir/rule
 libtraffic-control/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control.dir/build
 .PHONY : libtraffic-control/fast
-
-# Convenience name for target.
-src/traffic-control/CMakeFiles/libtraffic-control-test.dir/rule:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/traffic-control/CMakeFiles/libtraffic-control-test.dir/rule
-.PHONY : src/traffic-control/CMakeFiles/libtraffic-control-test.dir/rule
-
-# Convenience name for target.
-libtraffic-control-test: src/traffic-control/CMakeFiles/libtraffic-control-test.dir/rule
-.PHONY : libtraffic-control-test
-
-# fast build rule for target.
-libtraffic-control-test/fast:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build
-.PHONY : libtraffic-control-test/fast
 
 helper/queue-disc-container.o: helper/queue-disc-container.cc.o
 .PHONY : helper/queue-disc-container.o
@@ -622,246 +598,6 @@ model/traffic-control-layer.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-obj.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-obj.dir/model/traffic-control-layer.cc.s
 .PHONY : model/traffic-control-layer.cc.s
 
-test/adaptive-red-queue-disc-test-suite.o: test/adaptive-red-queue-disc-test-suite.cc.o
-.PHONY : test/adaptive-red-queue-disc-test-suite.o
-
-# target to build an object file
-test/adaptive-red-queue-disc-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/adaptive-red-queue-disc-test-suite.cc.o
-.PHONY : test/adaptive-red-queue-disc-test-suite.cc.o
-
-test/adaptive-red-queue-disc-test-suite.i: test/adaptive-red-queue-disc-test-suite.cc.i
-.PHONY : test/adaptive-red-queue-disc-test-suite.i
-
-# target to preprocess a source file
-test/adaptive-red-queue-disc-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/adaptive-red-queue-disc-test-suite.cc.i
-.PHONY : test/adaptive-red-queue-disc-test-suite.cc.i
-
-test/adaptive-red-queue-disc-test-suite.s: test/adaptive-red-queue-disc-test-suite.cc.s
-.PHONY : test/adaptive-red-queue-disc-test-suite.s
-
-# target to generate assembly for a file
-test/adaptive-red-queue-disc-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/adaptive-red-queue-disc-test-suite.cc.s
-.PHONY : test/adaptive-red-queue-disc-test-suite.cc.s
-
-test/cobalt-queue-disc-test-suite.o: test/cobalt-queue-disc-test-suite.cc.o
-.PHONY : test/cobalt-queue-disc-test-suite.o
-
-# target to build an object file
-test/cobalt-queue-disc-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/cobalt-queue-disc-test-suite.cc.o
-.PHONY : test/cobalt-queue-disc-test-suite.cc.o
-
-test/cobalt-queue-disc-test-suite.i: test/cobalt-queue-disc-test-suite.cc.i
-.PHONY : test/cobalt-queue-disc-test-suite.i
-
-# target to preprocess a source file
-test/cobalt-queue-disc-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/cobalt-queue-disc-test-suite.cc.i
-.PHONY : test/cobalt-queue-disc-test-suite.cc.i
-
-test/cobalt-queue-disc-test-suite.s: test/cobalt-queue-disc-test-suite.cc.s
-.PHONY : test/cobalt-queue-disc-test-suite.s
-
-# target to generate assembly for a file
-test/cobalt-queue-disc-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/cobalt-queue-disc-test-suite.cc.s
-.PHONY : test/cobalt-queue-disc-test-suite.cc.s
-
-test/codel-queue-disc-test-suite.o: test/codel-queue-disc-test-suite.cc.o
-.PHONY : test/codel-queue-disc-test-suite.o
-
-# target to build an object file
-test/codel-queue-disc-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/codel-queue-disc-test-suite.cc.o
-.PHONY : test/codel-queue-disc-test-suite.cc.o
-
-test/codel-queue-disc-test-suite.i: test/codel-queue-disc-test-suite.cc.i
-.PHONY : test/codel-queue-disc-test-suite.i
-
-# target to preprocess a source file
-test/codel-queue-disc-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/codel-queue-disc-test-suite.cc.i
-.PHONY : test/codel-queue-disc-test-suite.cc.i
-
-test/codel-queue-disc-test-suite.s: test/codel-queue-disc-test-suite.cc.s
-.PHONY : test/codel-queue-disc-test-suite.s
-
-# target to generate assembly for a file
-test/codel-queue-disc-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/codel-queue-disc-test-suite.cc.s
-.PHONY : test/codel-queue-disc-test-suite.cc.s
-
-test/fifo-queue-disc-test-suite.o: test/fifo-queue-disc-test-suite.cc.o
-.PHONY : test/fifo-queue-disc-test-suite.o
-
-# target to build an object file
-test/fifo-queue-disc-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/fifo-queue-disc-test-suite.cc.o
-.PHONY : test/fifo-queue-disc-test-suite.cc.o
-
-test/fifo-queue-disc-test-suite.i: test/fifo-queue-disc-test-suite.cc.i
-.PHONY : test/fifo-queue-disc-test-suite.i
-
-# target to preprocess a source file
-test/fifo-queue-disc-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/fifo-queue-disc-test-suite.cc.i
-.PHONY : test/fifo-queue-disc-test-suite.cc.i
-
-test/fifo-queue-disc-test-suite.s: test/fifo-queue-disc-test-suite.cc.s
-.PHONY : test/fifo-queue-disc-test-suite.s
-
-# target to generate assembly for a file
-test/fifo-queue-disc-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/fifo-queue-disc-test-suite.cc.s
-.PHONY : test/fifo-queue-disc-test-suite.cc.s
-
-test/pie-queue-disc-test-suite.o: test/pie-queue-disc-test-suite.cc.o
-.PHONY : test/pie-queue-disc-test-suite.o
-
-# target to build an object file
-test/pie-queue-disc-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/pie-queue-disc-test-suite.cc.o
-.PHONY : test/pie-queue-disc-test-suite.cc.o
-
-test/pie-queue-disc-test-suite.i: test/pie-queue-disc-test-suite.cc.i
-.PHONY : test/pie-queue-disc-test-suite.i
-
-# target to preprocess a source file
-test/pie-queue-disc-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/pie-queue-disc-test-suite.cc.i
-.PHONY : test/pie-queue-disc-test-suite.cc.i
-
-test/pie-queue-disc-test-suite.s: test/pie-queue-disc-test-suite.cc.s
-.PHONY : test/pie-queue-disc-test-suite.s
-
-# target to generate assembly for a file
-test/pie-queue-disc-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/pie-queue-disc-test-suite.cc.s
-.PHONY : test/pie-queue-disc-test-suite.cc.s
-
-test/prio-queue-disc-test-suite.o: test/prio-queue-disc-test-suite.cc.o
-.PHONY : test/prio-queue-disc-test-suite.o
-
-# target to build an object file
-test/prio-queue-disc-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/prio-queue-disc-test-suite.cc.o
-.PHONY : test/prio-queue-disc-test-suite.cc.o
-
-test/prio-queue-disc-test-suite.i: test/prio-queue-disc-test-suite.cc.i
-.PHONY : test/prio-queue-disc-test-suite.i
-
-# target to preprocess a source file
-test/prio-queue-disc-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/prio-queue-disc-test-suite.cc.i
-.PHONY : test/prio-queue-disc-test-suite.cc.i
-
-test/prio-queue-disc-test-suite.s: test/prio-queue-disc-test-suite.cc.s
-.PHONY : test/prio-queue-disc-test-suite.s
-
-# target to generate assembly for a file
-test/prio-queue-disc-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/prio-queue-disc-test-suite.cc.s
-.PHONY : test/prio-queue-disc-test-suite.cc.s
-
-test/queue-disc-traces-test-suite.o: test/queue-disc-traces-test-suite.cc.o
-.PHONY : test/queue-disc-traces-test-suite.o
-
-# target to build an object file
-test/queue-disc-traces-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/queue-disc-traces-test-suite.cc.o
-.PHONY : test/queue-disc-traces-test-suite.cc.o
-
-test/queue-disc-traces-test-suite.i: test/queue-disc-traces-test-suite.cc.i
-.PHONY : test/queue-disc-traces-test-suite.i
-
-# target to preprocess a source file
-test/queue-disc-traces-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/queue-disc-traces-test-suite.cc.i
-.PHONY : test/queue-disc-traces-test-suite.cc.i
-
-test/queue-disc-traces-test-suite.s: test/queue-disc-traces-test-suite.cc.s
-.PHONY : test/queue-disc-traces-test-suite.s
-
-# target to generate assembly for a file
-test/queue-disc-traces-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/queue-disc-traces-test-suite.cc.s
-.PHONY : test/queue-disc-traces-test-suite.cc.s
-
-test/red-queue-disc-test-suite.o: test/red-queue-disc-test-suite.cc.o
-.PHONY : test/red-queue-disc-test-suite.o
-
-# target to build an object file
-test/red-queue-disc-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/red-queue-disc-test-suite.cc.o
-.PHONY : test/red-queue-disc-test-suite.cc.o
-
-test/red-queue-disc-test-suite.i: test/red-queue-disc-test-suite.cc.i
-.PHONY : test/red-queue-disc-test-suite.i
-
-# target to preprocess a source file
-test/red-queue-disc-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/red-queue-disc-test-suite.cc.i
-.PHONY : test/red-queue-disc-test-suite.cc.i
-
-test/red-queue-disc-test-suite.s: test/red-queue-disc-test-suite.cc.s
-.PHONY : test/red-queue-disc-test-suite.s
-
-# target to generate assembly for a file
-test/red-queue-disc-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/red-queue-disc-test-suite.cc.s
-.PHONY : test/red-queue-disc-test-suite.cc.s
-
-test/tbf-queue-disc-test-suite.o: test/tbf-queue-disc-test-suite.cc.o
-.PHONY : test/tbf-queue-disc-test-suite.o
-
-# target to build an object file
-test/tbf-queue-disc-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/tbf-queue-disc-test-suite.cc.o
-.PHONY : test/tbf-queue-disc-test-suite.cc.o
-
-test/tbf-queue-disc-test-suite.i: test/tbf-queue-disc-test-suite.cc.i
-.PHONY : test/tbf-queue-disc-test-suite.i
-
-# target to preprocess a source file
-test/tbf-queue-disc-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/tbf-queue-disc-test-suite.cc.i
-.PHONY : test/tbf-queue-disc-test-suite.cc.i
-
-test/tbf-queue-disc-test-suite.s: test/tbf-queue-disc-test-suite.cc.s
-.PHONY : test/tbf-queue-disc-test-suite.s
-
-# target to generate assembly for a file
-test/tbf-queue-disc-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/tbf-queue-disc-test-suite.cc.s
-.PHONY : test/tbf-queue-disc-test-suite.cc.s
-
-test/tc-flow-control-test-suite.o: test/tc-flow-control-test-suite.cc.o
-.PHONY : test/tc-flow-control-test-suite.o
-
-# target to build an object file
-test/tc-flow-control-test-suite.cc.o:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/tc-flow-control-test-suite.cc.o
-.PHONY : test/tc-flow-control-test-suite.cc.o
-
-test/tc-flow-control-test-suite.i: test/tc-flow-control-test-suite.cc.i
-.PHONY : test/tc-flow-control-test-suite.i
-
-# target to preprocess a source file
-test/tc-flow-control-test-suite.cc.i:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/tc-flow-control-test-suite.cc.i
-.PHONY : test/tc-flow-control-test-suite.cc.i
-
-test/tc-flow-control-test-suite.s: test/tc-flow-control-test-suite.cc.s
-.PHONY : test/tc-flow-control-test-suite.s
-
-# target to generate assembly for a file
-test/tc-flow-control-test-suite.cc.s:
-	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/traffic-control/CMakeFiles/libtraffic-control-test.dir/build.make src/traffic-control/CMakeFiles/libtraffic-control-test.dir/test/tc-flow-control-test-suite.cc.s
-.PHONY : test/tc-flow-control-test-suite.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -874,10 +610,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... libtraffic-control"
 	@echo "... libtraffic-control-obj"
-	@echo "... libtraffic-control-test"
 	@echo "... helper/queue-disc-container.o"
 	@echo "... helper/queue-disc-container.i"
 	@echo "... helper/queue-disc-container.s"
@@ -929,36 +663,6 @@ help:
 	@echo "... model/traffic-control-layer.o"
 	@echo "... model/traffic-control-layer.i"
 	@echo "... model/traffic-control-layer.s"
-	@echo "... test/adaptive-red-queue-disc-test-suite.o"
-	@echo "... test/adaptive-red-queue-disc-test-suite.i"
-	@echo "... test/adaptive-red-queue-disc-test-suite.s"
-	@echo "... test/cobalt-queue-disc-test-suite.o"
-	@echo "... test/cobalt-queue-disc-test-suite.i"
-	@echo "... test/cobalt-queue-disc-test-suite.s"
-	@echo "... test/codel-queue-disc-test-suite.o"
-	@echo "... test/codel-queue-disc-test-suite.i"
-	@echo "... test/codel-queue-disc-test-suite.s"
-	@echo "... test/fifo-queue-disc-test-suite.o"
-	@echo "... test/fifo-queue-disc-test-suite.i"
-	@echo "... test/fifo-queue-disc-test-suite.s"
-	@echo "... test/pie-queue-disc-test-suite.o"
-	@echo "... test/pie-queue-disc-test-suite.i"
-	@echo "... test/pie-queue-disc-test-suite.s"
-	@echo "... test/prio-queue-disc-test-suite.o"
-	@echo "... test/prio-queue-disc-test-suite.i"
-	@echo "... test/prio-queue-disc-test-suite.s"
-	@echo "... test/queue-disc-traces-test-suite.o"
-	@echo "... test/queue-disc-traces-test-suite.i"
-	@echo "... test/queue-disc-traces-test-suite.s"
-	@echo "... test/red-queue-disc-test-suite.o"
-	@echo "... test/red-queue-disc-test-suite.i"
-	@echo "... test/red-queue-disc-test-suite.s"
-	@echo "... test/tbf-queue-disc-test-suite.o"
-	@echo "... test/tbf-queue-disc-test-suite.i"
-	@echo "... test/tbf-queue-disc-test-suite.s"
-	@echo "... test/tc-flow-control-test-suite.o"
-	@echo "... test/tc-flow-control-test-suite.i"
-	@echo "... test/tc-flow-control-test-suite.s"
 .PHONY : help
 
 

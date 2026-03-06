@@ -76,7 +76,6 @@ libcore_OBJECTS =
 libcore_EXTERNAL_OBJECTS = \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/core/CMakeFiles/libcore-obj.dir/model/int64x64-128.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/core/CMakeFiles/libcore-obj.dir/model/unix-fd-reader.cc.o" \
-"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/core/CMakeFiles/libcore-obj.dir/model/example-as-test.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/core/CMakeFiles/libcore-obj.dir/helper/csv-reader.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/core/CMakeFiles/libcore-obj.dir/helper/random-variable-stream-helper.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/core/CMakeFiles/libcore-obj.dir/helper/event-garbage-collector.cc.o" \
@@ -144,7 +143,6 @@ libcore_EXTERNAL_OBJECTS = \
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-core-default.so: src/core/CMakeFiles/libcore-obj.dir/model/int64x64-128.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-core-default.so: src/core/CMakeFiles/libcore-obj.dir/model/unix-fd-reader.cc.o
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-core-default.so: src/core/CMakeFiles/libcore-obj.dir/model/example-as-test.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-core-default.so: src/core/CMakeFiles/libcore-obj.dir/helper/csv-reader.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-core-default.so: src/core/CMakeFiles/libcore-obj.dir/helper/random-variable-stream-helper.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-core-default.so: src/core/CMakeFiles/libcore-obj.dir/helper/event-garbage-collector.cc.o
