@@ -120,10 +120,10 @@ append_summary_from_sim() {
         return 1
     fi
     
-    # Format du fichier sim: Scenario,NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,ADR,RunNumber,TotalPackets,SuccessfulPackets,PDR_Percent,TotalEnergy_J,AvgEnergy_mJ
+    # Format du fichier sim: Scenario,NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,ADR,RunNumber,TotalPackets,SuccessfulPackets,PDR_Percent,TotalEnergy_J,AvgEnergy_mJ,DownlinkPackets,Retransmissions
     # On extrait les colonnes nécessaires et on les réorganise
-    tail -n +2 "$sim_file" | while IFS=',' read -r scen dev mob traf sig adr run total success pdr total_e avg_e; do
-        echo "$scenario_name,$adr,$dev,$mob,$traf,$sig,$run,$total,$success,$pdr,$avg_e" >> "$summary_file"
+    tail -n +2 "$sim_file" | while IFS=',' read -r scen dev mob traf sig adr run total success pdr total_e avg_e downlink retrans; do
+        echo "$scenario_name,$adr,$dev,$mob,$traf,$sig,$run,$total,$success,$pdr,$avg_e,$downlink,$retrans" >> "$summary_file"
     done
     
     return 0
@@ -135,7 +135,7 @@ append_summary_from_sim() {
 init_scenario_summary() {
     local summary_file=$1
     # Créer le fichier avec le header
-    echo "Scenario,Algorithm,NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,RunNumber,TotalPackets,SuccessfulPackets,PDR_Percent,AvgEnergy_mJ" > "$summary_file"
+    echo "Scenario,Algorithm,NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,RunNumber,TotalPackets,SuccessfulPackets,PDR_Percent,AvgEnergy_mJ,DownlinkPackets,Retransmissions" > "$summary_file"
 }
 
 # ==============================================================================

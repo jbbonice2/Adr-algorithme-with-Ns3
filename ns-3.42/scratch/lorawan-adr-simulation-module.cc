@@ -906,17 +906,36 @@ main(int argc, char* argv[])
 
     LoraPacketTracker& tracker = helper.GetPacketTracker();
     
-    // Get packet statistics
+
+    // Get uplink packet statistics
     std::string macPacketStats = tracker.CountMacPacketsGlobally(Seconds(0), Seconds(simulationTime));
-    
-    // Parse the stats (format: "sent received" as doubles)
     std::istringstream iss(macPacketStats);
     double totalPacketsD = 0, successfulPacketsD = 0;
     iss >> totalPacketsD >> successfulPacketsD;
     uint32_t totalPackets = static_cast<uint32_t>(totalPacketsD);
     uint32_t successfulPackets = static_cast<uint32_t>(successfulPacketsD);
-
     double pdr = (totalPackets == 0) ? 0.0 : (static_cast<double>(successfulPackets) / totalPackets) * 100.0;
+
+    // Get retransmissions statistics (CountRetransmissions: "sent success")
+    std::string retransStats = tracker.CountRetransmissions(Seconds(0), Seconds(simulationTime));
+    std::istringstream riss(retransStats);
+    double totalRetransD = 0, successfulRetransD = 0;
+    riss >> totalRetransD >> successfulRetransD;
+    uint32_t totalRetrans = static_cast<uint32_t>(totalRetransD);
+
+    // Count downlink packets (MAC layer):
+    // Parcours du tracker pour les paquets downlink
+    uint32_t totalDownlinkPackets = 0;
+    for (const auto& entry : tracker.m_macPacketTracker) {
+        const auto& status = entry.second;
+        // Un paquet est downlink si !IsUplink
+        LorawanMacHeader mHdr;
+        Ptr<Packet> copy = status.packet->Copy();
+        copy->RemoveHeader(mHdr);
+        if (!mHdr.IsUplink()) {
+            totalDownlinkPackets++;
+        }
+    }
 
     // Calculate total energy consumption
     double totalEnergyConsumption = 0.0;
@@ -953,8 +972,8 @@ main(int argc, char* argv[])
              << "_run" << runNumber << ".csv";
 
     std::ofstream outputFile(filename.str());
-    outputFile << "Scenario,NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,ADR,RunNumber,"
-               << "TotalPackets,SuccessfulPackets,PDR_Percent,TotalEnergy_J,AvgEnergy_mJ\n";
+    outputFile << "Scenario,NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,ADR,RunNumber," 
+               << "TotalPackets,SuccessfulPackets,PDR_Percent,TotalEnergy_J,AvgEnergy_mJ,DownlinkPackets,Retransmissions\n";
     outputFile << scenario << ","
                << numDevices << ","
                << std::fixed << std::setprecision(1) << mobilitySpeed << ","
@@ -966,7 +985,9 @@ main(int argc, char* argv[])
                << successfulPackets << ","
                << std::setprecision(2) << pdr << ","
                << std::setprecision(6) << totalEnergyConsumption << ","
-               << std::setprecision(6) << avgEnergyPerPacket_mJ << "\n";
+               << std::setprecision(6) << avgEnergyPerPacket_mJ << ","
+               << totalDownlinkPackets << ","
+               << totalRetrans << "\n";
     outputFile.close();
 
     // --- Save summary in scenario folder ---
@@ -982,7 +1003,7 @@ main(int argc, char* argv[])
 
     std::ofstream summaryFile(summaryFilename.str());
     summaryFile << "NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,RunNumber,"
-                << "TotalPackets,SuccessfulPackets,PDR_Percent,AvgEnergy_mJ\n";
+                << "TotalPackets,SuccessfulPackets,PDR_Percent,AvgEnergy_mJ,DownlinkPackets,Retransmissions\n";
     summaryFile << numDevices << ","
                 << std::fixed << std::setprecision(1) << mobilitySpeed << ","
                 << static_cast<int>(trafficInterval) << ","
@@ -991,7 +1012,9 @@ main(int argc, char* argv[])
                 << totalPackets << ","
                 << successfulPackets << ","
                 << std::setprecision(2) << pdr << ","
-                << std::setprecision(6) << avgEnergyPerPacket_mJ << "\n";
+                << std::setprecision(6) << avgEnergyPerPacket_mJ << ","
+                << totalDownlinkPackets << ","
+                << totalRetrans << "\n";
     summaryFile.close();
 
     // Print summary to console
