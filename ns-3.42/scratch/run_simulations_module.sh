@@ -45,7 +45,7 @@ SIMULATION_NAME="lorawan-adr-simulation-module"
 
 # Nombre de messages par device par combinaison
 # NUM_MESSAGES=4
-NUM_MESSAGES=110
+NUM_MESSAGES=100
 
 # Nombre de répétitions par configuration
 NUM_RUNS=1
@@ -397,7 +397,7 @@ run_scenario4() {
     # Initialiser le fichier summary
     init_scenario_summary "$summary_file"
 
-    TRAFFIC_INTERVALS=(3600 1800 1200 900 720 600 514 450 400 360)
+    TRAFFIC_INTERVALS=(1200 600 400 300 240 200 171 150 133 120)
     
      DENSITIES_S4=(550)
     #  TRAFFIC_INTERVALS=(3600 145 72)

@@ -34,3 +34,11 @@ __pycache__/
 # Fichiers de sauvegarde
 *.bak
 *.backup
+
+# Ignorer le cache CMake et les dossiers de build
+cmake-cache/
+build/
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+Makefile
