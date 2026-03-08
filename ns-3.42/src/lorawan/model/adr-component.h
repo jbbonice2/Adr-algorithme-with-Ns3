@@ -212,6 +212,17 @@ class AdrComponent : public NetworkControllerComponent
         double lastAssignedTxPower;  //!< Last assigned TP_k
         uint8_t lastAssignedCF;      //!< Last assigned CF_k (channel index)
         uint8_t lastAssignedCR;      //!< Last assigned CR_k (coding rate)
+        
+        // Persistent binary search bounds (Algorithm 1 fix)
+        int searchMin;               //!< min_u: Lower bound of search range
+        int searchMax;               //!< max_u: Upper bound of search range
+        bool converged;              //!< Whether binary search has converged
+        int consecutiveSuccesses;    //!< Counter for consecutive successful receptions
+        int consecutiveFailures;     //!< Counter for consecutive failures
+        
+        // Downlink tracking to avoid repeated downlinks for same config
+        int lastSentConfigIndex;     //!< Last config index sent via downlink (-1 = never sent)
+        bool awaitingAck;            //!< Waiting for device to apply the sent config
     };
 
     /**
@@ -252,9 +263,12 @@ class AdrComponent : public NetworkControllerComponent
      *
      * @param newConfigIndex [out] New configuration index k_u(t)
      * @param status End device status
+     * @param state Device ADR-Lite state (passed by reference to ensure consistency)
      * @return true if parameters differ from previous assignment
      */
-    bool AdrLiteImplementation(int* newConfigIndex, Ptr<EndDeviceStatus> status);
+    void AdrLiteImplementation(int* newConfigIndex, 
+                               Ptr<EndDeviceStatus> status,
+                               DeviceAdrLiteState& state);
 
     /**
      * Check whether the last received packet used the assigned configuration.
@@ -265,6 +279,15 @@ class AdrComponent : public NetworkControllerComponent
      */
     bool ReceivedMatchesAssigned(Ptr<EndDeviceStatus> status,
                                  const DeviceAdrLiteState& state) const;
+
+    /**
+     * Find the configuration index that matches given SF and TxPower.
+     *
+     * @param sf Spreading factor
+     * @param txPowerDbm Transmission power in dBm
+     * @return Index in m_liteConfigurations
+     */
+    int FindConfigIndex(uint8_t sf, double txPowerDbm) const;
 
     /**
      * Convert TxPower dBm to TxPowerIndex for ADR-Lite (allows odd values).
@@ -319,6 +342,7 @@ class AdrComponent : public NetworkControllerComponent
     const int m_litePreambleSymbols = 8;   //!< Preamble symbols
     const int m_litePayloadBytes = 20;     //!< Default payload size for ToA ordering
     const bool m_liteHeaderEnabled = true; //!< Explicit header mode
+    uint32_t m_liteObservedPayloadBytes{50}; //!< Observed app payload from first uplink
 };
 } // namespace lorawan
 } // namespace ns3

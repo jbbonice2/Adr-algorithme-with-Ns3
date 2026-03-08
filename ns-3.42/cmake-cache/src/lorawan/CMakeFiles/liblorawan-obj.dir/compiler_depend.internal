@@ -2638,8 +2638,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.cc
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/abort.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/address.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-component.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-lite-component.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application-container.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/ascii-file.h
@@ -2870,8 +2868,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/warnings.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/watchdog.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/class-a-end-device-lorawan-mac.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/end-device-lorawan-mac.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/end-device-status.h

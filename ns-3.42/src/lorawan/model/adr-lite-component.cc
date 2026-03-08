@@ -217,6 +217,7 @@ AdrLiteComponent::GetDeviceState(LoraDeviceAddress deviceAddress)
         newState.currentConfigIndex = m_maxConfigIndex;  // k_u(0) = |K| (0-based: |K|-1)
         newState.lastReceivedConfigIndex = -1;           // No packet received yet
         newState.initialized = true;
+        newState.configSent = false;                     // No LinkAdrReq sent yet
         
         // I_k = {SF_k, TP_k, CF_k, CR_k} for the initial configuration
         const Configuration& initConfig = m_configurations[m_maxConfigIndex];
@@ -431,6 +432,9 @@ AdrLiteComponent::BeforeSendingReply(Ptr<EndDeviceStatus> status,
         status->m_reply.frameHeader.SetAsDownlink();
         status->m_reply.macHeader.SetMType(LorawanMacHeader::UNCONFIRMED_DATA_DOWN);
         status->m_reply.needsReply = true;
+        
+        // Mark that we've sent a configuration to this device
+        state.configSent = true;
     }
     else
     {
@@ -470,10 +474,22 @@ AdrLiteComponent::AdrLiteImplementation(int* newConfigIndex, Ptr<EndDeviceStatus
     // k_u(t-1): previous assigned configuration index
     int k_prev = state.currentConfigIndex;
     
+    // FIX: Handle first packet specially
+    // On first packet (no LinkAdrReq sent yet), treat as SUCCESS to start
+    // binary search towards lower energy configurations.
+    bool isFirstPacket = !state.configSent;
+    
     int min_u, max_u;
     
     // Check if r_u(t) == k_u(t-1): received packet used assigned configuration
     bool success = ReceivedMatchesAssigned(status, state);
+    
+    // On first packet, treat as success to start optimizing
+    if (isFirstPacket)
+    {
+        success = true;
+        NS_LOG_INFO("ADR-Lite [First Packet]: Treating as SUCCESS to start binary search");
+    }
     
     if (success)
     {
@@ -511,7 +527,7 @@ AdrLiteComponent::AdrLiteImplementation(int* newConfigIndex, Ptr<EndDeviceStatus
     
     *newConfigIndex = k_new;
     
-    // Check if configuration actually changed
+    // Check if configuration actually changed or if first packet (need initial config)
     const Configuration& oldConfig = m_configurations[k_prev];
     const Configuration& newConfig = m_configurations[k_new];
     
@@ -521,7 +537,8 @@ AdrLiteComponent::AdrLiteImplementation(int* newConfigIndex, Ptr<EndDeviceStatus
         changed = changed || (std::abs(newConfig.txPowerDbm - oldConfig.txPowerDbm) > 0.1);
     }
     
-    return changed;
+    // Force downlink on first packet to configure device
+    return changed || isFirstPacket;
 }
 
 void

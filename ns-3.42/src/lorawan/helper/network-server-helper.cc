@@ -10,10 +10,8 @@
 
 #include "network-server-helper.h"
 
-#include "ns3/adr-component.h"
-#include "ns3/adr-lite-component.h"
-#include "ns3/double.h"
-#include "ns3/log.h"
+
+
 #include "ns3/network-controller-components.h"
 #include "ns3/point-to-point-channel.h"
 #include "ns3/simulator.h"

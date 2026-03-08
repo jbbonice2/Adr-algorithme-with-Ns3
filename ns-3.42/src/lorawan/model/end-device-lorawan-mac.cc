@@ -221,6 +221,10 @@ EndDeviceLorawanMac::DoSend(Ptr<Packet> packet)
             NS_LOG_WARN("Attempting to send a packet larger than the maximum allowed"
                         << " size at this Data Rate (DR" << unsigned(m_dataRate)
                         << "). Transmission canceled.");
+            // Clear pending MAC commands to prevent permanent deadlock:
+            // if MAC commands (e.g. LinkAdrAns) made the packet too large,
+            // they must be cleared so the next transmission attempt can succeed.
+            m_macCommandList.clear();
             return;
         }
 

@@ -647,10 +647,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o: \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/pcap-file-wrapper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/pcap-file-wrapper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/pcap-file.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-component.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-lite-component.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/network-controller-components.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/network-controller-components.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/point-to-point-channel.h \

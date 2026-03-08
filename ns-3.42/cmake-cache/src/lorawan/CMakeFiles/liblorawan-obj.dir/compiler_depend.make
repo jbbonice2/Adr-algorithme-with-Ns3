@@ -2631,8 +2631,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o: /home/
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.cc \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/abort.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/address.h \
-  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-component.h \
-  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-lite-component.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application-container.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/ascii-file.h \
@@ -2863,8 +2861,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o: /ho
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/warnings.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/watchdog.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.h \
-  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h \
-  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/class-a-end-device-lorawan-mac.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/end-device-lorawan-mac.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/end-device-status.h \
@@ -20688,7 +20684,11 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.o: /home/bonice/Docu
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/box.h:
 
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.h:
+
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.cc:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.cc:
 
@@ -20771,10 +20771,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.o: /home/bonice/Docu
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/gateway-status.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/end-device-status.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/wall-clock-synchronizer.h:
 
@@ -20968,8 +20964,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.o: /home/bonice/Docu
 
 /usr/include/c++/13/bits/stl_list.h:
 
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-lite-component.h:
-
 /usr/include/c++/13/bits/stl_algobase.h:
 
 /usr/include/c++/13/cstddef:
@@ -21019,10 +21013,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.o: /home/bonice/Docu
 /usr/include/c++/13/streambuf:
 
 /usr/include/c++/13/bits/requires_hosted.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/int64x64-double.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/shuffle.h:
 
@@ -21115,10 +21105,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.o: /home/bonice/Docu
 /usr/include/c++/13/bits/alloc_traits.h:
 
 /usr/include/c++/13/bits/unique_ptr.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/int64x64-128.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/log.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/periodic-sender.cc:
 
@@ -21672,6 +21658,10 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.o: /home/bonice/Docu
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/header.h:
 
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/int64x64-double.h:
+
 /usr/include/endian.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/output-stream-wrapper.h:
@@ -21946,8 +21936,6 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.o: /home/bonice/Docu
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
 
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-component.h:
-
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/system-wall-clock-ms.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/attribute-construction-list.h:
@@ -22071,6 +22059,10 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.o: /home/bonice/Docu
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lorawan-mac.cc:
 
 /usr/include/c++/13/bits/stl_numeric.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/log.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/int64x64-128.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/tuple.h:
 

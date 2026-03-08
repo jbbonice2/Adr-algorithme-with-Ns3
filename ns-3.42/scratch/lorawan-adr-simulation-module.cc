@@ -789,12 +789,18 @@ main(int argc, char* argv[])
 
         // Configure radio energy model (typical LoRa values)
         radioEnergyHelper.Set("StandbyCurrentA", DoubleValue(0.0014));
-        radioEnergyHelper.Set("TxCurrentA", DoubleValue(0.028));
+        radioEnergyHelper.Set("TxCurrentA", DoubleValue(0.028));  // Default, overridden by TxCurrentModel
         radioEnergyHelper.Set("SleepCurrentA", DoubleValue(0.0000015));
         radioEnergyHelper.Set("RxCurrentA", DoubleValue(0.0112));
 
-        radioEnergyHelper.SetTxCurrentModel("ns3::ConstantLoraTxCurrentModel",
-                                            "TxCurrent", DoubleValue(0.028));
+        // Use LinearLoraTxCurrentModel to calculate current based on TxPower
+        // Formula: I_tx = P_tx / (eta * V) + I_standby
+        // Where P_tx is in Watts (converted from dBm)
+        // This makes energy consumption proportional to transmission power
+        radioEnergyHelper.SetTxCurrentModel("ns3::LinearLoraTxCurrentModel",
+                                            "Eta", DoubleValue(0.38),           // PA efficiency
+                                            "Voltage", DoubleValue(3.3),        // Supply voltage
+                                            "StandbyCurrent", DoubleValue(0.0014));
 
         // Install source on end devices' nodes
         sources = basicSourceHelper.Install(endDevices);

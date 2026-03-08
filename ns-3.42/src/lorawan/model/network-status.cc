@@ -137,7 +137,7 @@ NetworkStatus::OnReceivedPacket(Ptr<const Packet> packet, const Address& gwAddre
     }
 
     // Print full info: per-packet + device MAC params (covers ADR-Lite and other ADR modes)
-    NS_LOG_UNCOND("NetworkStatus: RX packet from GW=" << gwAddress
+    NS_LOG_DEBUG("NetworkStatus: RX packet from GW=" << gwAddress
                   << " | PacketUID=" << packet->GetUid()
                   << " | DevAddr=" << edAddr
                   << " | SF=" << unsigned(pktSf)

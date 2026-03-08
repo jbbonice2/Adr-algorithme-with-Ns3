@@ -122,13 +122,13 @@ AdrComponent::BeforeSendingReply(Ptr<EndDeviceStatus> status, Ptr<NetworkStatus>
 
     // Log device communication parameters and last received packet info for visibility
     LoraDeviceAddress devAddr = fHdr.GetAddress();
-    NS_LOG_UNCOND("AdrComponent: Preparing reply for device " << devAddr);
-    NS_LOG_UNCOND("AdrComponent: Device reported SF=" << unsigned(status->GetFirstReceiveWindowSpreadingFactor())
+    NS_LOG_DEBUG("AdrComponent: Preparing reply for device " << devAddr);
+    NS_LOG_DEBUG("AdrComponent: Device reported SF=" << unsigned(status->GetFirstReceiveWindowSpreadingFactor())
                   << " | RX1 Freq=" << status->GetFirstReceiveWindowFrequency() << " Hz");
     Ptr<ClassAEndDeviceLorawanMac> macPtr = status->GetMac();
     if (macPtr)
     {
-        NS_LOG_UNCOND("AdrComponent: Device MAC params: TxPower=" << macPtr->GetTransmissionPowerDbm()
+        NS_LOG_DEBUG("AdrComponent: Device MAC params: TxPower=" << macPtr->GetTransmissionPowerDbm()
                       << " dBm | CodingRate=" << unsigned(macPtr->GetCodingRate())
                       << " | NextTxFreq=" << macPtr->GetNextTxChannelFrequency() << " Hz");
     }
@@ -147,14 +147,14 @@ AdrComponent::BeforeSendingReply(Ptr<EndDeviceStatus> status, Ptr<NetworkStatus>
             pktDr = pktTag.GetDataRate();
         }
     }
-    NS_LOG_UNCOND("AdrComponent: Last received packet info: pkt SF=" << unsigned(lastInfo.sf)
+    NS_LOG_DEBUG("AdrComponent: Last received packet info: pkt SF=" << unsigned(lastInfo.sf)
                   << " | pkt Freq=" << lastInfo.frequencyHz << " Hz"
                   << " | DataRate=" << unsigned(pktDr)
                   << " | PacketSize=" << pktSize << " bytes"
                   << " | gwCount=" << lastInfo.gwList.size());
     for (auto&& gw : lastInfo.gwList)
     {
-        NS_LOG_UNCOND("  Gateway " << gw.first << " rxPower=" << gw.second.rxPower << " dBm");
+        NS_LOG_DEBUG("  Gateway " << gw.first << " rxPower=" << gw.second.rxPower << " dBm");
     }
 
     // Execute the Adaptive Data Rate (ADR) algorithm only if the request bit is set
@@ -165,80 +165,115 @@ AdrComponent::BeforeSendingReply(Ptr<EndDeviceStatus> status, Ptr<NetworkStatus>
             /////////////////////////////
             // ADR-Lite (binary search) //
             /////////////////////////////
-            NS_LOG_DEBUG("ADR-Lite: New request from device " << fHdr.GetAddress());
 
-            // Lazily build the configuration space on first use
+            LoraDeviceAddress deviceAddress = fHdr.GetAddress();
+
+            // Lazily build the configuration space on first use,
+            // using observed payload to exclude DRs that can't
+            // carry the payload + MAC command overhead
             if (m_liteConfigurations.empty())
             {
+                m_liteObservedPayloadBytes = myPacket->GetSize();
+                NS_LOG_INFO("ADR-Lite: Observed app payload size = "
+                            << m_liteObservedPayloadBytes << " bytes");
                 InitializeLiteConfigurationSpace();
             }
 
-            LoraDeviceAddress deviceAddress = fHdr.GetAddress();
             DeviceAdrLiteState& state = GetDeviceLiteState(deviceAddress);
 
+            // =========================================================
+            // Step 1: Algorithm 1 binary search for SF
+            // =========================================================
+            int newConfigIndex;
+            AdrLiteImplementation(&newConfigIndex, status, state);
+            state.currentConfigIndex = newConfigIndex;
+
+            const LiteConfiguration& newCfg = m_liteConfigurations[newConfigIndex];
+            uint8_t newSf = newCfg.sf;
+            uint8_t newDr = SfToDr(newSf);
+
+            // =========================================================
+            // Step 2: TxPower optimization from SNR margin
+            //
+            // ADR-Lite advantage: no 20-packet history required.
+            // Use the LAST received packet's SNR to compute optimal TP.
+            // This reduces interference from the FIRST downlink,
+            // unlike standard ADR which waits for 20 packets.
+            // =========================================================
             uint8_t currentSf = status->GetFirstReceiveWindowSpreadingFactor();
             double currentTxPower = status->GetMac()->GetTransmissionPowerDbm();
+            double newTxPower = currentTxPower;
 
-            int newConfigIndex;
-            int oldConfigIndex = state.currentConfigIndex;
-            bool changed = AdrLiteImplementation(&newConfigIndex, status);
-
-            if (changed)
+            // Get SNR from the last received packet
+            EndDeviceStatus::ReceivedPacketInfo lastPktInfo =
+                status->GetLastReceivedPacketInfo();
+            if (!lastPktInfo.gwList.empty())
             {
-                const LiteConfiguration& newCfg = m_liteConfigurations[newConfigIndex];
+                double rxPower = GetReceivedPower(lastPktInfo.gwList);
+                double snr = RxPowerToSNR(rxPower);
+                double reqSnr = threshold[newDr];
+                double margin = snr - reqSnr;
 
-                // Update device state for next iteration
-                state.currentConfigIndex = newConfigIndex;
-                state.lastAssignedSf = newCfg.sf;
-                state.lastAssignedTxPower = newCfg.txPowerDbm;
-                state.lastAssignedCF = newCfg.channelFreq;
-                state.lastAssignedCR = newCfg.codingRate;
+                // Use margin to reduce TxPower (same logic as standard ADR).
+                // Each step = 3dB SNR margin = 2dBm TxPower reduction.
+                int steps = std::floor(margin / 3);
 
-                uint8_t newDr = SfToDr(newCfg.sf);
-                double newTxPowerDbm = m_toggleTxPower ? newCfg.txPowerDbm : currentTxPower;
-
-                // CF_k: channel control
-                std::list<int> enabledChannels;
-                if (m_toggleChannel)
+                // Spend steps on TxPower reduction only
+                // (SF is already handled by binary search)
+                newTxPower = currentTxPower;
+                while (steps > 0 && newTxPower > min_transmissionPower)
                 {
-                    enabledChannels.push_back(newCfg.channelFreq);
+                    newTxPower -= 2;
+                    steps--;
                 }
-                else
+                while (steps < 0 && newTxPower < max_transmissionPower)
                 {
-                    int channels[] = {0, 1, 2};
-                    enabledChannels = std::list<int>(channels, channels + 3);
-                }
-
-                // CR_k: coding rate control
-                if (m_toggleCodingRate)
-                {
-                    Ptr<EndDeviceLorawanMac> edMac =
-                        DynamicCast<EndDeviceLorawanMac>(status->GetMac());
-                    if (edMac)
-                    {
-                        edMac->SetCodingRate(newCfg.codingRate);
-                    }
+                    newTxPower += 2;
+                    steps++;
                 }
 
-                const int rep = 1;
+                NS_LOG_DEBUG("ADR-Lite: SNR=" << snr << " reqSNR=" << reqSnr
+                             << " margin=" << margin
+                             << " TP: " << currentTxPower << "->" << newTxPower << "dBm");
+            }
+
+            if (!m_toggleTxPower)
+            {
+                newTxPower = currentTxPower;
+            }
+
+            // =========================================================
+            // Step 3: Send downlink only if SF or TP actually changed
+            // =========================================================
+            bool sfChanged = (newSf != currentSf);
+            bool tpChanged = (newTxPower != currentTxPower);
+
+            if (sfChanged || tpChanged)
+            {
+                int channels[] = {0, 1, 2};
+                std::list<int> enabledChannels(channels, channels + 3);
 
                 NS_LOG_DEBUG("ADR-Lite: LinkAdrReq DR=" << (unsigned)newDr
-                             << " TP=" << newTxPowerDbm << "dBm"
-                             << " CF=" << (int)newCfg.channelFreq
-                             << " CR=" << (int)newCfg.codingRate
-                             << " k_u: " << oldConfigIndex << "->" << newConfigIndex);
+                             << " SF" << (int)newSf
+                             << " TP=" << newTxPower << "dBm"
+                             << " (sfChg=" << sfChanged
+                             << " tpChg=" << tpChanged << ")");
 
-                status->m_reply.frameHeader.AddLinkAdrReq(newDr,
-                                                          GetTxPowerIndexLite(newTxPowerDbm),
-                                                          enabledChannels,
-                                                          rep);
+                status->m_reply.frameHeader.AddLinkAdrReq(
+                    newDr,
+                    GetTxPowerIndexLite(newTxPower),
+                    enabledChannels,
+                    1);
                 status->m_reply.frameHeader.SetAsDownlink();
-                status->m_reply.macHeader.SetMType(LorawanMacHeader::UNCONFIRMED_DATA_DOWN);
+                status->m_reply.macHeader.SetMType(
+                    LorawanMacHeader::UNCONFIRMED_DATA_DOWN);
                 status->m_reply.needsReply = true;
             }
             else
             {
-                NS_LOG_DEBUG("ADR-Lite: No change for device " << deviceAddress);
+                NS_LOG_DEBUG("ADR-Lite: No change needed for device "
+                             << deviceAddress << " (SF" << (int)newSf
+                             << " TP=" << newTxPower << "dBm)");
             }
         }
         else
@@ -317,27 +352,9 @@ AdrComponent::OnFailedReply(Ptr<EndDeviceStatus> status, Ptr<NetworkStatus> netw
 {
     NS_LOG_FUNCTION(this->GetTypeId() << networkStatus);
 
-    if (m_useAdrLite)
-    {
-        // ADR-Lite: move towards more robust config on failed reply
-        LoraDeviceAddress deviceAddress = status->m_endDeviceAddress;
-        auto it = m_deviceLiteStates.find(deviceAddress);
-        if (it != m_deviceLiteStates.end())
-        {
-            DeviceAdrLiteState& state = it->second;
-            int newIndex = (state.currentConfigIndex + m_liteMaxConfigIndex) / 2;
-            newIndex = std::min(newIndex + 1, m_liteMaxConfigIndex);
-
-            NS_LOG_WARN("ADR-Lite: Reply failed for device " << deviceAddress
-                        << " | config " << state.currentConfigIndex << " -> " << newIndex);
-
-            state.currentConfigIndex = newIndex;
-            state.lastAssignedSf = m_liteConfigurations[newIndex].sf;
-            state.lastAssignedTxPower = m_liteConfigurations[newIndex].txPowerDbm;
-            state.lastAssignedCF = m_liteConfigurations[newIndex].channelFreq;
-            state.lastAssignedCR = m_liteConfigurations[newIndex].codingRate;
-        }
-    }
+    // ADR-Lite: No special handling on failed reply per Algorithm 1.
+    // The binary search naturally recovers when the next uplink is received:
+    // if ru(t) != ku(t-1), the search moves toward more robust configs.
 }
 
 void
@@ -623,50 +640,68 @@ AdrComponent::InitializeLiteConfigurationSpace()
 
     m_liteConfigurations.clear();
 
-    // EU868 TxPower levels (dBm)
-    std::vector<double> txPowerLevels = {14, 12, 10, 8, 6, 4, 2};
-    // Channel frequency indices (EU868 mandatory)
-    std::vector<uint8_t> channelIndices = {0, 1, 2};
-    // Coding rates: 1=4/5, 2=4/6, 3=4/7, 4=4/8
-    std::vector<uint8_t> codingRates = {1, 2, 3, 4};
+    // ===========================================================
+    // ADR-Lite Configuration Space: I_k = {SF_k, TP_k}
+    //
+    // Binary search on SF only. TP is kept at device's current
+    // value to avoid reducing power to unreachable levels.
+    //
+    // Only include SFs whose DR can carry the application payload
+    // + MAC command overhead (LinkAdrAns = 2 bytes).
+    // EU868 maxMACPayload: DR0-DR2 (SF12-SF10) = 59 bytes,
+    //                      DR3 (SF9) = 123 bytes,
+    //                      DR4-DR5 (SF8-SF7) = 230 bytes.
+    // This ensures ADR-Lite never assigns a DR that would cause
+    // packet overflow, matching standard ADR's implicit behavior.
+    //
+    // Sorted ascending by EC: lowest SF first → highest SF last
+    // ===========================================================
 
+    // EU868 max MACPayload per DR (index = DR number)
+    const std::vector<uint32_t> maxPayloadPerDr = {59, 59, 59, 123, 230, 230, 230, 230};
+
+    // Estimate worst-case frame header size with MAC command responses
+    // Normal frame header: 8 bytes (DevAddr=4 + FCtrl=1 + FCnt=2 + FPort=1)
+    // With LinkAdrAns:     10 bytes (+2 bytes for the MAC command)
+    const uint32_t macOverhead = 10;
+
+    const double refTp = 14.0;
     for (uint8_t sf = 7; sf <= 12; ++sf)
     {
-        for (double txPower : txPowerLevels)
+        uint8_t dr = SfToDr(sf);
+        uint32_t maxPayload = maxPayloadPerDr.at(dr);
+
+        // Check if the observed payload + MAC overhead fits at this DR
+        if (m_liteObservedPayloadBytes + macOverhead > maxPayload)
         {
-            for (uint8_t cf : channelIndices)
-            {
-                for (uint8_t cr : codingRates)
-                {
-                    LiteConfiguration config;
-                    config.sf = sf;
-                    config.txPowerDbm = txPower;
-                    config.channelFreq = cf;
-                    config.codingRate = cr;
-                    config.energyIndex = CalculateEnergyIndex(sf, txPower, cr);
-                    m_liteConfigurations.push_back(config);
-                }
-            }
+            NS_LOG_INFO("ADR-Lite: Excluding SF" << (int)sf
+                        << " (DR" << (int)dr << "): payload+overhead "
+                        << m_liteObservedPayloadBytes + macOverhead
+                        << " > maxMACPayload " << maxPayload);
+            continue;
         }
+
+        LiteConfiguration config;
+        config.sf = sf;
+        config.txPowerDbm = refTp;
+        config.channelFreq = 0;
+        config.codingRate = 1;
+        config.energyIndex = CalculateEnergyIndex(sf, refTp, 1);
+        m_liteConfigurations.push_back(config);
     }
 
-    // Sort ascending by energy consumption
-    std::sort(m_liteConfigurations.begin(), m_liteConfigurations.end());
-
+    // Already sorted by SF ascending = EC ascending
     m_liteMinConfigIndex = 0;
     m_liteMaxConfigIndex = static_cast<int>(m_liteConfigurations.size()) - 1;
 
     NS_LOG_INFO("ADR-Lite: Initialized |K|=" << m_liteConfigurations.size()
-                << " configurations (6 SF x 7 TP x 3 CF x 4 CR)");
-    NS_LOG_INFO("ADR-Lite: I_1 (min EC): SF" << (int)m_liteConfigurations[0].sf
-                << " TP=" << m_liteConfigurations[0].txPowerDbm << "dBm"
-                << " CF=" << (int)m_liteConfigurations[0].channelFreq
-                << " CR=" << (int)m_liteConfigurations[0].codingRate);
-    NS_LOG_INFO("ADR-Lite: I_|K| (max EC): SF"
-                << (int)m_liteConfigurations[m_liteMaxConfigIndex].sf
-                << " TP=" << m_liteConfigurations[m_liteMaxConfigIndex].txPowerDbm << "dBm"
-                << " CF=" << (int)m_liteConfigurations[m_liteMaxConfigIndex].channelFreq
-                << " CR=" << (int)m_liteConfigurations[m_liteMaxConfigIndex].codingRate);
+                << " safe configurations");
+    for (size_t i = 0; i < m_liteConfigurations.size(); ++i)
+    {
+        NS_LOG_INFO("ADR-Lite: I_" << i << ": SF" << (int)m_liteConfigurations[i].sf
+                    << " (DR" << (int)SfToDr(m_liteConfigurations[i].sf)
+                    << ") EC=" << m_liteConfigurations[i].energyIndex);
+    }
 }
 
 double
@@ -702,25 +737,24 @@ AdrComponent::GetDeviceLiteState(LoraDeviceAddress deviceAddress)
     auto it = m_deviceLiteStates.find(deviceAddress);
     if (it == m_deviceLiteStates.end())
     {
-        // k_u(0) = |K|-1 (most robust config, 0-based indexing)
+        // =====================================================
+        // Algorithm 1, line 8: ku(0) = |K|
+        // Initialize to highest energy (most robust) config
+        // =====================================================
         DeviceAdrLiteState newState;
-        newState.currentConfigIndex = m_liteMaxConfigIndex;
-        newState.initialized = true;
-
-        const LiteConfiguration& initCfg = m_liteConfigurations[m_liteMaxConfigIndex];
-        newState.lastAssignedSf = initCfg.sf;
-        newState.lastAssignedTxPower = initCfg.txPowerDbm;
-        newState.lastAssignedCF = initCfg.channelFreq;
-        newState.lastAssignedCR = initCfg.codingRate;
+        newState.currentConfigIndex = 0;  // Placeholder; set to ru(0) on first uplink
+        newState.initialized = false;
+        newState.lastSentConfigIndex = -1;
+        newState.awaitingAck = false;
+        newState.lastAssignedSf = 7;
+        newState.lastAssignedTxPower = 14;
+        newState.lastAssignedCF = 0;
+        newState.lastAssignedCR = 1;
 
         m_deviceLiteStates[deviceAddress] = newState;
 
-        NS_LOG_INFO("ADR-Lite: New device " << deviceAddress
-                    << " k_u(0)=" << m_liteMaxConfigIndex
-                    << " SF" << (int)newState.lastAssignedSf
-                    << " TP=" << newState.lastAssignedTxPower << "dBm"
-                    << " CF=" << (int)newState.lastAssignedCF
-                    << " CR=" << (int)newState.lastAssignedCR);
+        NS_LOG_DEBUG("ADR-Lite: New device " << deviceAddress
+                     << " state created (will init ku(0) on first uplink)");
     }
     return m_deviceLiteStates[deviceAddress];
 }
@@ -729,114 +763,116 @@ bool
 AdrComponent::ReceivedMatchesAssigned(Ptr<EndDeviceStatus> status,
                                       const DeviceAdrLiteState& state) const
 {
-    uint8_t receivedSf = status->GetFirstReceiveWindowSpreadingFactor();
-    double receivedTxPower = status->GetMac()->GetTransmissionPowerDbm();
-
+    // =====================================================
+    // Algorithm 1, line 12: Check if ru(t) == ku(t-1)
+    // ADR-Lite only controls SF, so we compare SF only
+    // =====================================================
+    
+    uint8_t rxSf = status->GetFirstReceiveWindowSpreadingFactor();
     const LiteConfiguration& assigned = m_liteConfigurations[state.currentConfigIndex];
 
-    bool sfMatch = (receivedSf == assigned.sf);
-    bool tpMatch = (std::abs(receivedTxPower - assigned.txPowerDbm) < 0.1);
+    bool match = (rxSf == assigned.sf);
 
-    bool cfMatch = false;
-    bool crMatch = true;
+    NS_LOG_DEBUG("ADR-Lite [Check ru==ku]: rxSF=" << (int)rxSf 
+                 << " | assigned SF=" << (int)assigned.sf 
+                 << " | match=" << match);
 
-    // Determine received channel index by matching received frequency (Hz)
-    uint32_t receivedFreqHz = status->GetLastReceivedPacketInfo().frequencyHz;
-    Ptr<LorawanMac> mac = status->GetMac();
-    if (mac)
-    {
-        Ptr<LogicalLoraChannelHelper> helper = mac->GetLogicalLoraChannelHelper();
-        if (helper)
-        {
-            auto channels = helper->GetRawChannelArray();
-            for (size_t i = 0; i < channels.size(); ++i)
-            {
-                Ptr<LogicalLoraChannel> ch = channels.at(i);
-                if (ch && static_cast<uint32_t>(ch->GetFrequency()) == receivedFreqHz)
-                {
-                    cfMatch = (static_cast<uint8_t>(i) == assigned.channelFreq);
-                    break;
-                }
-            }
-        }
-    }
-
-    if (m_toggleCodingRate)
-    {
-        Ptr<EndDeviceLorawanMac> edMac =
-            DynamicCast<EndDeviceLorawanMac>(status->GetMac());
-        if (edMac)
-        {
-            crMatch = (edMac->GetCodingRate() == assigned.codingRate);
-        }
-    }
-
-    NS_LOG_DEBUG("ADR-Lite: Rx SF" << (int)receivedSf << " TP=" << receivedTxPower
-                 << " | Assigned SF" << (int)assigned.sf << " TP=" << assigned.txPowerDbm
-                 << " CF=" << (int)assigned.channelFreq << " CR=" << (int)assigned.codingRate
-                 << " | match=" << (sfMatch && tpMatch && cfMatch && crMatch));
-
-    return sfMatch &&
-           (tpMatch || !m_toggleTxPower) &&
-           (cfMatch || !m_toggleChannel) &&
-           (crMatch || !m_toggleCodingRate);
+    return match;
 }
 
-bool
-AdrComponent::AdrLiteImplementation(int* newConfigIndex, Ptr<EndDeviceStatus> status)
+int
+AdrComponent::FindConfigIndex(uint8_t sf, double txPowerDbm) const
 {
+    // Config space is SF-only (SF7=index 0, SF12=index 5)
+    // Find the config matching this SF
+    for (size_t i = 0; i < m_liteConfigurations.size(); ++i)
+    {
+        if (m_liteConfigurations[i].sf == sf)
+        {
+            return static_cast<int>(i);
+        }
+    }
+    // Default: return highest index (most robust)
+    return m_liteMaxConfigIndex;
+}
+
+void
+AdrComponent::AdrLiteImplementation(int* newConfigIndex, 
+                                    Ptr<EndDeviceStatus> status,
+                                    DeviceAdrLiteState& state)
+{
+    // =====================================================
+    // Algorithm 1: ADR-Lite on NS
+    //
+    // Input:  ku(t-1) = state.currentConfigIndex
+    //         ru(t)   = config index from device's last uplink
+    // Output: ku(t)   = *newConfigIndex
+    //
+    // Initialization: ku(0) = ru(0)
+    //   Start from the device's observed config so we don't
+    //   push devices to high SFs unnecessarily.
+    //
+    // K = {I_0, I_1, ..., I_|K|-1} sorted ascending by EC
+    //   I_0 = SF7  (lowest energy, least robust)
+    //   I_{|K|-1} = most robust config in space
+    // =====================================================
     NS_LOG_FUNCTION(this << status);
 
-    LoraDeviceAddress deviceAddress = status->m_endDeviceAddress;
-    DeviceAdrLiteState& state = GetDeviceLiteState(deviceAddress);
+    // --- ru(t): config index observed from device's last uplink ---
+    uint8_t rxSf = status->GetFirstReceiveWindowSpreadingFactor();
+    int ru = FindConfigIndex(rxSf, status->GetMac()->GetTransmissionPowerDbm());
 
-    int k_prev = state.currentConfigIndex;
+    // --- ku(t-1): previously assigned config index ---
+    int ku_prev = state.currentConfigIndex;
+
+    // =====================================================
+    // Initialization: ku(0) = ru(0)
+    // On first contact, set ku to the device's current config.
+    // This avoids unnecessary SF changes for devices already
+    // at optimal SF, while the binary search naturally adapts
+    // if the environment changes (ru != ku on future packets).
+    // =====================================================
+    if (!state.initialized)
+    {
+        ku_prev = ru;
+        state.currentConfigIndex = ru;
+        state.initialized = true;
+        NS_LOG_INFO("ADR-Lite [Init]: ku(0)=ru(0)=" << ru
+                    << " (SF" << (int)rxSf << ")");
+    }
+
+    // =====================================================
+    // Lines 12-17: Determine binary search bounds
+    // =====================================================
     int min_u, max_u;
 
-    bool success = ReceivedMatchesAssigned(status, state);
-
-    if (success)
+    if (ru == ku_prev)
     {
-        // r_u(t) == k_u(t-1): search lower energy
-        min_u = m_liteMinConfigIndex;
-        max_u = k_prev;
-        NS_LOG_DEBUG("ADR-Lite: SUCCESS min_u=" << min_u << " max_u=" << max_u);
+        // ru(t) == ku(t-1): device used assigned config
+        // -> Search toward LOWER energy (more efficient)
+        min_u = 0;
+        max_u = ku_prev;
     }
     else
     {
-        // r_u(t) != k_u(t-1): search higher energy / more robust
-        min_u = k_prev;
+        // ru(t) != ku(t-1): device did NOT use assigned config
+        // -> Search toward HIGHER energy (more robust)
+        min_u = ku_prev;
         max_u = m_liteMaxConfigIndex;
-        NS_LOG_DEBUG("ADR-Lite: FAILURE min_u=" << min_u << " max_u=" << max_u);
     }
 
-    // k_u(t) = floor((max_u + min_u) / 2)
-    int k_new = (max_u + min_u) / 2;
-    k_new = std::max(m_liteMinConfigIndex, std::min(m_liteMaxConfigIndex, k_new));
+    // =====================================================
+    // Line 19: ku(t) = floor((max_u + min_u) / 2)
+    // =====================================================
+    int ku_new = (max_u + min_u) / 2;
 
-    NS_LOG_INFO("ADR-Lite: k_u(t) = floor((" << max_u << "+" << min_u
-                << ")/2) = " << k_new << "  k_u(t-1)=" << k_prev);
+    NS_LOG_DEBUG("ADR-Lite: ru=" << ru << " (SF" << (int)rxSf
+                << ") ku(t-1)=" << ku_prev
+                << " -> [" << min_u << "," << max_u
+                << "] -> ku(t)=" << ku_new
+                << " (SF" << (int)m_liteConfigurations[ku_new].sf << ")");
 
-    *newConfigIndex = k_new;
-
-    const LiteConfiguration& oldCfg = m_liteConfigurations[k_prev];
-    const LiteConfiguration& newCfg = m_liteConfigurations[k_new];
-
-    bool changed = (newCfg.sf != oldCfg.sf);
-    if (m_toggleTxPower)
-    {
-        changed = changed || (std::abs(newCfg.txPowerDbm - oldCfg.txPowerDbm) > 0.1);
-    }
-    if (m_toggleCodingRate)
-    {
-        changed = changed || (newCfg.codingRate != oldCfg.codingRate);
-    }
-    if (m_toggleChannel)
-    {
-        changed = changed || (newCfg.channelFreq != oldCfg.channelFreq);
-    }
-
-    return changed;
+    *newConfigIndex = ku_new;
 }
 
 uint8_t

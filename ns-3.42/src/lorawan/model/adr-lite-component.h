@@ -96,6 +96,7 @@ class AdrLiteComponent : public NetworkControllerComponent
         int currentConfigIndex;      //!< k_u(t-1): Current assigned configuration index
         int lastReceivedConfigIndex; //!< r_u(t): Config index of last received packet
         bool initialized;            //!< Whether the device has been initialized
+        bool configSent;             //!< Whether any LinkAdrReq has been sent to device
         uint8_t lastAssignedSf;      //!< Last assigned SF_k
         double lastAssignedTxPower;  //!< Last assigned TP_k
         uint8_t lastAssignedCF;      //!< Last assigned CF_k (channel index)
