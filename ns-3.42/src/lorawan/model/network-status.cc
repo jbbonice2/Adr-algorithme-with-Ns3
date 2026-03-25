@@ -231,7 +231,7 @@ NetworkStatus::GetReplyForDevice(LoraDeviceAddress edAddress, int windowNumber)
         break;
     }
     // Log reply parameters that network server will use
-    // Also fetch device MAC params (Tx power, coding rate) to include in server log
+    // Also fetch device MAC params (Tx power, ) to include in server log
     double devTxPower = 0.0;
     uint8_t devCodingRate = 0;
     uint32_t devNextTxFreq = 0;

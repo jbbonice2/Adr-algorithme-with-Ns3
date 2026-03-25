@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -190,6 +200,20 @@ libdsdv/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsdv/CMakeFiles/libdsdv.dir/build.make src/dsdv/CMakeFiles/libdsdv.dir/build
 .PHONY : libdsdv/fast
 
+# Convenience name for target.
+src/dsdv/CMakeFiles/libdsdv-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/dsdv/CMakeFiles/libdsdv-test.dir/rule
+.PHONY : src/dsdv/CMakeFiles/libdsdv-test.dir/rule
+
+# Convenience name for target.
+libdsdv-test: src/dsdv/CMakeFiles/libdsdv-test.dir/rule
+.PHONY : libdsdv-test
+
+# fast build rule for target.
+libdsdv-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsdv/CMakeFiles/libdsdv-test.dir/build.make src/dsdv/CMakeFiles/libdsdv-test.dir/build
+.PHONY : libdsdv-test/fast
+
 helper/dsdv-helper.o: helper/dsdv-helper.cc.o
 .PHONY : helper/dsdv-helper.o
 
@@ -310,6 +334,30 @@ model/dsdv-rtable.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsdv/CMakeFiles/libdsdv-obj.dir/build.make src/dsdv/CMakeFiles/libdsdv-obj.dir/model/dsdv-rtable.cc.s
 .PHONY : model/dsdv-rtable.cc.s
 
+test/dsdv-testcase.o: test/dsdv-testcase.cc.o
+.PHONY : test/dsdv-testcase.o
+
+# target to build an object file
+test/dsdv-testcase.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsdv/CMakeFiles/libdsdv-test.dir/build.make src/dsdv/CMakeFiles/libdsdv-test.dir/test/dsdv-testcase.cc.o
+.PHONY : test/dsdv-testcase.cc.o
+
+test/dsdv-testcase.i: test/dsdv-testcase.cc.i
+.PHONY : test/dsdv-testcase.i
+
+# target to preprocess a source file
+test/dsdv-testcase.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsdv/CMakeFiles/libdsdv-test.dir/build.make src/dsdv/CMakeFiles/libdsdv-test.dir/test/dsdv-testcase.cc.i
+.PHONY : test/dsdv-testcase.cc.i
+
+test/dsdv-testcase.s: test/dsdv-testcase.cc.s
+.PHONY : test/dsdv-testcase.s
+
+# target to generate assembly for a file
+test/dsdv-testcase.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsdv/CMakeFiles/libdsdv-test.dir/build.make src/dsdv/CMakeFiles/libdsdv-test.dir/test/dsdv-testcase.cc.s
+.PHONY : test/dsdv-testcase.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -322,8 +370,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... libdsdv"
 	@echo "... libdsdv-obj"
+	@echo "... libdsdv-test"
 	@echo "... helper/dsdv-helper.o"
 	@echo "... helper/dsdv-helper.i"
 	@echo "... helper/dsdv-helper.s"
@@ -339,6 +389,9 @@ help:
 	@echo "... model/dsdv-rtable.o"
 	@echo "... model/dsdv-rtable.i"
 	@echo "... model/dsdv-rtable.s"
+	@echo "... test/dsdv-testcase.o"
+	@echo "... test/dsdv-testcase.i"
+	@echo "... test/dsdv-testcase.s"
 .PHONY : help
 
 

@@ -19,6 +19,7 @@
 #include "ns3/log.h"
 #include "ns3/object.h"
 #include "ns3/packet.h"
+#include "ns3/traced-callback.h"
 
 #include <map>
 #include <vector>
@@ -220,6 +221,13 @@ class AdrComponent : public NetworkControllerComponent
         int consecutiveSuccesses;    //!< Counter for consecutive successful receptions
         int consecutiveFailures;     //!< Counter for consecutive failures
         
+        // Enhanced PDR tracking fields
+        int totalPacketsReceived;    //!< Total packets received from this device
+        int recentSuccesses;         //!< Recent successes for sliding window
+        int recentTotal;             //!< Recent total for sliding window
+        int recoveryHoldCounter;     //!< Hold counter after failure recovery
+        int lastOptimizationIndex;   //!< Last config index after optimization
+        
         // Downlink tracking to avoid repeated downlinks for same config
         int lastSentConfigIndex;     //!< Last config index sent via downlink (-1 = never sent)
         bool awaitingAck;            //!< Waiting for device to apply the sent config
@@ -290,12 +298,40 @@ class AdrComponent : public NetworkControllerComponent
     int FindConfigIndex(uint8_t sf, double txPowerDbm) const;
 
     /**
+     * Find the configuration index that best matches all 4 parameters.
+     * This is used to determine rᵤ(t) from the received packet.
+     *
+     * @param sf Spreading factor (7-12)
+     * @param txPowerDbm Transmission power in dBm
+     * @param channelIndex Channel frequency index (0, 1, 2)
+     * @param codingRate Coding rate (1=4/5, 4=4/8)
+     * @return Index in m_liteConfigurations (closest match)
+     */
+    int FindConfigIndexFull(uint8_t sf, double txPowerDbm, uint8_t channelIndex, uint8_t codingRate) const;
+
+    /**
      * Convert TxPower dBm to TxPowerIndex for ADR-Lite (allows odd values).
      *
      * @param txPowerDbm Power in dBm
      * @return TxPower index (0-7)
      */
     uint8_t GetTxPowerIndexLite(double txPowerDbm) const;
+
+    /**
+     * Get channel frequency in Hz from channel index.
+     *
+     * @param channelIndex Channel index (0, 1, 2 for EU868 mandatory channels)
+     * @return Frequency in Hz
+     */
+    uint32_t GetChannelFrequencyHz(uint8_t channelIndex) const;
+
+    /**
+     * Get channel index from frequency in Hz.
+     *
+     * @param frequencyHz Frequency in Hz
+     * @return Channel index (0, 1, 2 for EU868 mandatory channels)
+     */
+    uint8_t GetChannelIndexFromFrequency(uint32_t frequencyHz) const;
 
     //////////////////////////////////////////
     // Standard ADR member variables
@@ -343,6 +379,27 @@ class AdrComponent : public NetworkControllerComponent
     const int m_litePayloadBytes = 20;     //!< Default payload size for ToA ordering
     const bool m_liteHeaderEnabled = true; //!< Explicit header mode
     uint32_t m_liteObservedPayloadBytes{50}; //!< Observed app payload from first uplink
+
+    //////////////////////////////////////////
+    // TracedCallbacks for ADR monitoring
+    //////////////////////////////////////////
+
+    /**
+     * TracedCallback signature for ADR downlink sent.
+     * Fired when a LinkAdrReq MAC command is added to a reply.
+     *
+     * @param deviceAddress The end device address (as uint32_t for trace compatibility)
+     * @param oldDr Previous data rate (DR0-DR5)
+     * @param newDr New data rate being assigned
+     * @param oldTxPower Previous transmission power (dBm)
+     * @param newTxPower New transmission power being assigned (dBm)
+     * @param oldCF Previous channel frequency index
+     * @param newCF New channel frequency index being assigned
+     * @param oldCR Previous coding rate
+     * @param newCR New coding rate being assigned
+     * @param algorithmType ADR algorithm type: 0=Standard, 1=ADR-Lite
+     */
+    TracedCallback<uint32_t, uint8_t, uint8_t, double, double, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t> m_adrDownlinkSent;
 };
 } // namespace lorawan
 } // namespace ns3

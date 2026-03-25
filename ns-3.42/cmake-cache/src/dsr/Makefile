@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -189,6 +199,20 @@ libdsr: src/dsr/CMakeFiles/libdsr.dir/rule
 libdsr/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsr/CMakeFiles/libdsr.dir/build.make src/dsr/CMakeFiles/libdsr.dir/build
 .PHONY : libdsr/fast
+
+# Convenience name for target.
+src/dsr/CMakeFiles/libdsr-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/dsr/CMakeFiles/libdsr-test.dir/rule
+.PHONY : src/dsr/CMakeFiles/libdsr-test.dir/rule
+
+# Convenience name for target.
+libdsr-test: src/dsr/CMakeFiles/libdsr-test.dir/rule
+.PHONY : libdsr-test
+
+# fast build rule for target.
+libdsr-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsr/CMakeFiles/libdsr-test.dir/build.make src/dsr/CMakeFiles/libdsr-test.dir/build
+.PHONY : libdsr-test/fast
 
 helper/dsr-helper.o: helper/dsr-helper.cc.o
 .PHONY : helper/dsr-helper.o
@@ -526,6 +550,30 @@ model/dsr-rsendbuff.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsr/CMakeFiles/libdsr-obj.dir/build.make src/dsr/CMakeFiles/libdsr-obj.dir/model/dsr-rsendbuff.cc.s
 .PHONY : model/dsr-rsendbuff.cc.s
 
+test/dsr-test-suite.o: test/dsr-test-suite.cc.o
+.PHONY : test/dsr-test-suite.o
+
+# target to build an object file
+test/dsr-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsr/CMakeFiles/libdsr-test.dir/build.make src/dsr/CMakeFiles/libdsr-test.dir/test/dsr-test-suite.cc.o
+.PHONY : test/dsr-test-suite.cc.o
+
+test/dsr-test-suite.i: test/dsr-test-suite.cc.i
+.PHONY : test/dsr-test-suite.i
+
+# target to preprocess a source file
+test/dsr-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsr/CMakeFiles/libdsr-test.dir/build.make src/dsr/CMakeFiles/libdsr-test.dir/test/dsr-test-suite.cc.i
+.PHONY : test/dsr-test-suite.cc.i
+
+test/dsr-test-suite.s: test/dsr-test-suite.cc.s
+.PHONY : test/dsr-test-suite.s
+
+# target to generate assembly for a file
+test/dsr-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/dsr/CMakeFiles/libdsr-test.dir/build.make src/dsr/CMakeFiles/libdsr-test.dir/test/dsr-test-suite.cc.s
+.PHONY : test/dsr-test-suite.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -538,8 +586,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... libdsr"
 	@echo "... libdsr-obj"
+	@echo "... libdsr-test"
 	@echo "... helper/dsr-helper.o"
 	@echo "... helper/dsr-helper.i"
 	@echo "... helper/dsr-helper.s"
@@ -582,6 +632,9 @@ help:
 	@echo "... model/dsr-rsendbuff.o"
 	@echo "... model/dsr-rsendbuff.i"
 	@echo "... model/dsr-rsendbuff.s"
+	@echo "... test/dsr-test-suite.o"
+	@echo "... test/dsr-test-suite.i"
+	@echo "... test/dsr-test-suite.s"
 .PHONY : help
 
 

@@ -39315,6 +39315,7 @@ src/wifi/CMakeFiles/libwifi-obj.dir/model/rate-control/thompson-sampling-wifi-ma
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h \
+  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h \
@@ -39430,6 +39431,7 @@ src/wifi/CMakeFiles/libwifi-obj.dir/model/rate-control/thompson-sampling-wifi-ma
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h \
+  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h \
@@ -64327,6 +64329,8 @@ src/wifi/CMakeFiles/libwifi-obj.dir/model/yans-wifi-phy.cc.o: /home/bonice/Docum
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h:
 
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h:
+
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/default-simulator-impl.h:
@@ -65006,6 +65010,8 @@ src/wifi/CMakeFiles/libwifi-obj.dir/model/yans-wifi-phy.cc.o: /home/bonice/Docum
 /usr/include/c++/13/cstddef:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/pointer.h:
 

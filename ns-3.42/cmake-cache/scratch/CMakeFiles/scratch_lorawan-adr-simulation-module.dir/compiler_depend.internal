@@ -6,6 +6,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/abort.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/address-utils.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/address.h
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-component.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-lite-component.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application-container.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application-helper.h
@@ -75,6 +76,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h
@@ -272,6 +274,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h
@@ -371,6 +374,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lorawan-mac-helper.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/periodic-sender-helper.h
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/building-penetration-loss.h
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/class-a-end-device-lorawan-mac.h

@@ -68,6 +68,7 @@ endif()
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ns3" TYPE FILE FILES
     "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/int64x64-128.h"
+    "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h"
     "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/helper/csv-reader.h"
     "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/helper/event-garbage-collector.h"
     "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/helper/random-variable-stream-helper.h"
@@ -171,5 +172,11 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/core-config.h"
     "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/core-module.h"
     )
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/core/examples/cmake_install.cmake")
+
 endif()
 

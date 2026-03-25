@@ -32,7 +32,15 @@ MOBILITY_STYLES = {
 
 
 def main():
-    df = pd.read_csv(CSV_PATH)
+    # Read only the expected number of columns (first 13) to avoid shifted rows
+    df = pd.read_csv(CSV_PATH, usecols=range(13), engine='python', index_col=False)
+    # Normalize column names and values
+    df.columns = df.columns.str.strip()
+    df['Algorithm'] = df['Algorithm'].astype(str).str.strip()
+    df['MobilitySpeed'] = pd.to_numeric(df['MobilitySpeed'], errors='coerce')
+    df['NumDevices'] = pd.to_numeric(df['NumDevices'], errors='coerce')
+    # Drop rows missing critical values
+    df = df.dropna(subset=['Algorithm', 'MobilitySpeed', 'NumDevices'])
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     algorithms = [a for a in ALGO_ORDER if a in df["Algorithm"].unique()]
@@ -102,6 +110,8 @@ def main():
         ax.set_ylabel("Average Energy (mJ)", fontsize=12)
         ax.legend(fontsize=10, loc='best')
         ax.grid(True, alpha=0.3)
+        ax.set_ylim(0, 120)
+        ax.set_yticks(np.arange(0, 121, 10))
         x_ticks = sorted(algo_df["NumDevices"].unique())
         ax.set_xticks(x_ticks)
         ax.set_xlim(min(x_ticks) - 50, max(x_ticks) + 50)

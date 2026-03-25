@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -189,6 +199,20 @@ libbuildings: src/buildings/CMakeFiles/libbuildings.dir/rule
 libbuildings/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings.dir/build.make src/buildings/CMakeFiles/libbuildings.dir/build
 .PHONY : libbuildings/fast
+
+# Convenience name for target.
+src/buildings/CMakeFiles/libbuildings-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/buildings/CMakeFiles/libbuildings-test.dir/rule
+.PHONY : src/buildings/CMakeFiles/libbuildings-test.dir/rule
+
+# Convenience name for target.
+libbuildings-test: src/buildings/CMakeFiles/libbuildings-test.dir/rule
+.PHONY : libbuildings-test
+
+# fast build rule for target.
+libbuildings-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/build
+.PHONY : libbuildings-test/fast
 
 helper/building-allocator.o: helper/building-allocator.cc.o
 .PHONY : helper/building-allocator.o
@@ -526,6 +550,198 @@ model/three-gpp-v2v-channel-condition-model.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-obj.dir/build.make src/buildings/CMakeFiles/libbuildings-obj.dir/model/three-gpp-v2v-channel-condition-model.cc.s
 .PHONY : model/three-gpp-v2v-channel-condition-model.cc.s
 
+test/building-position-allocator-test.o: test/building-position-allocator-test.cc.o
+.PHONY : test/building-position-allocator-test.o
+
+# target to build an object file
+test/building-position-allocator-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/building-position-allocator-test.cc.o
+.PHONY : test/building-position-allocator-test.cc.o
+
+test/building-position-allocator-test.i: test/building-position-allocator-test.cc.i
+.PHONY : test/building-position-allocator-test.i
+
+# target to preprocess a source file
+test/building-position-allocator-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/building-position-allocator-test.cc.i
+.PHONY : test/building-position-allocator-test.cc.i
+
+test/building-position-allocator-test.s: test/building-position-allocator-test.cc.s
+.PHONY : test/building-position-allocator-test.s
+
+# target to generate assembly for a file
+test/building-position-allocator-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/building-position-allocator-test.cc.s
+.PHONY : test/building-position-allocator-test.cc.s
+
+test/buildings-channel-condition-model-test.o: test/buildings-channel-condition-model-test.cc.o
+.PHONY : test/buildings-channel-condition-model-test.o
+
+# target to build an object file
+test/buildings-channel-condition-model-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-channel-condition-model-test.cc.o
+.PHONY : test/buildings-channel-condition-model-test.cc.o
+
+test/buildings-channel-condition-model-test.i: test/buildings-channel-condition-model-test.cc.i
+.PHONY : test/buildings-channel-condition-model-test.i
+
+# target to preprocess a source file
+test/buildings-channel-condition-model-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-channel-condition-model-test.cc.i
+.PHONY : test/buildings-channel-condition-model-test.cc.i
+
+test/buildings-channel-condition-model-test.s: test/buildings-channel-condition-model-test.cc.s
+.PHONY : test/buildings-channel-condition-model-test.s
+
+# target to generate assembly for a file
+test/buildings-channel-condition-model-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-channel-condition-model-test.cc.s
+.PHONY : test/buildings-channel-condition-model-test.cc.s
+
+test/buildings-helper-test.o: test/buildings-helper-test.cc.o
+.PHONY : test/buildings-helper-test.o
+
+# target to build an object file
+test/buildings-helper-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-helper-test.cc.o
+.PHONY : test/buildings-helper-test.cc.o
+
+test/buildings-helper-test.i: test/buildings-helper-test.cc.i
+.PHONY : test/buildings-helper-test.i
+
+# target to preprocess a source file
+test/buildings-helper-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-helper-test.cc.i
+.PHONY : test/buildings-helper-test.cc.i
+
+test/buildings-helper-test.s: test/buildings-helper-test.cc.s
+.PHONY : test/buildings-helper-test.s
+
+# target to generate assembly for a file
+test/buildings-helper-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-helper-test.cc.s
+.PHONY : test/buildings-helper-test.cc.s
+
+test/buildings-pathloss-test.o: test/buildings-pathloss-test.cc.o
+.PHONY : test/buildings-pathloss-test.o
+
+# target to build an object file
+test/buildings-pathloss-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-pathloss-test.cc.o
+.PHONY : test/buildings-pathloss-test.cc.o
+
+test/buildings-pathloss-test.i: test/buildings-pathloss-test.cc.i
+.PHONY : test/buildings-pathloss-test.i
+
+# target to preprocess a source file
+test/buildings-pathloss-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-pathloss-test.cc.i
+.PHONY : test/buildings-pathloss-test.cc.i
+
+test/buildings-pathloss-test.s: test/buildings-pathloss-test.cc.s
+.PHONY : test/buildings-pathloss-test.s
+
+# target to generate assembly for a file
+test/buildings-pathloss-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-pathloss-test.cc.s
+.PHONY : test/buildings-pathloss-test.cc.s
+
+test/buildings-penetration-loss-pathloss-test.o: test/buildings-penetration-loss-pathloss-test.cc.o
+.PHONY : test/buildings-penetration-loss-pathloss-test.o
+
+# target to build an object file
+test/buildings-penetration-loss-pathloss-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-penetration-loss-pathloss-test.cc.o
+.PHONY : test/buildings-penetration-loss-pathloss-test.cc.o
+
+test/buildings-penetration-loss-pathloss-test.i: test/buildings-penetration-loss-pathloss-test.cc.i
+.PHONY : test/buildings-penetration-loss-pathloss-test.i
+
+# target to preprocess a source file
+test/buildings-penetration-loss-pathloss-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-penetration-loss-pathloss-test.cc.i
+.PHONY : test/buildings-penetration-loss-pathloss-test.cc.i
+
+test/buildings-penetration-loss-pathloss-test.s: test/buildings-penetration-loss-pathloss-test.cc.s
+.PHONY : test/buildings-penetration-loss-pathloss-test.s
+
+# target to generate assembly for a file
+test/buildings-penetration-loss-pathloss-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-penetration-loss-pathloss-test.cc.s
+.PHONY : test/buildings-penetration-loss-pathloss-test.cc.s
+
+test/buildings-shadowing-test.o: test/buildings-shadowing-test.cc.o
+.PHONY : test/buildings-shadowing-test.o
+
+# target to build an object file
+test/buildings-shadowing-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-shadowing-test.cc.o
+.PHONY : test/buildings-shadowing-test.cc.o
+
+test/buildings-shadowing-test.i: test/buildings-shadowing-test.cc.i
+.PHONY : test/buildings-shadowing-test.i
+
+# target to preprocess a source file
+test/buildings-shadowing-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-shadowing-test.cc.i
+.PHONY : test/buildings-shadowing-test.cc.i
+
+test/buildings-shadowing-test.s: test/buildings-shadowing-test.cc.s
+.PHONY : test/buildings-shadowing-test.s
+
+# target to generate assembly for a file
+test/buildings-shadowing-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/buildings-shadowing-test.cc.s
+.PHONY : test/buildings-shadowing-test.cc.s
+
+test/outdoor-random-walk-test.o: test/outdoor-random-walk-test.cc.o
+.PHONY : test/outdoor-random-walk-test.o
+
+# target to build an object file
+test/outdoor-random-walk-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/outdoor-random-walk-test.cc.o
+.PHONY : test/outdoor-random-walk-test.cc.o
+
+test/outdoor-random-walk-test.i: test/outdoor-random-walk-test.cc.i
+.PHONY : test/outdoor-random-walk-test.i
+
+# target to preprocess a source file
+test/outdoor-random-walk-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/outdoor-random-walk-test.cc.i
+.PHONY : test/outdoor-random-walk-test.cc.i
+
+test/outdoor-random-walk-test.s: test/outdoor-random-walk-test.cc.s
+.PHONY : test/outdoor-random-walk-test.s
+
+# target to generate assembly for a file
+test/outdoor-random-walk-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/outdoor-random-walk-test.cc.s
+.PHONY : test/outdoor-random-walk-test.cc.s
+
+test/three-gpp-v2v-channel-condition-model-test.o: test/three-gpp-v2v-channel-condition-model-test.cc.o
+.PHONY : test/three-gpp-v2v-channel-condition-model-test.o
+
+# target to build an object file
+test/three-gpp-v2v-channel-condition-model-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/three-gpp-v2v-channel-condition-model-test.cc.o
+.PHONY : test/three-gpp-v2v-channel-condition-model-test.cc.o
+
+test/three-gpp-v2v-channel-condition-model-test.i: test/three-gpp-v2v-channel-condition-model-test.cc.i
+.PHONY : test/three-gpp-v2v-channel-condition-model-test.i
+
+# target to preprocess a source file
+test/three-gpp-v2v-channel-condition-model-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/three-gpp-v2v-channel-condition-model-test.cc.i
+.PHONY : test/three-gpp-v2v-channel-condition-model-test.cc.i
+
+test/three-gpp-v2v-channel-condition-model-test.s: test/three-gpp-v2v-channel-condition-model-test.cc.s
+.PHONY : test/three-gpp-v2v-channel-condition-model-test.s
+
+# target to generate assembly for a file
+test/three-gpp-v2v-channel-condition-model-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/buildings/CMakeFiles/libbuildings-test.dir/build.make src/buildings/CMakeFiles/libbuildings-test.dir/test/three-gpp-v2v-channel-condition-model-test.cc.s
+.PHONY : test/three-gpp-v2v-channel-condition-model-test.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -538,8 +754,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... libbuildings"
 	@echo "... libbuildings-obj"
+	@echo "... libbuildings-test"
 	@echo "... helper/building-allocator.o"
 	@echo "... helper/building-allocator.i"
 	@echo "... helper/building-allocator.s"
@@ -582,6 +800,30 @@ help:
 	@echo "... model/three-gpp-v2v-channel-condition-model.o"
 	@echo "... model/three-gpp-v2v-channel-condition-model.i"
 	@echo "... model/three-gpp-v2v-channel-condition-model.s"
+	@echo "... test/building-position-allocator-test.o"
+	@echo "... test/building-position-allocator-test.i"
+	@echo "... test/building-position-allocator-test.s"
+	@echo "... test/buildings-channel-condition-model-test.o"
+	@echo "... test/buildings-channel-condition-model-test.i"
+	@echo "... test/buildings-channel-condition-model-test.s"
+	@echo "... test/buildings-helper-test.o"
+	@echo "... test/buildings-helper-test.i"
+	@echo "... test/buildings-helper-test.s"
+	@echo "... test/buildings-pathloss-test.o"
+	@echo "... test/buildings-pathloss-test.i"
+	@echo "... test/buildings-pathloss-test.s"
+	@echo "... test/buildings-penetration-loss-pathloss-test.o"
+	@echo "... test/buildings-penetration-loss-pathloss-test.i"
+	@echo "... test/buildings-penetration-loss-pathloss-test.s"
+	@echo "... test/buildings-shadowing-test.o"
+	@echo "... test/buildings-shadowing-test.i"
+	@echo "... test/buildings-shadowing-test.s"
+	@echo "... test/outdoor-random-walk-test.o"
+	@echo "... test/outdoor-random-walk-test.i"
+	@echo "... test/outdoor-random-walk-test.s"
+	@echo "... test/three-gpp-v2v-channel-condition-model-test.o"
+	@echo "... test/three-gpp-v2v-channel-condition-model-test.i"
+	@echo "... test/three-gpp-v2v-channel-condition-model-test.s"
 .PHONY : help
 
 

@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -189,6 +199,20 @@ liblorawan: src/lorawan/CMakeFiles/liblorawan.dir/rule
 liblorawan/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan.dir/build.make src/lorawan/CMakeFiles/liblorawan.dir/build
 .PHONY : liblorawan/fast
+
+# Convenience name for target.
+src/lorawan/CMakeFiles/liblorawan-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/lorawan/CMakeFiles/liblorawan-test.dir/rule
+.PHONY : src/lorawan/CMakeFiles/liblorawan-test.dir/rule
+
+# Convenience name for target.
+liblorawan-test: src/lorawan/CMakeFiles/liblorawan-test.dir/rule
+.PHONY : liblorawan-test
+
+# fast build rule for target.
+liblorawan-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/build
+.PHONY : liblorawan-test/fast
 
 helper/forwarder-helper.o: helper/forwarder-helper.cc.o
 .PHONY : helper/forwarder-helper.o
@@ -1342,6 +1366,126 @@ model/sub-band.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.s
 .PHONY : model/sub-band.cc.s
 
+test/lorawan-test-suite.o: test/lorawan-test-suite.cc.o
+.PHONY : test/lorawan-test-suite.o
+
+# target to build an object file
+test/lorawan-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/lorawan-test-suite.cc.o
+.PHONY : test/lorawan-test-suite.cc.o
+
+test/lorawan-test-suite.i: test/lorawan-test-suite.cc.i
+.PHONY : test/lorawan-test-suite.i
+
+# target to preprocess a source file
+test/lorawan-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/lorawan-test-suite.cc.i
+.PHONY : test/lorawan-test-suite.cc.i
+
+test/lorawan-test-suite.s: test/lorawan-test-suite.cc.s
+.PHONY : test/lorawan-test-suite.s
+
+# target to generate assembly for a file
+test/lorawan-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/lorawan-test-suite.cc.s
+.PHONY : test/lorawan-test-suite.cc.s
+
+test/network-scheduler-test-suite.o: test/network-scheduler-test-suite.cc.o
+.PHONY : test/network-scheduler-test-suite.o
+
+# target to build an object file
+test/network-scheduler-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-scheduler-test-suite.cc.o
+.PHONY : test/network-scheduler-test-suite.cc.o
+
+test/network-scheduler-test-suite.i: test/network-scheduler-test-suite.cc.i
+.PHONY : test/network-scheduler-test-suite.i
+
+# target to preprocess a source file
+test/network-scheduler-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-scheduler-test-suite.cc.i
+.PHONY : test/network-scheduler-test-suite.cc.i
+
+test/network-scheduler-test-suite.s: test/network-scheduler-test-suite.cc.s
+.PHONY : test/network-scheduler-test-suite.s
+
+# target to generate assembly for a file
+test/network-scheduler-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-scheduler-test-suite.cc.s
+.PHONY : test/network-scheduler-test-suite.cc.s
+
+test/network-server-test-suite.o: test/network-server-test-suite.cc.o
+.PHONY : test/network-server-test-suite.o
+
+# target to build an object file
+test/network-server-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-server-test-suite.cc.o
+.PHONY : test/network-server-test-suite.cc.o
+
+test/network-server-test-suite.i: test/network-server-test-suite.cc.i
+.PHONY : test/network-server-test-suite.i
+
+# target to preprocess a source file
+test/network-server-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-server-test-suite.cc.i
+.PHONY : test/network-server-test-suite.cc.i
+
+test/network-server-test-suite.s: test/network-server-test-suite.cc.s
+.PHONY : test/network-server-test-suite.s
+
+# target to generate assembly for a file
+test/network-server-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-server-test-suite.cc.s
+.PHONY : test/network-server-test-suite.cc.s
+
+test/network-status-test-suite.o: test/network-status-test-suite.cc.o
+.PHONY : test/network-status-test-suite.o
+
+# target to build an object file
+test/network-status-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-status-test-suite.cc.o
+.PHONY : test/network-status-test-suite.cc.o
+
+test/network-status-test-suite.i: test/network-status-test-suite.cc.i
+.PHONY : test/network-status-test-suite.i
+
+# target to preprocess a source file
+test/network-status-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-status-test-suite.cc.i
+.PHONY : test/network-status-test-suite.cc.i
+
+test/network-status-test-suite.s: test/network-status-test-suite.cc.s
+.PHONY : test/network-status-test-suite.s
+
+# target to generate assembly for a file
+test/network-status-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/network-status-test-suite.cc.s
+.PHONY : test/network-status-test-suite.cc.s
+
+test/utilities.o: test/utilities.cc.o
+.PHONY : test/utilities.o
+
+# target to build an object file
+test/utilities.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/utilities.cc.o
+.PHONY : test/utilities.cc.o
+
+test/utilities.i: test/utilities.cc.i
+.PHONY : test/utilities.i
+
+# target to preprocess a source file
+test/utilities.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/utilities.cc.i
+.PHONY : test/utilities.cc.i
+
+test/utilities.s: test/utilities.cc.s
+.PHONY : test/utilities.s
+
+# target to generate assembly for a file
+test/utilities.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-test.dir/build.make src/lorawan/CMakeFiles/liblorawan-test.dir/test/utilities.cc.s
+.PHONY : test/utilities.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1354,8 +1498,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... liblorawan"
 	@echo "... liblorawan-obj"
+	@echo "... liblorawan-test"
 	@echo "... helper/forwarder-helper.o"
 	@echo "... helper/forwarder-helper.i"
 	@echo "... helper/forwarder-helper.s"
@@ -1500,6 +1646,21 @@ help:
 	@echo "... model/sub-band.o"
 	@echo "... model/sub-band.i"
 	@echo "... model/sub-band.s"
+	@echo "... test/lorawan-test-suite.o"
+	@echo "... test/lorawan-test-suite.i"
+	@echo "... test/lorawan-test-suite.s"
+	@echo "... test/network-scheduler-test-suite.o"
+	@echo "... test/network-scheduler-test-suite.i"
+	@echo "... test/network-scheduler-test-suite.s"
+	@echo "... test/network-server-test-suite.o"
+	@echo "... test/network-server-test-suite.i"
+	@echo "... test/network-server-test-suite.s"
+	@echo "... test/network-status-test-suite.o"
+	@echo "... test/network-status-test-suite.i"
+	@echo "... test/network-status-test-suite.s"
+	@echo "... test/utilities.o"
+	@echo "... test/utilities.i"
+	@echo "... test/utilities.s"
 .PHONY : help
 
 

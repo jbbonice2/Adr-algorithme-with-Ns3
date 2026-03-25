@@ -11,6 +11,8 @@
  */
 
 #include "ns3/adr-lite-component.h"
+#include "ns3/adr-component.h"
+#include "ns3/network-server.h"
 #include "ns3/basic-energy-source-helper.h"
 #include "ns3/building-penetration-loss.h"
 #include "ns3/class-a-end-device-lorawan-mac.h"
@@ -68,13 +70,20 @@ std::map<uint32_t, Ptr<BasicEnergySource>> g_energySources;
 uint32_t g_packetsSent = 0;
 uint32_t g_packetsReceived = 0;
 uint32_t g_packetsLost = 0;
-uint32_t g_downlinkPackets = 0;
+
 
 // Global containers for device tracking
 NodeContainer g_endDevices;
 NodeContainer g_gateways;
 std::map<uint32_t, uint32_t> g_packetToDevice;  // Maps packet UID to device ID
 std::map<uint32_t, uint32_t> g_deviceMessageCount;  // Counts messages per device
+
+// ADR downlink counter from Network Server
+uint32_t g_nsAdrDownlinks = 0;      // Total LinkAdrReq commands sent by NS
+
+// ED-side parameter change counters (verification that ED applies NS commands)
+uint32_t g_edDrChanges = 0;          // Times end device actually changed its DataRate
+uint32_t g_edTpChanges = 0;          // Times end device actually changed its TxPower
 
 /**
  * Log all device details (ID, position, mobility type)
@@ -304,35 +313,74 @@ OnPhyNoMoreReceivers(Ptr<const Packet> packet, uint32_t systemId)
 void
 OnGatewaySendDownlink(uint32_t gatewayNodeId, Ptr<const Packet> packet)
 {
-    g_downlinkPackets++;
+    // Gateway-level downlink transmissions are logged for debug only.
+    // ADR-specific downlinks are counted at the Network Server via
+    // the OnAdrDownlinkSent callback (g_nsAdrDownlinks).
     NS_LOG_DEBUG("[TX-DL] GatewayID=" << gatewayNodeId 
-                << " | PacketUID=" << packet->GetUid()
-                << " | TotalDownlink=" << g_downlinkPackets);
+                 << " | PacketUID=" << packet->GetUid());
 }
 
 /**
- * Record a change in the data rate setting on an end device.
+ * Callback fired when Network Server sends a LinkAdrReq MAC command.
+ * This is the most reliable way to count ADR downlinks as it comes directly
+ * from the AdrComponent when it decides to send a parameter change.
  *
- * @param oldDr The previous data rate value.
- * @param newDr The updated data rate value.
+ * @param deviceAddress End device address (uint32_t)
+ * @param oldDr Old data rate value
+ * @param newDr New data rate value being commanded
+ * @param oldTxPower Old transmission power (dBm)
+ * @param newTxPower New transmission power being commanded (dBm)
+ * @param oldCF Old channel frequency index
+ * @param newCF New channel frequency index being commanded
+ * @param oldCR Old coding rate
+ * @param newCR New coding rate being commanded
+ * @param algorithmType 0=Standard ADR, 1=ADR-Lite
  */
 void
-OnDataRateChange(uint8_t oldDr, uint8_t newDr)
+OnAdrDownlinkSent(uint32_t deviceAddress, uint8_t oldDr, uint8_t newDr, 
+                  double oldTxPower, double newTxPower,
+                  uint8_t oldCF, uint8_t newCF,
+                  uint8_t oldCR, uint8_t newCR,
+                  uint8_t algorithmType)
 {
-    NS_LOG_INFO("[ADR] Data Rate changed: DR" << unsigned(oldDr) << " -> DR" << unsigned(newDr)
-                << " (SF" << (12 - oldDr) << " -> SF" << (12 - newDr) << ")");
+    // The trace is only fired when the NS actually changed at least one parameter
+    // (DR, TP, CF, or CR), so we always increment here.
+    g_nsAdrDownlinks++;
+    
+    std::string algoName = (algorithmType == 1) ? "ADR-Lite" : "Standard-ADR";
+    NS_LOG_INFO("[NS-ADR] Downlink sent to device 0x" << std::hex << deviceAddress << std::dec
+                << " | Algorithm=" << algoName
+                << " | DR: " << (int)oldDr << "->" << (int)newDr 
+                << " (SF" << (12 - oldDr) << "->SF" << (12 - newDr) << ")"
+                << " | TP: " << oldTxPower << "->" << newTxPower << " dBm"
+                << " | CF: " << (int)oldCF << "->" << (int)newCF
+                << " | CR: 4/" << (4 + oldCR) << "->4/" << (4 + newCR)
+                << " | ParamChanges=" << g_nsAdrDownlinks);
 }
 
 /**
- * Record a change in the transmission power setting on an end device.
- *
- * @param oldTxPower The previous transmission power value.
- * @param newTxPower The updated transmission power value.
+ * Callback fired when an End Device actually changes its DataRate.
+ * This verifies that the ED applied the NS command.
  */
 void
-OnTxPowerChange(double oldTxPower, double newTxPower)
+OnEdDataRateChange(uint8_t oldDr, uint8_t newDr)
 {
-    NS_LOG_INFO("[ADR] TxPower changed: " << oldTxPower << " dBm -> " << newTxPower << " dBm");
+    g_edDrChanges++;
+    NS_LOG_INFO("[ED-VERIFY] DataRate changed: DR" << (int)oldDr << " -> DR" << (int)newDr
+                << " (SF" << (12 - oldDr) << " -> SF" << (12 - newDr) << ")"
+                << " | Total ED DR changes=" << g_edDrChanges);
+}
+
+/**
+ * Callback fired when an End Device actually changes its TxPower.
+ * This verifies that the ED applied the NS command.
+ */
+void
+OnEdTxPowerChange(double oldTp, double newTp)
+{
+    g_edTpChanges++;
+    NS_LOG_INFO("[ED-VERIFY] TxPower changed: " << oldTp << " -> " << newTp << " dBm"
+                << " | Total ED TP changes=" << g_edTpChanges);
 }
 
 /**
@@ -840,14 +888,50 @@ main(int argc, char* argv[])
     }
 
     // Install the NetworkServer application on the network server
+    // Note: We disable ADR in NetworkServerHelper and add our own AdrComponent
+    // to enable tracing of ADR downlinks directly from the Network Server
     NetworkServerHelper networkServerHelper;
-    networkServerHelper.EnableAdr(adrEnabled);
-    networkServerHelper.SetAdr(adrTypeId);  // Use selected ADR component (AdrComponent or AdrLiteComponent)
+    networkServerHelper.EnableAdr(false);  // Disable helper's ADR - we'll add our own
     networkServerHelper.SetGatewaysP2P(gwRegistration);
     networkServerHelper.SetEndDevices(endDevices);
-    networkServerHelper.Install(networkServer);
+    ApplicationContainer nsApps = networkServerHelper.Install(networkServer);
     
-    NS_LOG_INFO("ADR component type: " << adrTypeId);
+    // Get the NetworkServer application to add our custom tracked AdrComponent
+    Ptr<NetworkServer> nsApp = DynamicCast<NetworkServer>(nsApps.Get(0));
+
+    // Create and configure AdrComponent with trace callback for reliable downlink counting
+    Ptr<AdrComponent> adrComponent;
+    if (adrEnabled) {
+        adrComponent = CreateObject<AdrComponent>();
+        
+        // Configure AdrComponent based on algorithm choice
+        if (useAdrLite) {
+            adrComponent->SetAttribute("UseAdrLite", BooleanValue(true));
+            adrComponent->SetAttribute("ChangeTransmissionPower", BooleanValue(true));
+            adrComponent->SetAttribute("ChangeCodingRate", BooleanValue(true));
+            adrComponent->SetAttribute("ChangeChannel", BooleanValue(true));
+            NS_LOG_INFO("Created ADR-Lite component with 4-param optimization");
+        } else {
+            adrComponent->SetAttribute("UseAdrLite", BooleanValue(false));
+            adrComponent->SetAttribute("MultiplePacketsCombiningMethod", 
+                                       StringValue(snrCombiningMethod));
+            adrComponent->SetAttribute("HistoryRange", IntegerValue(historyRange));
+            adrComponent->SetAttribute("ChangeTransmissionPower", BooleanValue(true));
+            NS_LOG_INFO("Created Standard ADR component (SNR method: " << snrCombiningMethod 
+                        << ", history: " << historyRange << ")");
+        }
+        
+        // Connect our reliable downlink tracking callback BEFORE adding to NetworkServer
+        adrComponent->TraceConnectWithoutContext(
+            "AdrDownlinkSent",
+            MakeCallback(&OnAdrDownlinkSent));
+        NS_LOG_INFO("Connected AdrDownlinkSent trace for reliable downlink counting");
+        
+        // Add the configured AdrComponent to the NetworkServer
+        nsApp->AddComponent(adrComponent);
+    }
+    
+    NS_LOG_INFO("ADR component type: " << adrTypeId << (adrEnabled ? " (enabled)" : " (disabled)"));
 
     // Install the Forwarder application on the gateways
     ForwarderHelper forwarderHelper;
@@ -857,14 +941,6 @@ main(int argc, char* argv[])
 
     // Connect traces for monitoring PHY events
     NS_LOG_INFO("Connecting trace sources for packet tracking...");
-    
-    // Connect traces for ADR monitoring
-    Config::ConnectWithoutContext(
-        "/NodeList/*/DeviceList/0/$ns3::LoraNetDevice/Mac/$ns3::EndDeviceLorawanMac/TxPower",
-        MakeCallback(&OnTxPowerChange));
-    Config::ConnectWithoutContext(
-        "/NodeList/*/DeviceList/0/$ns3::LoraNetDevice/Mac/$ns3::EndDeviceLorawanMac/DataRate",
-        MakeCallback(&OnDataRateChange));
     
     // Connect to MAC layer traces for packet monitoring - End Devices TX
     for (auto j = endDevices.Begin(); j != endDevices.End(); ++j) {
@@ -878,6 +954,13 @@ main(int argc, char* argv[])
                 mac->TraceConnectWithoutContext(
                     "SentNewPacket",
                     MakeBoundCallback(&OnEndDeviceSend, nodeId));
+                // Connect to DataRate and TxPower TracedValues for ED-side verification
+                mac->TraceConnectWithoutContext(
+                    "DataRate",
+                    MakeCallback(&OnEdDataRateChange));
+                mac->TraceConnectWithoutContext(
+                    "TxPower",
+                    MakeCallback(&OnEdTxPowerChange));
             }
         }
     }
@@ -940,12 +1023,7 @@ main(int argc, char* argv[])
     uint32_t successfulPackets = static_cast<uint32_t>(successfulPacketsD);
     double pdr = (totalPackets == 0) ? 0.0 : (static_cast<double>(successfulPackets) / totalPackets) * 100.0;
 
-    // Note: CountRetransmissions is not implemented in the lorawan module
-    // Retransmissions count: derived from total - successful packets
-    uint32_t totalRetrans = (totalPackets > successfulPackets) ? (totalPackets - successfulPackets) : 0;
 
-    // Count downlink packets (using global counter from trace callbacks)
-    uint32_t totalDownlinkPackets = g_downlinkPackets;
 
     // Calculate total energy consumption
     double totalEnergyConsumption = 0.0;
@@ -969,6 +1047,16 @@ main(int argc, char* argv[])
     NS_LOG_INFO("Packet Delivery Ratio:  " << pdr << " %");
     NS_LOG_INFO("Total Energy consumed:  " << totalEnergyConsumption << " J");
     NS_LOG_INFO("Avg Energy per packet:  " << avgEnergyPerPacket_mJ << " mJ");
+    NS_LOG_INFO("NS Total ADR Downlinks: " << g_nsAdrDownlinks);
+    NS_LOG_INFO("ED DataRate changes:    " << g_edDrChanges);
+    NS_LOG_INFO("ED TxPower changes:     " << g_edTpChanges);
+    uint32_t totalEdChanges = g_edDrChanges + g_edTpChanges;
+    NS_LOG_INFO("ED Total param changes: " << totalEdChanges);
+    if (g_nsAdrDownlinks > 0) {
+        NS_LOG_INFO("[VERIFICATION] NS sent " << g_nsAdrDownlinks << " ADR commands, "
+                    << "ED applied " << g_edDrChanges << " DR changes + " << g_edTpChanges << " TP changes = "
+                    << totalEdChanges << " total param changes");
+    }
     NS_LOG_INFO("========================================");
 
     // --- Save detailed results ---
@@ -983,7 +1071,8 @@ main(int argc, char* argv[])
 
     std::ofstream outputFile(filename.str());
     outputFile << "Scenario,NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,ADR,RunNumber," 
-               << "TotalPackets,SuccessfulPackets,PDR_Percent,TotalEnergy_J,AvgEnergy_mJ,DownlinkPackets,Retransmissions\n";
+               << "TotalPackets,SuccessfulPackets,PDR_Percent,TotalEnergy_J,AvgEnergy_mJ,"
+               << "NsAdrDownlinks\n";
     outputFile << scenario << ","
                << numDevices << ","
                << std::fixed << std::setprecision(1) << mobilitySpeed << ","
@@ -996,8 +1085,7 @@ main(int argc, char* argv[])
                << std::setprecision(2) << pdr << ","
                << std::setprecision(6) << totalEnergyConsumption << ","
                << std::setprecision(6) << avgEnergyPerPacket_mJ << ","
-               << totalDownlinkPackets << ","
-               << totalRetrans << "\n";
+               << g_nsAdrDownlinks <<"\n";
     outputFile.close();
 
     // --- Save summary in scenario folder ---
@@ -1013,7 +1101,8 @@ main(int argc, char* argv[])
 
     std::ofstream summaryFile(summaryFilename.str());
     summaryFile << "NumDevices,MobilitySpeed,TrafficInterval,MaxRandomLoss,RunNumber,"
-                << "TotalPackets,SuccessfulPackets,PDR_Percent,AvgEnergy_mJ,DownlinkPackets,Retransmissions\n";
+                << "TotalPackets,SuccessfulPackets,PDR_Percent,AvgEnergy_mJ,"
+                << "NsAdrDownlinks,EdDrChanges,EdTpChanges\n";
     summaryFile << numDevices << ","
                 << std::fixed << std::setprecision(1) << mobilitySpeed << ","
                 << static_cast<int>(trafficInterval) << ","
@@ -1023,14 +1112,18 @@ main(int argc, char* argv[])
                 << successfulPackets << ","
                 << std::setprecision(2) << pdr << ","
                 << std::setprecision(6) << avgEnergyPerPacket_mJ << ","
-                << totalDownlinkPackets << ","
-                << totalRetrans << "\n";
+                << g_nsAdrDownlinks << ","
+                << g_edDrChanges << ","
+                << g_edTpChanges << "\n";
     summaryFile.close();
 
     // Print summary to console
     std::cout << "Run " << runNumber << " (" << adrAlgoStr << "): "
               << "PDR=" << std::fixed << std::setprecision(2) << pdr << "%, "
               << "Energy=" << std::setprecision(6) << avgEnergyPerPacket_mJ << " mJ, "
+              << "NS-ADR-Downlinks=" << g_nsAdrDownlinks << ", "
+              << "ED-DR-Changes=" << g_edDrChanges << ", "
+              << "ED-TP-Changes=" << g_edTpChanges << ", "
               << "Packets=" << totalPackets << " (sent), " 
               << successfulPackets << " (received)" << std::endl;
 
@@ -1052,7 +1145,10 @@ main(int argc, char* argv[])
     g_packetsSent = 0;
     g_packetsReceived = 0;
     g_packetsLost = 0;
-    g_downlinkPackets = 0;
+    // Reset NS ADR counter and ED verification counters
+    g_nsAdrDownlinks = 0;
+    g_edDrChanges = 0;
+    g_edTpChanges = 0;
     
     // Note: SIGSEGV may occur during Simulator::Destroy() due to ns-3 internal cleanup
     // This is a known issue with some ns-3 modules and does not affect simulation results

@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -189,6 +199,20 @@ libantenna: src/antenna/CMakeFiles/libantenna.dir/rule
 libantenna/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna.dir/build.make src/antenna/CMakeFiles/libantenna.dir/build
 .PHONY : libantenna/fast
+
+# Convenience name for target.
+src/antenna/CMakeFiles/libantenna-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/antenna/CMakeFiles/libantenna-test.dir/rule
+.PHONY : src/antenna/CMakeFiles/libantenna-test.dir/rule
+
+# Convenience name for target.
+libantenna-test: src/antenna/CMakeFiles/libantenna-test.dir/rule
+.PHONY : libantenna-test
+
+# fast build rule for target.
+libantenna-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/build
+.PHONY : libantenna-test/fast
 
 model/angles.o: model/angles.cc.o
 .PHONY : model/angles.o
@@ -406,6 +430,174 @@ model/uniform-planar-array.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-obj.dir/build.make src/antenna/CMakeFiles/libantenna-obj.dir/model/uniform-planar-array.cc.s
 .PHONY : model/uniform-planar-array.cc.s
 
+test/test-angles.o: test/test-angles.cc.o
+.PHONY : test/test-angles.o
+
+# target to build an object file
+test/test-angles.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-angles.cc.o
+.PHONY : test/test-angles.cc.o
+
+test/test-angles.i: test/test-angles.cc.i
+.PHONY : test/test-angles.i
+
+# target to preprocess a source file
+test/test-angles.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-angles.cc.i
+.PHONY : test/test-angles.cc.i
+
+test/test-angles.s: test/test-angles.cc.s
+.PHONY : test/test-angles.s
+
+# target to generate assembly for a file
+test/test-angles.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-angles.cc.s
+.PHONY : test/test-angles.cc.s
+
+test/test-circular-aperture-antenna.o: test/test-circular-aperture-antenna.cc.o
+.PHONY : test/test-circular-aperture-antenna.o
+
+# target to build an object file
+test/test-circular-aperture-antenna.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-circular-aperture-antenna.cc.o
+.PHONY : test/test-circular-aperture-antenna.cc.o
+
+test/test-circular-aperture-antenna.i: test/test-circular-aperture-antenna.cc.i
+.PHONY : test/test-circular-aperture-antenna.i
+
+# target to preprocess a source file
+test/test-circular-aperture-antenna.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-circular-aperture-antenna.cc.i
+.PHONY : test/test-circular-aperture-antenna.cc.i
+
+test/test-circular-aperture-antenna.s: test/test-circular-aperture-antenna.cc.s
+.PHONY : test/test-circular-aperture-antenna.s
+
+# target to generate assembly for a file
+test/test-circular-aperture-antenna.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-circular-aperture-antenna.cc.s
+.PHONY : test/test-circular-aperture-antenna.cc.s
+
+test/test-cosine-antenna.o: test/test-cosine-antenna.cc.o
+.PHONY : test/test-cosine-antenna.o
+
+# target to build an object file
+test/test-cosine-antenna.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-cosine-antenna.cc.o
+.PHONY : test/test-cosine-antenna.cc.o
+
+test/test-cosine-antenna.i: test/test-cosine-antenna.cc.i
+.PHONY : test/test-cosine-antenna.i
+
+# target to preprocess a source file
+test/test-cosine-antenna.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-cosine-antenna.cc.i
+.PHONY : test/test-cosine-antenna.cc.i
+
+test/test-cosine-antenna.s: test/test-cosine-antenna.cc.s
+.PHONY : test/test-cosine-antenna.s
+
+# target to generate assembly for a file
+test/test-cosine-antenna.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-cosine-antenna.cc.s
+.PHONY : test/test-cosine-antenna.cc.s
+
+test/test-degrees-radians.o: test/test-degrees-radians.cc.o
+.PHONY : test/test-degrees-radians.o
+
+# target to build an object file
+test/test-degrees-radians.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-degrees-radians.cc.o
+.PHONY : test/test-degrees-radians.cc.o
+
+test/test-degrees-radians.i: test/test-degrees-radians.cc.i
+.PHONY : test/test-degrees-radians.i
+
+# target to preprocess a source file
+test/test-degrees-radians.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-degrees-radians.cc.i
+.PHONY : test/test-degrees-radians.cc.i
+
+test/test-degrees-radians.s: test/test-degrees-radians.cc.s
+.PHONY : test/test-degrees-radians.s
+
+# target to generate assembly for a file
+test/test-degrees-radians.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-degrees-radians.cc.s
+.PHONY : test/test-degrees-radians.cc.s
+
+test/test-isotropic-antenna.o: test/test-isotropic-antenna.cc.o
+.PHONY : test/test-isotropic-antenna.o
+
+# target to build an object file
+test/test-isotropic-antenna.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-isotropic-antenna.cc.o
+.PHONY : test/test-isotropic-antenna.cc.o
+
+test/test-isotropic-antenna.i: test/test-isotropic-antenna.cc.i
+.PHONY : test/test-isotropic-antenna.i
+
+# target to preprocess a source file
+test/test-isotropic-antenna.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-isotropic-antenna.cc.i
+.PHONY : test/test-isotropic-antenna.cc.i
+
+test/test-isotropic-antenna.s: test/test-isotropic-antenna.cc.s
+.PHONY : test/test-isotropic-antenna.s
+
+# target to generate assembly for a file
+test/test-isotropic-antenna.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-isotropic-antenna.cc.s
+.PHONY : test/test-isotropic-antenna.cc.s
+
+test/test-parabolic-antenna.o: test/test-parabolic-antenna.cc.o
+.PHONY : test/test-parabolic-antenna.o
+
+# target to build an object file
+test/test-parabolic-antenna.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-parabolic-antenna.cc.o
+.PHONY : test/test-parabolic-antenna.cc.o
+
+test/test-parabolic-antenna.i: test/test-parabolic-antenna.cc.i
+.PHONY : test/test-parabolic-antenna.i
+
+# target to preprocess a source file
+test/test-parabolic-antenna.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-parabolic-antenna.cc.i
+.PHONY : test/test-parabolic-antenna.cc.i
+
+test/test-parabolic-antenna.s: test/test-parabolic-antenna.cc.s
+.PHONY : test/test-parabolic-antenna.s
+
+# target to generate assembly for a file
+test/test-parabolic-antenna.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-parabolic-antenna.cc.s
+.PHONY : test/test-parabolic-antenna.cc.s
+
+test/test-uniform-planar-array.o: test/test-uniform-planar-array.cc.o
+.PHONY : test/test-uniform-planar-array.o
+
+# target to build an object file
+test/test-uniform-planar-array.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-uniform-planar-array.cc.o
+.PHONY : test/test-uniform-planar-array.cc.o
+
+test/test-uniform-planar-array.i: test/test-uniform-planar-array.cc.i
+.PHONY : test/test-uniform-planar-array.i
+
+# target to preprocess a source file
+test/test-uniform-planar-array.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-uniform-planar-array.cc.i
+.PHONY : test/test-uniform-planar-array.cc.i
+
+test/test-uniform-planar-array.s: test/test-uniform-planar-array.cc.s
+.PHONY : test/test-uniform-planar-array.s
+
+# target to generate assembly for a file
+test/test-uniform-planar-array.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/antenna/CMakeFiles/libantenna-test.dir/build.make src/antenna/CMakeFiles/libantenna-test.dir/test/test-uniform-planar-array.cc.s
+.PHONY : test/test-uniform-planar-array.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -418,8 +610,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... libantenna"
 	@echo "... libantenna-obj"
+	@echo "... libantenna-test"
 	@echo "... model/angles.o"
 	@echo "... model/angles.i"
 	@echo "... model/angles.s"
@@ -447,6 +641,27 @@ help:
 	@echo "... model/uniform-planar-array.o"
 	@echo "... model/uniform-planar-array.i"
 	@echo "... model/uniform-planar-array.s"
+	@echo "... test/test-angles.o"
+	@echo "... test/test-angles.i"
+	@echo "... test/test-angles.s"
+	@echo "... test/test-circular-aperture-antenna.o"
+	@echo "... test/test-circular-aperture-antenna.i"
+	@echo "... test/test-circular-aperture-antenna.s"
+	@echo "... test/test-cosine-antenna.o"
+	@echo "... test/test-cosine-antenna.i"
+	@echo "... test/test-cosine-antenna.s"
+	@echo "... test/test-degrees-radians.o"
+	@echo "... test/test-degrees-radians.i"
+	@echo "... test/test-degrees-radians.s"
+	@echo "... test/test-isotropic-antenna.o"
+	@echo "... test/test-isotropic-antenna.i"
+	@echo "... test/test-isotropic-antenna.s"
+	@echo "... test/test-parabolic-antenna.o"
+	@echo "... test/test-parabolic-antenna.i"
+	@echo "... test/test-parabolic-antenna.s"
+	@echo "... test/test-uniform-planar-array.o"
+	@echo "... test/test-uniform-planar-array.i"
+	@echo "... test/test-uniform-planar-array.s"
 .PHONY : help
 
 

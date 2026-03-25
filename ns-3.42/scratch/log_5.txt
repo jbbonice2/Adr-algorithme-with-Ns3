@@ -1,0 +1,1651 @@
+[0;36m========================================[0m
+[0;36m  LoRaWAN ADR Module - Scénario 5[0m
+[0;36m  (Exécution séquentielle)[0m
+[0;36m========================================[0m
+
+[0;34m========================================[0m
+[0;34m  SCENARIO 5: Densité × Mobilité[0m
+[0;34m========================================[0m
+[1;33mTotal simulations: 150[0m
+[0;32mDémarrage de l'exécution séquentielle...[0m
+[1;33mHeure de début: 2026-03-08 14:53:34[0m
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m0%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 1/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:00 | Restant estimé: 00:00:00  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=0, T=3600, L=3.96, A=No-ADR, R=1
+-- GLOB mismatch!
+-- Using default output directory /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build
+-- [33mProceeding without cmake-format[0m
+-- find_external_library: SQLite3 was found.
+-- Could NOT find Boost (missing: Boost_INCLUDE_DIR) 
+-- [33mdocs: doxygen documentation not enabled due to missing dependencies: doxygen dot dia[0m
+-- Failed to locate sphinx-build executable (missing: SPHINX_EXECUTABLE) 
+-- [33mdocs: sphinx documentation not enabled due to missing dependencies: Sphinx epstopdf convert dvipng dia[0m
+-- Processing contrib/lora-model
+-- Processing src/antenna
+-- Standard library Bessel function has been found
+-- Processing src/aodv
+-- Processing src/applications
+-- Processing src/bridge
+-- Processing src/brite
+-- [33mSkipping src/brite[0m
+-- Processing src/buildings
+-- Processing src/click
+-- [33mSkipping src/click[0m
+-- Processing src/config-store
+-- Processing src/core
+-- Boost Units are an optional feature of length.cc.  Ubuntu ships it within the libboost-dev package.  You may need to clean up the CMake cache after installing it to pass this check.
+-- Processing src/csma
+-- Processing src/csma-layout
+-- Processing src/dsdv
+-- Processing src/dsr
+-- Processing src/energy
+-- Processing src/fd-net-device
+-- Checking for module 'libdpdk'
+--   Package 'libdpdk', required by 'virtual:world', not found
+-- Processing src/flow-monitor
+-- Processing src/internet
+-- Processing src/internet-apps
+-- Processing src/lorawan
+-- Processing src/lr-wpan
+-- Processing src/lte
+-- Processing src/mesh
+-- Processing src/mobility
+-- Processing src/netanim
+-- Processing src/network
+-- Processing src/nix-vector-routing
+-- Processing src/olsr
+-- Processing src/openflow
+-- [33mSkipping src/openflow[0m
+-- Processing src/point-to-point
+-- Processing src/point-to-point-layout
+-- Processing src/propagation
+-- Processing src/sixlowpan
+-- Processing src/spectrum
+-- Processing src/stats
+-- Processing src/tap-bridge
+-- Processing src/topology-read
+-- Processing src/traffic-control
+-- Processing src/uan
+-- Processing src/virtual-net-device
+-- Processing src/wifi
+-- Processing src/wimax
+-- ---- Summary of ns-3 settings:
+Build profile                 : default
+Build directory               : /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build
+Build with runtime asserts    : [32mON[0m
+Build with runtime logging    : [32mON[0m
+Build version embedding       : OFF (not requested)
+BRITE Integration             : [31mOFF (Missing headers: "Brite.h" and missing libraries: "brite")[0m
+DES Metrics event collection  : OFF (not requested)
+DPDK NetDevice                : OFF (not requested)
+Emulation FdNetDevice         : [32mON[0m
+Examples                      : OFF (not requested)
+File descriptor NetDevice     : [32mON[0m
+GNU Scientific Library (GSL)  : [31mOFF (GSL was not found)[0m
+GtkConfigStore                : [31mOFF (Harfbuzz is required by GTK3 and was not found)[0m
+LibXml2 support               : [32mON[0m
+MPI Support                   : OFF (not requested)
+ns-3 Click Integration        : [31mOFF (Missing headers: "simclick.h" and missing libraries: "nsclick click")[0m
+ns-3 OpenFlow Integration     : [31mOFF (Missing headers: "openflow.h" and missing libraries: "openflow")[0m
+Netmap emulation FdNetDevice  : [31mOFF (missing dependency)[0m
+PyViz visualizer              : [31mOFF (Python Bindings are disabled)[0m
+Python Bindings               : OFF (not requested)
+SQLite support                : [32mON[0m
+Eigen3 support                : [31mOFF (Eigen was not found)[0m
+Tap Bridge                    : [32mON[0m
+Tap FdNetDevice               : [32mON[0m
+Tests                         : OFF (not requested)
+
+
+Modules configured to be built:
+antenna                   aodv                      applications              
+bridge                    buildings                 config-store              
+core                      csma                      csma-layout               
+dsdv                      dsr                       energy                    
+fd-net-device             flow-monitor              internet                  
+internet-apps             lora-model                lorawan                   
+lr-wpan                   lte                       mesh                      
+mobility                  netanim                   network                   
+nix-vector-routing        olsr                      point-to-point            
+point-to-point-layout     propagation               sixlowpan                 
+spectrum                  stats                     tap-bridge                
+topology-read             traffic-control           uan                       
+virtual-net-device        wifi                      wimax                     
+
+
+Modules that cannot be built:
+brite                     click                     mpi                       
+openflow                  test                      visualizer                
+
+
+
+-- Configuring done (0.4s)
+-- Generating done (0.7s)
+-- Build files have been written to: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
+[  0%] Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/end-device-lorawan-mac.cc.o
+[  0%] Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/network-status.cc.o
+[  0%] Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-component.cc.o
+In file included from [01m[K/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.cc:9[m[K:
+[01m[K/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h:[m[K In constructor ‘[01m[Kns3::lorawan::AdrComponent::[01;32m[KAdrComponent[m[K()[m[K’:
+[01m[K/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h:335:9:[m[K [01;35m[Kwarning: [m[K‘[01m[Kns3::lorawan::AdrComponent::m_liteMaxConfigIndex[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+  335 |     int [01;35m[Km_liteMaxConfigIndex[m[K; //!< Index |K|-1 (highest energy / most robust)
+      |         [01;35m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h:323:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool ns3::lorawan::AdrComponent::m_toggleTxPower[m[K’ [[01;35m[K-Wreorder[m[K]
+  323 |     bool [01;35m[Km_toggleTxPower[m[K; //!< Whether to control transmission power of end devices or not
+      |          [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.cc:86:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+   86 | [01;35m[KAdrComponent[m[K::AdrComponent()
+      | [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.cc:[m[K In member function ‘[01m[Kvoid ns3::lorawan::AdrComponent::[01;32m[KAdrImplementation[m[K(uint8_t*, double*, ns3::Ptr<ns3::lorawan::EndDeviceStatus>)[m[K’:
+[01m[K/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.cc:367:12:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KLITE[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+  367 |     switch [01;35m[K([m[KhistoryAveraging)
+      |            [01;35m[K^[m[K
+[  1%] Linking CXX shared library /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m1%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 2/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:26 | Restant estimé: 00:32:04  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m2%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 3/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:28 | Restant estimé: 00:22:52  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m2%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 4/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:30 | Restant estimé: 00:18:15  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m3%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 5/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:33 | Restant estimé: 00:15:57  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m4%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 6/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:36 | Restant estimé: 00:14:24  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m4%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 7/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:39 | Restant estimé: 00:13:16  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m5%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 8/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:42 | Restant estimé: 00:12:25  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m6%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 9/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:44 | Restant estimé: 00:11:29  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m6%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 10/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:47 | Restant estimé: 00:10:58  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m7%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 11/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:50 | Restant estimé: 00:10:31  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m8%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 12/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:53 | Restant estimé: 00:10:09  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m8%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 13/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:55 | Restant estimé: 00:09:39  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m9%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 14/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:00:58 | Restant estimé: 00:09:23  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m10%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 15/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:01 | Restant estimé: 00:09:09  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=100, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=100 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev100_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m10%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 16/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:04 | Restant estimé: 00:08:56  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m11%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 17/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:07 | Restant estimé: 00:08:44  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m12%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 18/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:10 | Restant estimé: 00:08:33  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m12%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 19/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:12 | Restant estimé: 00:08:16  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m13%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 20/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:15 | Restant estimé: 00:08:07  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m14%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 21/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:18 | Restant estimé: 00:07:59  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m14%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 22/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:21 | Restant estimé: 00:07:51  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m15%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 23/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:24 | Restant estimé: 00:07:43  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m16%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 24/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:28 | Restant estimé: 00:07:42  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m16%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 25/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:31 | Restant estimé: 00:07:35  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m17%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 26/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:34 | Restant estimé: 00:07:28  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m18%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 27/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:36 | Restant estimé: 00:07:17  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m18%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 28/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:38 | Restant estimé: 00:07:07  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m19%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 29/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:40 | Restant estimé: 00:06:57  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m20%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 30/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:43 | Restant estimé: 00:06:52  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=200, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=200 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev200_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m20%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 31/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:45 | Restant estimé: 00:06:43  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m21%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 32/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:47 | Restant estimé: 00:06:34  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m22%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 33/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:49 | Restant estimé: 00:06:26  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m22%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 34/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:51 | Restant estimé: 00:06:18  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m23%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 35/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:54 | Restant estimé: 00:06:14  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m24%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 36/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:56 | Restant estimé: 00:06:07  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m24%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 37/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:01:58 | Restant estimé: 00:06:00  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m25%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 38/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:00 | Restant estimé: 00:05:53  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m26%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 39/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:02 | Restant estimé: 00:05:47  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m26%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 40/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:05 | Restant estimé: 00:05:43  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m27%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 41/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:07 | Restant estimé: 00:05:37  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m28%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 42/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:09 | Restant estimé: 00:05:31  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m28%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 43/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:12 | Restant estimé: 00:05:28  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m29%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 44/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:14 | Restant estimé: 00:05:22  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m30%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 45/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:16 | Restant estimé: 00:05:17  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=300, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=300 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev300_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m30%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 46/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:18 | Restant estimé: 00:05:12  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m31%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 47/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:20 | Restant estimé: 00:05:06  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m32%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 48/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:22 | Restant estimé: 00:05:01  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m32%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 49/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:25 | Restant estimé: 00:04:58  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m33%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 50/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:27 | Restant estimé: 00:04:54  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m34%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 51/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:28 | Restant estimé: 00:04:47  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m34%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 52/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:30 | Restant estimé: 00:04:42  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m35%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 53/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:32 | Restant estimé: 00:04:38  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m36%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 54/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:33 | Restant estimé: 00:04:32  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m36%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 55/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:35 | Restant estimé: 00:04:27  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m37%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 56/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:36 | Restant estimé: 00:04:21  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m38%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 57/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:38 | Restant estimé: 00:04:17  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m38%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 58/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:39 | Restant estimé: 00:04:12  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████░░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m39%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 59/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:41 | Restant estimé: 00:04:08  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m40%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 60/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:42 | Restant estimé: 00:04:03  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=400, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=400 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev400_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m40%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 61/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:44 | Restant estimé: 00:03:59  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m41%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 62/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:46 | Restant estimé: 00:03:55  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████░░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m42%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 63/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:48 | Restant estimé: 00:03:52  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m42%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 64/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:49 | Restant estimé: 00:03:47  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m43%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 65/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:51 | Restant estimé: 00:03:43  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m44%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 66/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:52 | Restant estimé: 00:03:38  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████░░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m44%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 67/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:54 | Restant estimé: 00:03:35  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m45%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 68/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:56 | Restant estimé: 00:03:32  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m46%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 69/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:57 | Restant estimé: 00:03:27  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m46%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 70/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:02:59 | Restant estimé: 00:03:24  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████░░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m47%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 71/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:01 | Restant estimé: 00:03:21  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m48%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 72/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:03 | Restant estimé: 00:03:18  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m48%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 73/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:04 | Restant estimé: 00:03:14  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████░░░░░░░░░░░░░░░░░░░░░[0m] [1;33m49%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 74/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:06 | Restant estimé: 00:03:11  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████░░░░░░░░░░░░░░░░░░░░[0m] [1;33m50%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 75/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:08 | Restant estimé: 00:03:08  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=500, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=500 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev500_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████░░░░░░░░░░░░░░░░░░░░[0m] [1;33m50%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 76/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:09 | Restant estimé: 00:03:04  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████░░░░░░░░░░░░░░░░░░░░[0m] [1;33m51%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 77/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:11 | Restant estimé: 00:03:01  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████░░░░░░░░░░░░░░░░░░░░[0m] [1;33m52%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 78/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:13 | Restant estimé: 00:02:58  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████░░░░░░░░░░░░░░░░░░░[0m] [1;33m52%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 79/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:15 | Restant estimé: 00:02:55  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████░░░░░░░░░░░░░░░░░░░[0m] [1;33m53%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 80/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:16 | Restant estimé: 00:02:51  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████░░░░░░░░░░░░░░░░░░░[0m] [1;33m54%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 81/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:18 | Restant estimé: 00:02:48  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████░░░░░░░░░░░░░░░░░░░[0m] [1;33m54%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 82/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:20 | Restant estimé: 00:02:45  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████░░░░░░░░░░░░░░░░░░[0m] [1;33m55%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 83/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:21 | Restant estimé: 00:02:42  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████░░░░░░░░░░░░░░░░░░[0m] [1;33m56%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 84/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:23 | Restant estimé: 00:02:39  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████░░░░░░░░░░░░░░░░░░[0m] [1;33m56%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 85/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:25 | Restant estimé: 00:02:36  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████░░░░░░░░░░░░░░░░░░[0m] [1;33m57%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 86/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:26 | Restant estimé: 00:02:33  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████░░░░░░░░░░░░░░░░░[0m] [1;33m58%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 87/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:28 | Restant estimé: 00:02:30  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████░░░░░░░░░░░░░░░░░[0m] [1;33m58%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 88/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:30 | Restant estimé: 00:02:27  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████░░░░░░░░░░░░░░░░░[0m] [1;33m59%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 89/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:32 | Restant estimé: 00:02:25  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████░░░░░░░░░░░░░░░░[0m] [1;33m60%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 90/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:33 | Restant estimé: 00:02:22  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=600, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=600 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev600_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████░░░░░░░░░░░░░░░░[0m] [1;33m60%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 91/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:35 | Restant estimé: 00:02:19  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████░░░░░░░░░░░░░░░░[0m] [1;33m61%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 92/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:36 | Restant estimé: 00:02:16  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████░░░░░░░░░░░░░░░░[0m] [1;33m62%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 93/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:38 | Restant estimé: 00:02:13  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████░░░░░░░░░░░░░░░[0m] [1;33m62%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 94/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:39 | Restant estimé: 00:02:10  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████░░░░░░░░░░░░░░░[0m] [1;33m63%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 95/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:41 | Restant estimé: 00:02:07  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████░░░░░░░░░░░░░░░[0m] [1;33m64%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 96/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:43 | Restant estimé: 00:02:05  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████░░░░░░░░░░░░░░░[0m] [1;33m64%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 97/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:44 | Restant estimé: 00:02:02  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████░░░░░░░░░░░░░░[0m] [1;33m65%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 98/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:46 | Restant estimé: 00:01:59  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████░░░░░░░░░░░░░░[0m] [1;33m66%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 99/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:47 | Restant estimé: 00:01:56  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████░░░░░░░░░░░░░░[0m] [1;33m66%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 100/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:49 | Restant estimé: 00:01:54  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████░░░░░░░░░░░░░░[0m] [1;33m67%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 101/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:50 | Restant estimé: 00:01:51  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████░░░░░░░░░░░░░[0m] [1;33m68%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 102/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:52 | Restant estimé: 00:01:49  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████░░░░░░░░░░░░░[0m] [1;33m68%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 103/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:54 | Restant estimé: 00:01:46  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████░░░░░░░░░░░░░[0m] [1;33m69%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 104/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:55 | Restant estimé: 00:01:43  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████░░░░░░░░░░░░[0m] [1;33m70%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 105/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:57 | Restant estimé: 00:01:41  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=700, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=700 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev700_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████░░░░░░░░░░░░[0m] [1;33m70%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 106/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:03:59 | Restant estimé: 00:01:39  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████░░░░░░░░░░░░[0m] [1;33m71%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 107/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:01 | Restant estimé: 00:01:36  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████░░░░░░░░░░░░[0m] [1;33m72%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 108/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:03 | Restant estimé: 00:01:34  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████░░░░░░░░░░░[0m] [1;33m72%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 109/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:04 | Restant estimé: 00:01:31  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████░░░░░░░░░░░[0m] [1;33m73%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 110/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:06 | Restant estimé: 00:01:29  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████░░░░░░░░░░░[0m] [1;33m74%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 111/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:08 | Restant estimé: 00:01:27  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████░░░░░░░░░░░[0m] [1;33m74%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 112/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:10 | Restant estimé: 00:01:24  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████░░░░░░░░░░[0m] [1;33m75%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 113/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:12 | Restant estimé: 00:01:22  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████░░░░░░░░░░[0m] [1;33m76%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 114/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:13 | Restant estimé: 00:01:19  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████░░░░░░░░░░[0m] [1;33m76%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 115/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:15 | Restant estimé: 00:01:17  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████░░░░░░░░░░[0m] [1;33m77%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 116/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:17 | Restant estimé: 00:01:15  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████░░░░░░░░░[0m] [1;33m78%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 117/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:19 | Restant estimé: 00:01:13  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████░░░░░░░░░[0m] [1;33m78%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 118/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:21 | Restant estimé: 00:01:10  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████░░░░░░░░░[0m] [1;33m79%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 119/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:22 | Restant estimé: 00:01:08  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████░░░░░░░░[0m] [1;33m80%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 120/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:24 | Restant estimé: 00:01:06  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=800, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=800 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev800_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████░░░░░░░░[0m] [1;33m80%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 121/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:26 | Restant estimé: 00:01:03  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████░░░░░░░░[0m] [1;33m81%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 122/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:27 | Restant estimé: 00:01:01  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████░░░░░░░░[0m] [1;33m82%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 123/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:29 | Restant estimé: 00:00:59  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████████░░░░░░░[0m] [1;33m82%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 124/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:30 | Restant estimé: 00:00:56  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████████░░░░░░░[0m] [1;33m83%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 125/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:32 | Restant estimé: 00:00:54  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████████░░░░░░░[0m] [1;33m84%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 126/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:34 | Restant estimé: 00:00:52  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████████░░░░░░░[0m] [1;33m84%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 127/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:36 | Restant estimé: 00:00:49  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████████░░░░░░[0m] [1;33m85%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 128/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:38 | Restant estimé: 00:00:47  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████████░░░░░░[0m] [1;33m86%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 129/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:39 | Restant estimé: 00:00:45  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████████░░░░░░[0m] [1;33m86%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 130/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:41 | Restant estimé: 00:00:43  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████████░░░░░░[0m] [1;33m87%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 131/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:43 | Restant estimé: 00:00:41  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████████░░░░░[0m] [1;33m88%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 132/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:45 | Restant estimé: 00:00:38  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████████░░░░░[0m] [1;33m88%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 133/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:46 | Restant estimé: 00:00:36  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████████░░░░░[0m] [1;33m89%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 134/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:48 | Restant estimé: 00:00:34  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████████░░░░[0m] [1;33m90%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 135/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:50 | Restant estimé: 00:00:32  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=900, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=900 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev900_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████████░░░░[0m] [1;33m90%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 136/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:51 | Restant estimé: 00:00:29  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=0, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob0.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████████░░░░[0m] [1;33m91%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 137/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:53 | Restant estimé: 00:00:27  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=0, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob0.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████████░░░░[0m] [1;33m92%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 138/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:54 | Restant estimé: 00:00:25  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=0, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob0.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████████████░░░[0m] [1;33m92%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 139/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:56 | Restant estimé: 00:00:23  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=0, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob0.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████████████░░░[0m] [1;33m93%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 140/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:04:58 | Restant estimé: 00:00:21  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=0, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=0 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob0.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████████████░░░[0m] [1;33m94%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 141/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:00 | Restant estimé: 00:00:19  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=30, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob30.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m█████████████████████████████████████░░░[0m] [1;33m94%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 142/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:01 | Restant estimé: 00:00:16  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=30, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob30.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████████████░░[0m] [1;33m95%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 143/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:03 | Restant estimé: 00:00:14  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=30, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob30.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████████████░░[0m] [1;33m96%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 144/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:05 | Restant estimé: 00:00:12  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=30, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob30.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████████████░░[0m] [1;33m96%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 145/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:06 | Restant estimé: 00:00:10  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=30, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=30 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob30.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m██████████████████████████████████████░░[0m] [1;33m97%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 146/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:08 | Restant estimé: 00:00:08  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=60, T=3600, L=3.96, A=No-ADR, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=No-ADR --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob60.0_traf3600_sig3.96_No-ADR_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████████████░[0m] [1;33m98%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 147/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:10 | Restant estimé: 00:00:06  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=60, T=3600, L=3.96, A=ADR-MAX, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MAX --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob60.0_traf3600_sig3.96_ADR-MAX_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████████████░[0m] [1;33m98%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 148/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:11 | Restant estimé: 00:00:04  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=60, T=3600, L=3.96, A=ADR-AVG, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-AVG --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob60.0_traf3600_sig3.96_ADR-AVG_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m███████████████████████████████████████░[0m] [1;33m99%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 149/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:12 | Restant estimé: 00:00:02  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=60, T=3600, L=3.96, A=ADR-MIN, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-MIN --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob60.0_traf3600_sig3.96_ADR-MIN_run1.csv[0m
+
+[0;36m┌────────────────────────────────────────────────────────┐[0m
+[0;36m│[0m [[0;32m████████████████████████████████████████[0m] [1;33m100%[0m        [0;36m│[0m
+[0;36m│[0m Progression: 150/150 simulations               [0;36m│[0m
+[0;36m│[0m Temps écoulé: 00:05:13 | Restant estimé: 00:00:00  [0;36m│[0m
+[0;36m└────────────────────────────────────────────────────────┘[0m
+[0;34mSimulation:[0m D=1000, M=60, T=3600, L=3.96, A=ADR-Lite, R=1
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/scratch/ns3.42-lorawan-adr-simulation-module-default: symbol lookup error: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: undefined symbol: _ZN3ns37lorawan19EndDeviceLorawanMac4SendENS_3PtrINS_6PacketEEE
+Command 'build/scratch/ns3.42-lorawan-adr-simulation-module-default --scenario=5 --numDevices=1000 --mobilitySpeed=60 --trafficInterval=3600 --maxRandomLoss=3.96 --adrAlgo=ADR-Lite --runNumber=1 --simulationTime=360000' returned non-zero exit status 127.
+[0;31m Fichier sim non créé: sim_scen5_dev1000_mob60.0_traf3600_sig3.96_ADR-Lite_run1.csv[0m
+
+[0;32mScenario 5 completed![0m
+[0;36mTemps total: 00:05:14[0m
+[0;32mSummary: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/resultsfinal/summaries/summary_scenario5.csv[0m
+
+[0;36m========================================[0m
+[0;36m  SIMULATION SCÉNARIO 5 TERMINÉE![0m
+[0;36m========================================[0m
+
+[0;34mRésultats dans:[0m
+[0;32m  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/resultsfinal/summaries/[0m
+[0;31mFichier summary non créé[0m

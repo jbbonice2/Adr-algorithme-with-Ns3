@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -189,6 +199,20 @@ libmesh: src/mesh/CMakeFiles/libmesh.dir/rule
 libmesh/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh.dir/build.make src/mesh/CMakeFiles/libmesh.dir/build
 .PHONY : libmesh/fast
+
+# Convenience name for target.
+src/mesh/CMakeFiles/libmesh-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/mesh/CMakeFiles/libmesh-test.dir/rule
+.PHONY : src/mesh/CMakeFiles/libmesh-test.dir/rule
+
+# Convenience name for target.
+libmesh-test: src/mesh/CMakeFiles/libmesh-test.dir/rule
+.PHONY : libmesh-test
+
+# fast build rule for target.
+libmesh-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/build
+.PHONY : libmesh-test/fast
 
 helper/dot11s/dot11s-installer.o: helper/dot11s/dot11s-installer.cc.o
 .PHONY : helper/dot11s/dot11s-installer.o
@@ -982,6 +1006,270 @@ model/mesh-wifi-interface-mac.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-obj.dir/build.make src/mesh/CMakeFiles/libmesh-obj.dir/model/mesh-wifi-interface-mac.cc.s
 .PHONY : model/mesh-wifi-interface-mac.cc.s
 
+test/dot11s/dot11s-test-suite.o: test/dot11s/dot11s-test-suite.cc.o
+.PHONY : test/dot11s/dot11s-test-suite.o
+
+# target to build an object file
+test/dot11s/dot11s-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/dot11s-test-suite.cc.o
+.PHONY : test/dot11s/dot11s-test-suite.cc.o
+
+test/dot11s/dot11s-test-suite.i: test/dot11s/dot11s-test-suite.cc.i
+.PHONY : test/dot11s/dot11s-test-suite.i
+
+# target to preprocess a source file
+test/dot11s/dot11s-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/dot11s-test-suite.cc.i
+.PHONY : test/dot11s/dot11s-test-suite.cc.i
+
+test/dot11s/dot11s-test-suite.s: test/dot11s/dot11s-test-suite.cc.s
+.PHONY : test/dot11s/dot11s-test-suite.s
+
+# target to generate assembly for a file
+test/dot11s/dot11s-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/dot11s-test-suite.cc.s
+.PHONY : test/dot11s/dot11s-test-suite.cc.s
+
+test/dot11s/hwmp-proactive-regression.o: test/dot11s/hwmp-proactive-regression.cc.o
+.PHONY : test/dot11s/hwmp-proactive-regression.o
+
+# target to build an object file
+test/dot11s/hwmp-proactive-regression.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-proactive-regression.cc.o
+.PHONY : test/dot11s/hwmp-proactive-regression.cc.o
+
+test/dot11s/hwmp-proactive-regression.i: test/dot11s/hwmp-proactive-regression.cc.i
+.PHONY : test/dot11s/hwmp-proactive-regression.i
+
+# target to preprocess a source file
+test/dot11s/hwmp-proactive-regression.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-proactive-regression.cc.i
+.PHONY : test/dot11s/hwmp-proactive-regression.cc.i
+
+test/dot11s/hwmp-proactive-regression.s: test/dot11s/hwmp-proactive-regression.cc.s
+.PHONY : test/dot11s/hwmp-proactive-regression.s
+
+# target to generate assembly for a file
+test/dot11s/hwmp-proactive-regression.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-proactive-regression.cc.s
+.PHONY : test/dot11s/hwmp-proactive-regression.cc.s
+
+test/dot11s/hwmp-reactive-regression.o: test/dot11s/hwmp-reactive-regression.cc.o
+.PHONY : test/dot11s/hwmp-reactive-regression.o
+
+# target to build an object file
+test/dot11s/hwmp-reactive-regression.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-reactive-regression.cc.o
+.PHONY : test/dot11s/hwmp-reactive-regression.cc.o
+
+test/dot11s/hwmp-reactive-regression.i: test/dot11s/hwmp-reactive-regression.cc.i
+.PHONY : test/dot11s/hwmp-reactive-regression.i
+
+# target to preprocess a source file
+test/dot11s/hwmp-reactive-regression.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-reactive-regression.cc.i
+.PHONY : test/dot11s/hwmp-reactive-regression.cc.i
+
+test/dot11s/hwmp-reactive-regression.s: test/dot11s/hwmp-reactive-regression.cc.s
+.PHONY : test/dot11s/hwmp-reactive-regression.s
+
+# target to generate assembly for a file
+test/dot11s/hwmp-reactive-regression.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-reactive-regression.cc.s
+.PHONY : test/dot11s/hwmp-reactive-regression.cc.s
+
+test/dot11s/hwmp-simplest-regression.o: test/dot11s/hwmp-simplest-regression.cc.o
+.PHONY : test/dot11s/hwmp-simplest-regression.o
+
+# target to build an object file
+test/dot11s/hwmp-simplest-regression.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-simplest-regression.cc.o
+.PHONY : test/dot11s/hwmp-simplest-regression.cc.o
+
+test/dot11s/hwmp-simplest-regression.i: test/dot11s/hwmp-simplest-regression.cc.i
+.PHONY : test/dot11s/hwmp-simplest-regression.i
+
+# target to preprocess a source file
+test/dot11s/hwmp-simplest-regression.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-simplest-regression.cc.i
+.PHONY : test/dot11s/hwmp-simplest-regression.cc.i
+
+test/dot11s/hwmp-simplest-regression.s: test/dot11s/hwmp-simplest-regression.cc.s
+.PHONY : test/dot11s/hwmp-simplest-regression.s
+
+# target to generate assembly for a file
+test/dot11s/hwmp-simplest-regression.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-simplest-regression.cc.s
+.PHONY : test/dot11s/hwmp-simplest-regression.cc.s
+
+test/dot11s/hwmp-target-flags-regression.o: test/dot11s/hwmp-target-flags-regression.cc.o
+.PHONY : test/dot11s/hwmp-target-flags-regression.o
+
+# target to build an object file
+test/dot11s/hwmp-target-flags-regression.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-target-flags-regression.cc.o
+.PHONY : test/dot11s/hwmp-target-flags-regression.cc.o
+
+test/dot11s/hwmp-target-flags-regression.i: test/dot11s/hwmp-target-flags-regression.cc.i
+.PHONY : test/dot11s/hwmp-target-flags-regression.i
+
+# target to preprocess a source file
+test/dot11s/hwmp-target-flags-regression.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-target-flags-regression.cc.i
+.PHONY : test/dot11s/hwmp-target-flags-regression.cc.i
+
+test/dot11s/hwmp-target-flags-regression.s: test/dot11s/hwmp-target-flags-regression.cc.s
+.PHONY : test/dot11s/hwmp-target-flags-regression.s
+
+# target to generate assembly for a file
+test/dot11s/hwmp-target-flags-regression.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/hwmp-target-flags-regression.cc.s
+.PHONY : test/dot11s/hwmp-target-flags-regression.cc.s
+
+test/dot11s/pmp-regression.o: test/dot11s/pmp-regression.cc.o
+.PHONY : test/dot11s/pmp-regression.o
+
+# target to build an object file
+test/dot11s/pmp-regression.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/pmp-regression.cc.o
+.PHONY : test/dot11s/pmp-regression.cc.o
+
+test/dot11s/pmp-regression.i: test/dot11s/pmp-regression.cc.i
+.PHONY : test/dot11s/pmp-regression.i
+
+# target to preprocess a source file
+test/dot11s/pmp-regression.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/pmp-regression.cc.i
+.PHONY : test/dot11s/pmp-regression.cc.i
+
+test/dot11s/pmp-regression.s: test/dot11s/pmp-regression.cc.s
+.PHONY : test/dot11s/pmp-regression.s
+
+# target to generate assembly for a file
+test/dot11s/pmp-regression.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/pmp-regression.cc.s
+.PHONY : test/dot11s/pmp-regression.cc.s
+
+test/dot11s/regression.o: test/dot11s/regression.cc.o
+.PHONY : test/dot11s/regression.o
+
+# target to build an object file
+test/dot11s/regression.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/regression.cc.o
+.PHONY : test/dot11s/regression.cc.o
+
+test/dot11s/regression.i: test/dot11s/regression.cc.i
+.PHONY : test/dot11s/regression.i
+
+# target to preprocess a source file
+test/dot11s/regression.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/regression.cc.i
+.PHONY : test/dot11s/regression.cc.i
+
+test/dot11s/regression.s: test/dot11s/regression.cc.s
+.PHONY : test/dot11s/regression.s
+
+# target to generate assembly for a file
+test/dot11s/regression.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/dot11s/regression.cc.s
+.PHONY : test/dot11s/regression.cc.s
+
+test/flame/flame-regression.o: test/flame/flame-regression.cc.o
+.PHONY : test/flame/flame-regression.o
+
+# target to build an object file
+test/flame/flame-regression.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/flame-regression.cc.o
+.PHONY : test/flame/flame-regression.cc.o
+
+test/flame/flame-regression.i: test/flame/flame-regression.cc.i
+.PHONY : test/flame/flame-regression.i
+
+# target to preprocess a source file
+test/flame/flame-regression.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/flame-regression.cc.i
+.PHONY : test/flame/flame-regression.cc.i
+
+test/flame/flame-regression.s: test/flame/flame-regression.cc.s
+.PHONY : test/flame/flame-regression.s
+
+# target to generate assembly for a file
+test/flame/flame-regression.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/flame-regression.cc.s
+.PHONY : test/flame/flame-regression.cc.s
+
+test/flame/flame-test-suite.o: test/flame/flame-test-suite.cc.o
+.PHONY : test/flame/flame-test-suite.o
+
+# target to build an object file
+test/flame/flame-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/flame-test-suite.cc.o
+.PHONY : test/flame/flame-test-suite.cc.o
+
+test/flame/flame-test-suite.i: test/flame/flame-test-suite.cc.i
+.PHONY : test/flame/flame-test-suite.i
+
+# target to preprocess a source file
+test/flame/flame-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/flame-test-suite.cc.i
+.PHONY : test/flame/flame-test-suite.cc.i
+
+test/flame/flame-test-suite.s: test/flame/flame-test-suite.cc.s
+.PHONY : test/flame/flame-test-suite.s
+
+# target to generate assembly for a file
+test/flame/flame-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/flame-test-suite.cc.s
+.PHONY : test/flame/flame-test-suite.cc.s
+
+test/flame/regression.o: test/flame/regression.cc.o
+.PHONY : test/flame/regression.o
+
+# target to build an object file
+test/flame/regression.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/regression.cc.o
+.PHONY : test/flame/regression.cc.o
+
+test/flame/regression.i: test/flame/regression.cc.i
+.PHONY : test/flame/regression.i
+
+# target to preprocess a source file
+test/flame/regression.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/regression.cc.i
+.PHONY : test/flame/regression.cc.i
+
+test/flame/regression.s: test/flame/regression.cc.s
+.PHONY : test/flame/regression.s
+
+# target to generate assembly for a file
+test/flame/regression.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/flame/regression.cc.s
+.PHONY : test/flame/regression.cc.s
+
+test/mesh-information-element-vector-test-suite.o: test/mesh-information-element-vector-test-suite.cc.o
+.PHONY : test/mesh-information-element-vector-test-suite.o
+
+# target to build an object file
+test/mesh-information-element-vector-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/mesh-information-element-vector-test-suite.cc.o
+.PHONY : test/mesh-information-element-vector-test-suite.cc.o
+
+test/mesh-information-element-vector-test-suite.i: test/mesh-information-element-vector-test-suite.cc.i
+.PHONY : test/mesh-information-element-vector-test-suite.i
+
+# target to preprocess a source file
+test/mesh-information-element-vector-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/mesh-information-element-vector-test-suite.cc.i
+.PHONY : test/mesh-information-element-vector-test-suite.cc.i
+
+test/mesh-information-element-vector-test-suite.s: test/mesh-information-element-vector-test-suite.cc.s
+.PHONY : test/mesh-information-element-vector-test-suite.s
+
+# target to generate assembly for a file
+test/mesh-information-element-vector-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/mesh/CMakeFiles/libmesh-test.dir/build.make src/mesh/CMakeFiles/libmesh-test.dir/test/mesh-information-element-vector-test-suite.cc.s
+.PHONY : test/mesh-information-element-vector-test-suite.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -994,8 +1282,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... libmesh"
 	@echo "... libmesh-obj"
+	@echo "... libmesh-test"
 	@echo "... helper/dot11s/dot11s-installer.o"
 	@echo "... helper/dot11s/dot11s-installer.i"
 	@echo "... helper/dot11s/dot11s-installer.s"
@@ -1095,6 +1385,39 @@ help:
 	@echo "... model/mesh-wifi-interface-mac.o"
 	@echo "... model/mesh-wifi-interface-mac.i"
 	@echo "... model/mesh-wifi-interface-mac.s"
+	@echo "... test/dot11s/dot11s-test-suite.o"
+	@echo "... test/dot11s/dot11s-test-suite.i"
+	@echo "... test/dot11s/dot11s-test-suite.s"
+	@echo "... test/dot11s/hwmp-proactive-regression.o"
+	@echo "... test/dot11s/hwmp-proactive-regression.i"
+	@echo "... test/dot11s/hwmp-proactive-regression.s"
+	@echo "... test/dot11s/hwmp-reactive-regression.o"
+	@echo "... test/dot11s/hwmp-reactive-regression.i"
+	@echo "... test/dot11s/hwmp-reactive-regression.s"
+	@echo "... test/dot11s/hwmp-simplest-regression.o"
+	@echo "... test/dot11s/hwmp-simplest-regression.i"
+	@echo "... test/dot11s/hwmp-simplest-regression.s"
+	@echo "... test/dot11s/hwmp-target-flags-regression.o"
+	@echo "... test/dot11s/hwmp-target-flags-regression.i"
+	@echo "... test/dot11s/hwmp-target-flags-regression.s"
+	@echo "... test/dot11s/pmp-regression.o"
+	@echo "... test/dot11s/pmp-regression.i"
+	@echo "... test/dot11s/pmp-regression.s"
+	@echo "... test/dot11s/regression.o"
+	@echo "... test/dot11s/regression.i"
+	@echo "... test/dot11s/regression.s"
+	@echo "... test/flame/flame-regression.o"
+	@echo "... test/flame/flame-regression.i"
+	@echo "... test/flame/flame-regression.s"
+	@echo "... test/flame/flame-test-suite.o"
+	@echo "... test/flame/flame-test-suite.i"
+	@echo "... test/flame/flame-test-suite.s"
+	@echo "... test/flame/regression.o"
+	@echo "... test/flame/regression.i"
+	@echo "... test/flame/regression.s"
+	@echo "... test/mesh-information-element-vector-test-suite.o"
+	@echo "... test/mesh-information-element-vector-test-suite.i"
+	@echo "... test/mesh-information-element-vector-test-suite.s"
 .PHONY : help
 
 

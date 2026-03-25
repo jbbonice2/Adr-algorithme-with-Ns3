@@ -404,12 +404,16 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/core-module.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/int64x64-128.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/int64x64-128.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/csv-reader.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/helper/csv-reader.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/test.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/system-wall-clock-ms.h \
  /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/csv-reader.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/helper/csv-reader.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/helper/event-garbage-collector.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h \
@@ -423,8 +427,6 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/ascii-test.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/ascii-test.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/ascii-file.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/test.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/system-wall-clock-ms.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/attribute-accessor-helper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/attribute-accessor-helper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/attribute-construction-list.h \
@@ -615,6 +617,21 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/matrix-array.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/matrix-array.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/val-array.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-component.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/network-server.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/network-server.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/model/application.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/model/node.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/node-container.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/helper/node-container.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/point-to-point-net-device.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/point-to-point/model/point-to-point-net-device.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/data-rate.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/data-rate.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/queue-fwd.h \
+ /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/queue-fwd.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/basic-energy-source-helper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/energy/helper/basic-energy-source-helper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/energy/helper/energy-model-helper.h \
@@ -632,8 +649,6 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/energy/model/device-energy-model.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/net-device-container.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/helper/net-device-container.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/node-container.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/helper/node-container.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/building-penetration-loss.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/building-penetration-loss.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/class-a-end-device-lorawan-mac.h \
@@ -683,17 +698,8 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/forwarder-helper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application-container.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/helper/application-container.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/model/application.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/model/node.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/forwarder.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/forwarder.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/point-to-point-net-device.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/point-to-point/model/point-to-point-net-device.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/data-rate.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/data-rate.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/queue-fwd.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/queue-fwd.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/gateway-lora-phy.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/gateway-lora-phy.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/gateway-lorawan-mac.h \
@@ -880,8 +886,6 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/timestamp-tag.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/network-server-helper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/network-server.h \
- /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/network-server.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/point-to-point-helper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/point-to-point/helper/point-to-point-helper.h \
  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/periodic-sender-helper.h \

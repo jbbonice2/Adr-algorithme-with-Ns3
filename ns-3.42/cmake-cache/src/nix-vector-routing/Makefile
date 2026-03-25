@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -190,6 +200,20 @@ libnix-vector-routing/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/nix-vector-routing/CMakeFiles/libnix-vector-routing.dir/build.make src/nix-vector-routing/CMakeFiles/libnix-vector-routing.dir/build
 .PHONY : libnix-vector-routing/fast
 
+# Convenience name for target.
+src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/rule
+.PHONY : src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/rule
+
+# Convenience name for target.
+libnix-vector-routing-test: src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/rule
+.PHONY : libnix-vector-routing-test
+
+# fast build rule for target.
+libnix-vector-routing-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/build.make src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/build
+.PHONY : libnix-vector-routing-test/fast
+
 helper/nix-vector-helper.o: helper/nix-vector-helper.cc.o
 .PHONY : helper/nix-vector-helper.o
 
@@ -238,6 +262,30 @@ model/nix-vector-routing.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/nix-vector-routing/CMakeFiles/libnix-vector-routing-obj.dir/build.make src/nix-vector-routing/CMakeFiles/libnix-vector-routing-obj.dir/model/nix-vector-routing.cc.s
 .PHONY : model/nix-vector-routing.cc.s
 
+test/nix-test.o: test/nix-test.cc.o
+.PHONY : test/nix-test.o
+
+# target to build an object file
+test/nix-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/build.make src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/test/nix-test.cc.o
+.PHONY : test/nix-test.cc.o
+
+test/nix-test.i: test/nix-test.cc.i
+.PHONY : test/nix-test.i
+
+# target to preprocess a source file
+test/nix-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/build.make src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/test/nix-test.cc.i
+.PHONY : test/nix-test.cc.i
+
+test/nix-test.s: test/nix-test.cc.s
+.PHONY : test/nix-test.s
+
+# target to generate assembly for a file
+test/nix-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/build.make src/nix-vector-routing/CMakeFiles/libnix-vector-routing-test.dir/test/nix-test.cc.s
+.PHONY : test/nix-test.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -250,14 +298,19 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... libnix-vector-routing"
 	@echo "... libnix-vector-routing-obj"
+	@echo "... libnix-vector-routing-test"
 	@echo "... helper/nix-vector-helper.o"
 	@echo "... helper/nix-vector-helper.i"
 	@echo "... helper/nix-vector-helper.s"
 	@echo "... model/nix-vector-routing.o"
 	@echo "... model/nix-vector-routing.i"
 	@echo "... model/nix-vector-routing.s"
+	@echo "... test/nix-test.o"
+	@echo "... test/nix-test.i"
+	@echo "... test/nix-test.s"
 .PHONY : help
 
 

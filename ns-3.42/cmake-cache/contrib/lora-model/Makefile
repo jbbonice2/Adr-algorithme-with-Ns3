@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -190,6 +200,20 @@ liblora-model/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f contrib/lora-model/CMakeFiles/liblora-model.dir/build.make contrib/lora-model/CMakeFiles/liblora-model.dir/build
 .PHONY : liblora-model/fast
 
+# Convenience name for target.
+contrib/lora-model/CMakeFiles/liblora-model-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 contrib/lora-model/CMakeFiles/liblora-model-test.dir/rule
+.PHONY : contrib/lora-model/CMakeFiles/liblora-model-test.dir/rule
+
+# Convenience name for target.
+liblora-model-test: contrib/lora-model/CMakeFiles/liblora-model-test.dir/rule
+.PHONY : liblora-model-test
+
+# fast build rule for target.
+liblora-model-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f contrib/lora-model/CMakeFiles/liblora-model-test.dir/build.make contrib/lora-model/CMakeFiles/liblora-model-test.dir/build
+.PHONY : liblora-model-test/fast
+
 helper/lora-model-helper.o: helper/lora-model-helper.cc.o
 .PHONY : helper/lora-model-helper.o
 
@@ -238,6 +262,30 @@ model/lora-model.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f contrib/lora-model/CMakeFiles/liblora-model-obj.dir/build.make contrib/lora-model/CMakeFiles/liblora-model-obj.dir/model/lora-model.cc.s
 .PHONY : model/lora-model.cc.s
 
+test/lora-model-test-suite.o: test/lora-model-test-suite.cc.o
+.PHONY : test/lora-model-test-suite.o
+
+# target to build an object file
+test/lora-model-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f contrib/lora-model/CMakeFiles/liblora-model-test.dir/build.make contrib/lora-model/CMakeFiles/liblora-model-test.dir/test/lora-model-test-suite.cc.o
+.PHONY : test/lora-model-test-suite.cc.o
+
+test/lora-model-test-suite.i: test/lora-model-test-suite.cc.i
+.PHONY : test/lora-model-test-suite.i
+
+# target to preprocess a source file
+test/lora-model-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f contrib/lora-model/CMakeFiles/liblora-model-test.dir/build.make contrib/lora-model/CMakeFiles/liblora-model-test.dir/test/lora-model-test-suite.cc.i
+.PHONY : test/lora-model-test-suite.cc.i
+
+test/lora-model-test-suite.s: test/lora-model-test-suite.cc.s
+.PHONY : test/lora-model-test-suite.s
+
+# target to generate assembly for a file
+test/lora-model-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f contrib/lora-model/CMakeFiles/liblora-model-test.dir/build.make contrib/lora-model/CMakeFiles/liblora-model-test.dir/test/lora-model-test-suite.cc.s
+.PHONY : test/lora-model-test-suite.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -250,14 +298,19 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... liblora-model"
 	@echo "... liblora-model-obj"
+	@echo "... liblora-model-test"
 	@echo "... helper/lora-model-helper.o"
 	@echo "... helper/lora-model-helper.i"
 	@echo "... helper/lora-model-helper.s"
 	@echo "... model/lora-model.o"
 	@echo "... model/lora-model.i"
 	@echo "... model/lora-model.s"
+	@echo "... test/lora-model-test-suite.o"
+	@echo "... test/lora-model-test-suite.i"
+	@echo "... test/lora-model-test-suite.s"
 .PHONY : help
 
 

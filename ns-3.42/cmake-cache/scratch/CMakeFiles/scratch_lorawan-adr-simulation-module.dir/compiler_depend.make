@@ -5,6 +5,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/abort.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/address-utils.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/address.h \
+  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-component.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-lite-component.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application-container.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/application-helper.h \
@@ -74,6 +75,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-garbage-collector.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-id.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h \
+  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-error.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fatal-impl.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/fd-reader.h \
@@ -271,6 +273,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/environment-variable.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-id.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/event-impl.h \
+  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-error.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fatal-impl.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/fd-reader.h \
@@ -370,6 +373,7 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lorawan-mac-helper.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/periodic-sender-helper.h \
+  /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/building-penetration-loss.h \
   /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/class-a-end-device-lorawan-mac.h \
@@ -1287,6 +1291,10 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /usr/include/c++/13/bits/gslice_array.h:
 
+/usr/include/c++/13/bits/gslice.h:
+
+/usr/include/c++/13/bits/functional_hash.h:
+
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/attribute-accessor-helper.h:
@@ -1583,6 +1591,26 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/names.h:
 
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/tag-buffer.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/logical-lora-channel-helper.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/matrix-array.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/log-macros-enabled.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
+
+/usr/include/c++/13/bits/charconv.h:
+
+/usr/include/stdint.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/output-stream-wrapper.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/math.h:
+
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/end-device-lorawan-mac.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
@@ -1600,42 +1628,6 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/mac8-address.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/data-rate.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/header-serialization-test.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/vector.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/log-macros-enabled.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/queue-fwd.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/energy/model/generic-battery-model.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/end-device-lora-phy.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/trace-source-accessor.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/valgrind.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lorawan-mac-header.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/simple-end-device-lora-phy.h:
-
-/usr/include/c++/13/bits/atomic_base.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/dynamic-queue-limits.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/trailer.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/random-variable-stream.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/crc32.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/crc32.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/rng-stream.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
@@ -1700,10 +1692,6 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/generic-battery-model-helper.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/deprecated.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/breakpoint.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-device-address.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/simple-channel.h:
 
@@ -1781,15 +1769,65 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/basic-data-calculators.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/c++/13/stop_token:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/lora-net-device.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/lorawan-mac.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/packet-socket-server.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/buffer.h:
+
+/usr/include/c++/13/bits/ranges_uninitialized.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/config.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/header-serialization-test.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/vector.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/log-macros-enabled.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/queue-fwd.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/energy/model/generic-battery-model.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/end-device-lora-phy.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/trace-source-accessor.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/valgrind.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lorawan-mac-header.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/simple-end-device-lora-phy.h:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/crc32.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/crc32.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/rng-stream.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/dynamic-queue-limits.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/trailer.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/random-variable-stream.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/adr-component.h:
+
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/net-device.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/attribute.h:
-
-/usr/include/stdint.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/output-stream-wrapper.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/math.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/address-utils.h:
 
@@ -1806,10 +1844,6 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/helper/net-device-container.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/energy-harvester-helper.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/delay-jitter-estimation.h:
 
 /usr/include/c++/13/bits/shared_ptr_atomic.h:
 
@@ -1863,6 +1897,8 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/pointer.h:
 
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/example-as-test.h:
+
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/ppp-header.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/hash-function.h:
@@ -1880,24 +1916,6 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/timer-impl.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/bit-serializer.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/include/c++/13/stop_token:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/lora-net-device.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/lorawan-mac.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/packet-socket-server.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/buffer.h:
-
-/usr/include/c++/13/bits/ranges_uninitialized.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/config.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/forwarder-helper.h:
 
@@ -1918,6 +1936,10 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/breakpoint.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/lora-radio-energy-model-helper.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/energy-harvester-helper.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/delay-jitter-estimation.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/lorawan-adr-simulation-module.cc:
 
@@ -1979,27 +2001,13 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/ethernet-header.h:
 
-/usr/include/c++/13/bits/gslice.h:
-
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/ethernet-trailer.h:
-
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/tag-buffer.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/logical-lora-channel-helper.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/matrix-array.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/log-macros-enabled.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
-
-/usr/include/c++/13/bits/charconv.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/event-impl.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/hash-fnv.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/example-as-test.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/lora-device-address-generator.h:
 
@@ -2088,6 +2096,10 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/assert.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/make-event.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/breakpoint.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-device-address.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/data-calculator.h:
 
@@ -2385,6 +2397,8 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/periodic-sender-helper.h:
 
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-component.h:
+
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.h:
 
 /usr/include/c++/13/pstl/glue_numeric_defs.h:
@@ -2413,13 +2427,15 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/gateway-lora-phy.h:
 
-/usr/include/c++/13/bits/functional_hash.h:
-
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/core/model/timer.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/gateway-lorawan-mac.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/logical-lora-channel.h:
+
+/usr/include/c++/13/bits/functexcept.h:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-device-address-generator.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
@@ -2519,10 +2535,6 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/model/tag-buffer.h:
 
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-device-address-generator.h:
-
-/usr/include/c++/13/bits/functexcept.h:
-
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/address-utils.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/network/utils/queue-size.h:
@@ -2595,6 +2607,10 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/propagation/model/propagation-delay-model.h:
 
+/usr/include/c++/13/bits/fstream.tcc:
+
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/stats/model/data-output-interface.h:
+
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/trickle-timer.h:
 
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/include/ns3/default-deleter.h:
@@ -2656,7 +2672,3 @@ scratch/CMakeFiles/scratch_lorawan-adr-simulation-module.dir/lorawan-adr-simulat
 /usr/include/c++/13/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/13/bits/exception.h:
-
-/home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/stats/model/data-output-interface.h:
-
-/usr/include/c++/13/bits/fstream.tcc:

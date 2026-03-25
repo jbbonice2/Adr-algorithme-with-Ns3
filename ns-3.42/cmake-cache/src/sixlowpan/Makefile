@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -190,6 +200,20 @@ libsixlowpan/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan.dir/build
 .PHONY : libsixlowpan/fast
 
+# Convenience name for target.
+src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/rule
+.PHONY : src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/rule
+
+# Convenience name for target.
+libsixlowpan-test: src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/rule
+.PHONY : libsixlowpan-test
+
+# fast build rule for target.
+libsixlowpan-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build
+.PHONY : libsixlowpan-test/fast
+
 helper/sixlowpan-helper.o: helper/sixlowpan-helper.cc.o
 .PHONY : helper/sixlowpan-helper.o
 
@@ -262,6 +286,150 @@ model/sixlowpan-net-device.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-obj.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-obj.dir/model/sixlowpan-net-device.cc.s
 .PHONY : model/sixlowpan-net-device.cc.s
 
+test/mock-net-device.o: test/mock-net-device.cc.o
+.PHONY : test/mock-net-device.o
+
+# target to build an object file
+test/mock-net-device.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/mock-net-device.cc.o
+.PHONY : test/mock-net-device.cc.o
+
+test/mock-net-device.i: test/mock-net-device.cc.i
+.PHONY : test/mock-net-device.i
+
+# target to preprocess a source file
+test/mock-net-device.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/mock-net-device.cc.i
+.PHONY : test/mock-net-device.cc.i
+
+test/mock-net-device.s: test/mock-net-device.cc.s
+.PHONY : test/mock-net-device.s
+
+# target to generate assembly for a file
+test/mock-net-device.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/mock-net-device.cc.s
+.PHONY : test/mock-net-device.cc.s
+
+test/sixlowpan-examples-test-suite.o: test/sixlowpan-examples-test-suite.cc.o
+.PHONY : test/sixlowpan-examples-test-suite.o
+
+# target to build an object file
+test/sixlowpan-examples-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-examples-test-suite.cc.o
+.PHONY : test/sixlowpan-examples-test-suite.cc.o
+
+test/sixlowpan-examples-test-suite.i: test/sixlowpan-examples-test-suite.cc.i
+.PHONY : test/sixlowpan-examples-test-suite.i
+
+# target to preprocess a source file
+test/sixlowpan-examples-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-examples-test-suite.cc.i
+.PHONY : test/sixlowpan-examples-test-suite.cc.i
+
+test/sixlowpan-examples-test-suite.s: test/sixlowpan-examples-test-suite.cc.s
+.PHONY : test/sixlowpan-examples-test-suite.s
+
+# target to generate assembly for a file
+test/sixlowpan-examples-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-examples-test-suite.cc.s
+.PHONY : test/sixlowpan-examples-test-suite.cc.s
+
+test/sixlowpan-fragmentation-test.o: test/sixlowpan-fragmentation-test.cc.o
+.PHONY : test/sixlowpan-fragmentation-test.o
+
+# target to build an object file
+test/sixlowpan-fragmentation-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-fragmentation-test.cc.o
+.PHONY : test/sixlowpan-fragmentation-test.cc.o
+
+test/sixlowpan-fragmentation-test.i: test/sixlowpan-fragmentation-test.cc.i
+.PHONY : test/sixlowpan-fragmentation-test.i
+
+# target to preprocess a source file
+test/sixlowpan-fragmentation-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-fragmentation-test.cc.i
+.PHONY : test/sixlowpan-fragmentation-test.cc.i
+
+test/sixlowpan-fragmentation-test.s: test/sixlowpan-fragmentation-test.cc.s
+.PHONY : test/sixlowpan-fragmentation-test.s
+
+# target to generate assembly for a file
+test/sixlowpan-fragmentation-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-fragmentation-test.cc.s
+.PHONY : test/sixlowpan-fragmentation-test.cc.s
+
+test/sixlowpan-hc1-test.o: test/sixlowpan-hc1-test.cc.o
+.PHONY : test/sixlowpan-hc1-test.o
+
+# target to build an object file
+test/sixlowpan-hc1-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-hc1-test.cc.o
+.PHONY : test/sixlowpan-hc1-test.cc.o
+
+test/sixlowpan-hc1-test.i: test/sixlowpan-hc1-test.cc.i
+.PHONY : test/sixlowpan-hc1-test.i
+
+# target to preprocess a source file
+test/sixlowpan-hc1-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-hc1-test.cc.i
+.PHONY : test/sixlowpan-hc1-test.cc.i
+
+test/sixlowpan-hc1-test.s: test/sixlowpan-hc1-test.cc.s
+.PHONY : test/sixlowpan-hc1-test.s
+
+# target to generate assembly for a file
+test/sixlowpan-hc1-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-hc1-test.cc.s
+.PHONY : test/sixlowpan-hc1-test.cc.s
+
+test/sixlowpan-iphc-stateful-test.o: test/sixlowpan-iphc-stateful-test.cc.o
+.PHONY : test/sixlowpan-iphc-stateful-test.o
+
+# target to build an object file
+test/sixlowpan-iphc-stateful-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-iphc-stateful-test.cc.o
+.PHONY : test/sixlowpan-iphc-stateful-test.cc.o
+
+test/sixlowpan-iphc-stateful-test.i: test/sixlowpan-iphc-stateful-test.cc.i
+.PHONY : test/sixlowpan-iphc-stateful-test.i
+
+# target to preprocess a source file
+test/sixlowpan-iphc-stateful-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-iphc-stateful-test.cc.i
+.PHONY : test/sixlowpan-iphc-stateful-test.cc.i
+
+test/sixlowpan-iphc-stateful-test.s: test/sixlowpan-iphc-stateful-test.cc.s
+.PHONY : test/sixlowpan-iphc-stateful-test.s
+
+# target to generate assembly for a file
+test/sixlowpan-iphc-stateful-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-iphc-stateful-test.cc.s
+.PHONY : test/sixlowpan-iphc-stateful-test.cc.s
+
+test/sixlowpan-iphc-test.o: test/sixlowpan-iphc-test.cc.o
+.PHONY : test/sixlowpan-iphc-test.o
+
+# target to build an object file
+test/sixlowpan-iphc-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-iphc-test.cc.o
+.PHONY : test/sixlowpan-iphc-test.cc.o
+
+test/sixlowpan-iphc-test.i: test/sixlowpan-iphc-test.cc.i
+.PHONY : test/sixlowpan-iphc-test.i
+
+# target to preprocess a source file
+test/sixlowpan-iphc-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-iphc-test.cc.i
+.PHONY : test/sixlowpan-iphc-test.cc.i
+
+test/sixlowpan-iphc-test.s: test/sixlowpan-iphc-test.cc.s
+.PHONY : test/sixlowpan-iphc-test.s
+
+# target to generate assembly for a file
+test/sixlowpan-iphc-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/build.make src/sixlowpan/CMakeFiles/libsixlowpan-test.dir/test/sixlowpan-iphc-test.cc.s
+.PHONY : test/sixlowpan-iphc-test.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -274,8 +442,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... libsixlowpan"
 	@echo "... libsixlowpan-obj"
+	@echo "... libsixlowpan-test"
 	@echo "... helper/sixlowpan-helper.o"
 	@echo "... helper/sixlowpan-helper.i"
 	@echo "... helper/sixlowpan-helper.s"
@@ -285,6 +455,24 @@ help:
 	@echo "... model/sixlowpan-net-device.o"
 	@echo "... model/sixlowpan-net-device.i"
 	@echo "... model/sixlowpan-net-device.s"
+	@echo "... test/mock-net-device.o"
+	@echo "... test/mock-net-device.i"
+	@echo "... test/mock-net-device.s"
+	@echo "... test/sixlowpan-examples-test-suite.o"
+	@echo "... test/sixlowpan-examples-test-suite.i"
+	@echo "... test/sixlowpan-examples-test-suite.s"
+	@echo "... test/sixlowpan-fragmentation-test.o"
+	@echo "... test/sixlowpan-fragmentation-test.i"
+	@echo "... test/sixlowpan-fragmentation-test.s"
+	@echo "... test/sixlowpan-hc1-test.o"
+	@echo "... test/sixlowpan-hc1-test.i"
+	@echo "... test/sixlowpan-hc1-test.s"
+	@echo "... test/sixlowpan-iphc-stateful-test.o"
+	@echo "... test/sixlowpan-iphc-stateful-test.i"
+	@echo "... test/sixlowpan-iphc-stateful-test.s"
+	@echo "... test/sixlowpan-iphc-test.o"
+	@echo "... test/sixlowpan-iphc-test.i"
+	@echo "... test/sixlowpan-iphc-test.s"
 .PHONY : help
 
 

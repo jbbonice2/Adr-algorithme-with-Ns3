@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -189,6 +199,20 @@ libspectrum: src/spectrum/CMakeFiles/libspectrum.dir/rule
 libspectrum/fast:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum.dir/build.make src/spectrum/CMakeFiles/libspectrum.dir/build
 .PHONY : libspectrum/fast
+
+# Convenience name for target.
+src/spectrum/CMakeFiles/libspectrum-test.dir/rule:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/spectrum/CMakeFiles/libspectrum-test.dir/rule
+.PHONY : src/spectrum/CMakeFiles/libspectrum-test.dir/rule
+
+# Convenience name for target.
+libspectrum-test: src/spectrum/CMakeFiles/libspectrum-test.dir/rule
+.PHONY : libspectrum-test
+
+# fast build rule for target.
+libspectrum-test/fast:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/build
+.PHONY : libspectrum-test/fast
 
 helper/adhoc-aloha-noack-ideal-phy-helper.o: helper/adhoc-aloha-noack-ideal-phy-helper.cc.o
 .PHONY : helper/adhoc-aloha-noack-ideal-phy-helper.o
@@ -1078,6 +1102,198 @@ model/waveform-generator.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-obj.dir/build.make src/spectrum/CMakeFiles/libspectrum-obj.dir/model/waveform-generator.cc.s
 .PHONY : model/waveform-generator.cc.s
 
+test/spectrum-ideal-phy-test.o: test/spectrum-ideal-phy-test.cc.o
+.PHONY : test/spectrum-ideal-phy-test.o
+
+# target to build an object file
+test/spectrum-ideal-phy-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-ideal-phy-test.cc.o
+.PHONY : test/spectrum-ideal-phy-test.cc.o
+
+test/spectrum-ideal-phy-test.i: test/spectrum-ideal-phy-test.cc.i
+.PHONY : test/spectrum-ideal-phy-test.i
+
+# target to preprocess a source file
+test/spectrum-ideal-phy-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-ideal-phy-test.cc.i
+.PHONY : test/spectrum-ideal-phy-test.cc.i
+
+test/spectrum-ideal-phy-test.s: test/spectrum-ideal-phy-test.cc.s
+.PHONY : test/spectrum-ideal-phy-test.s
+
+# target to generate assembly for a file
+test/spectrum-ideal-phy-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-ideal-phy-test.cc.s
+.PHONY : test/spectrum-ideal-phy-test.cc.s
+
+test/spectrum-interference-test.o: test/spectrum-interference-test.cc.o
+.PHONY : test/spectrum-interference-test.o
+
+# target to build an object file
+test/spectrum-interference-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-interference-test.cc.o
+.PHONY : test/spectrum-interference-test.cc.o
+
+test/spectrum-interference-test.i: test/spectrum-interference-test.cc.i
+.PHONY : test/spectrum-interference-test.i
+
+# target to preprocess a source file
+test/spectrum-interference-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-interference-test.cc.i
+.PHONY : test/spectrum-interference-test.cc.i
+
+test/spectrum-interference-test.s: test/spectrum-interference-test.cc.s
+.PHONY : test/spectrum-interference-test.s
+
+# target to generate assembly for a file
+test/spectrum-interference-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-interference-test.cc.s
+.PHONY : test/spectrum-interference-test.cc.s
+
+test/spectrum-value-test.o: test/spectrum-value-test.cc.o
+.PHONY : test/spectrum-value-test.o
+
+# target to build an object file
+test/spectrum-value-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-value-test.cc.o
+.PHONY : test/spectrum-value-test.cc.o
+
+test/spectrum-value-test.i: test/spectrum-value-test.cc.i
+.PHONY : test/spectrum-value-test.i
+
+# target to preprocess a source file
+test/spectrum-value-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-value-test.cc.i
+.PHONY : test/spectrum-value-test.cc.i
+
+test/spectrum-value-test.s: test/spectrum-value-test.cc.s
+.PHONY : test/spectrum-value-test.s
+
+# target to generate assembly for a file
+test/spectrum-value-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-value-test.cc.s
+.PHONY : test/spectrum-value-test.cc.s
+
+test/spectrum-waveform-generator-test.o: test/spectrum-waveform-generator-test.cc.o
+.PHONY : test/spectrum-waveform-generator-test.o
+
+# target to build an object file
+test/spectrum-waveform-generator-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-waveform-generator-test.cc.o
+.PHONY : test/spectrum-waveform-generator-test.cc.o
+
+test/spectrum-waveform-generator-test.i: test/spectrum-waveform-generator-test.cc.i
+.PHONY : test/spectrum-waveform-generator-test.i
+
+# target to preprocess a source file
+test/spectrum-waveform-generator-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-waveform-generator-test.cc.i
+.PHONY : test/spectrum-waveform-generator-test.cc.i
+
+test/spectrum-waveform-generator-test.s: test/spectrum-waveform-generator-test.cc.s
+.PHONY : test/spectrum-waveform-generator-test.s
+
+# target to generate assembly for a file
+test/spectrum-waveform-generator-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/spectrum-waveform-generator-test.cc.s
+.PHONY : test/spectrum-waveform-generator-test.cc.s
+
+test/three-gpp-channel-test-suite.o: test/three-gpp-channel-test-suite.cc.o
+.PHONY : test/three-gpp-channel-test-suite.o
+
+# target to build an object file
+test/three-gpp-channel-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/three-gpp-channel-test-suite.cc.o
+.PHONY : test/three-gpp-channel-test-suite.cc.o
+
+test/three-gpp-channel-test-suite.i: test/three-gpp-channel-test-suite.cc.i
+.PHONY : test/three-gpp-channel-test-suite.i
+
+# target to preprocess a source file
+test/three-gpp-channel-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/three-gpp-channel-test-suite.cc.i
+.PHONY : test/three-gpp-channel-test-suite.cc.i
+
+test/three-gpp-channel-test-suite.s: test/three-gpp-channel-test-suite.cc.s
+.PHONY : test/three-gpp-channel-test-suite.s
+
+# target to generate assembly for a file
+test/three-gpp-channel-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/three-gpp-channel-test-suite.cc.s
+.PHONY : test/three-gpp-channel-test-suite.cc.s
+
+test/tv-helper-distribution-test.o: test/tv-helper-distribution-test.cc.o
+.PHONY : test/tv-helper-distribution-test.o
+
+# target to build an object file
+test/tv-helper-distribution-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/tv-helper-distribution-test.cc.o
+.PHONY : test/tv-helper-distribution-test.cc.o
+
+test/tv-helper-distribution-test.i: test/tv-helper-distribution-test.cc.i
+.PHONY : test/tv-helper-distribution-test.i
+
+# target to preprocess a source file
+test/tv-helper-distribution-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/tv-helper-distribution-test.cc.i
+.PHONY : test/tv-helper-distribution-test.cc.i
+
+test/tv-helper-distribution-test.s: test/tv-helper-distribution-test.cc.s
+.PHONY : test/tv-helper-distribution-test.s
+
+# target to generate assembly for a file
+test/tv-helper-distribution-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/tv-helper-distribution-test.cc.s
+.PHONY : test/tv-helper-distribution-test.cc.s
+
+test/tv-spectrum-transmitter-test.o: test/tv-spectrum-transmitter-test.cc.o
+.PHONY : test/tv-spectrum-transmitter-test.o
+
+# target to build an object file
+test/tv-spectrum-transmitter-test.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/tv-spectrum-transmitter-test.cc.o
+.PHONY : test/tv-spectrum-transmitter-test.cc.o
+
+test/tv-spectrum-transmitter-test.i: test/tv-spectrum-transmitter-test.cc.i
+.PHONY : test/tv-spectrum-transmitter-test.i
+
+# target to preprocess a source file
+test/tv-spectrum-transmitter-test.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/tv-spectrum-transmitter-test.cc.i
+.PHONY : test/tv-spectrum-transmitter-test.cc.i
+
+test/tv-spectrum-transmitter-test.s: test/tv-spectrum-transmitter-test.cc.s
+.PHONY : test/tv-spectrum-transmitter-test.s
+
+# target to generate assembly for a file
+test/tv-spectrum-transmitter-test.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/tv-spectrum-transmitter-test.cc.s
+.PHONY : test/tv-spectrum-transmitter-test.cc.s
+
+test/two-ray-splm-test-suite.o: test/two-ray-splm-test-suite.cc.o
+.PHONY : test/two-ray-splm-test-suite.o
+
+# target to build an object file
+test/two-ray-splm-test-suite.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/two-ray-splm-test-suite.cc.o
+.PHONY : test/two-ray-splm-test-suite.cc.o
+
+test/two-ray-splm-test-suite.i: test/two-ray-splm-test-suite.cc.i
+.PHONY : test/two-ray-splm-test-suite.i
+
+# target to preprocess a source file
+test/two-ray-splm-test-suite.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/two-ray-splm-test-suite.cc.i
+.PHONY : test/two-ray-splm-test-suite.cc.i
+
+test/two-ray-splm-test-suite.s: test/two-ray-splm-test-suite.cc.s
+.PHONY : test/two-ray-splm-test-suite.s
+
+# target to generate assembly for a file
+test/two-ray-splm-test-suite.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/spectrum/CMakeFiles/libspectrum-test.dir/build.make src/spectrum/CMakeFiles/libspectrum-test.dir/test/two-ray-splm-test-suite.cc.s
+.PHONY : test/two-ray-splm-test-suite.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1090,8 +1306,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... libspectrum"
 	@echo "... libspectrum-obj"
+	@echo "... libspectrum-test"
 	@echo "... helper/adhoc-aloha-noack-ideal-phy-helper.o"
 	@echo "... helper/adhoc-aloha-noack-ideal-phy-helper.i"
 	@echo "... helper/adhoc-aloha-noack-ideal-phy-helper.s"
@@ -1203,6 +1421,30 @@ help:
 	@echo "... model/waveform-generator.o"
 	@echo "... model/waveform-generator.i"
 	@echo "... model/waveform-generator.s"
+	@echo "... test/spectrum-ideal-phy-test.o"
+	@echo "... test/spectrum-ideal-phy-test.i"
+	@echo "... test/spectrum-ideal-phy-test.s"
+	@echo "... test/spectrum-interference-test.o"
+	@echo "... test/spectrum-interference-test.i"
+	@echo "... test/spectrum-interference-test.s"
+	@echo "... test/spectrum-value-test.o"
+	@echo "... test/spectrum-value-test.i"
+	@echo "... test/spectrum-value-test.s"
+	@echo "... test/spectrum-waveform-generator-test.o"
+	@echo "... test/spectrum-waveform-generator-test.i"
+	@echo "... test/spectrum-waveform-generator-test.s"
+	@echo "... test/three-gpp-channel-test-suite.o"
+	@echo "... test/three-gpp-channel-test-suite.i"
+	@echo "... test/three-gpp-channel-test-suite.s"
+	@echo "... test/tv-helper-distribution-test.o"
+	@echo "... test/tv-helper-distribution-test.i"
+	@echo "... test/tv-helper-distribution-test.s"
+	@echo "... test/tv-spectrum-transmitter-test.o"
+	@echo "... test/tv-spectrum-transmitter-test.i"
+	@echo "... test/tv-spectrum-transmitter-test.s"
+	@echo "... test/two-ray-splm-test-suite.o"
+	@echo "... test/two-ray-splm-test-suite.i"
+	@echo "... test/two-ray-splm-test-suite.s"
 .PHONY : help
 
 

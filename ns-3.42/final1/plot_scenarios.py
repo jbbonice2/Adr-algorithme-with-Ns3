@@ -223,6 +223,8 @@ def plot_scenario(df, scenario_name, config, output_dir):
         ax_energy.set_title("Energy Consumption", fontsize=11)
         ax_energy.legend(fontsize=9, loc='best')
         ax_energy.grid(True, alpha=0.3)
+        ax_energy.set_ylim(0, 120)
+        ax_energy.set_yticks(np.arange(0, 121, 10))
         configure_x_ticks(ax_energy)
 
         plt.tight_layout()
