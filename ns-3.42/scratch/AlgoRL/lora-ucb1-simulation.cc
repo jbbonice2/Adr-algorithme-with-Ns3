@@ -28,6 +28,7 @@
 #include "ns3/correlated-shadowing-propagation-loss-model.h"
 #include "ns3/basic-energy-source-helper.h"
 #include "ns3/lora-radio-energy-model-helper.h"
+#include "ns3/mobility-model.h"
 
 // RL module components
 #include "ns3/lora-rl-packet-tag.h"
@@ -168,6 +169,39 @@ void PrintDetailedMetrics(const SimulationMetrics& m, const std::string& algorit
 }
 
 // ============================================================================
+// DEVICE LOGGING
+// ============================================================================
+
+void LogDeviceDetails(NodeContainer& endDevices)
+{
+    NS_LOG_INFO("\n========== DEVICE CREATION SUMMARY ==========");
+    NS_LOG_INFO("Total devices created: " << endDevices.GetN());
+
+    for (auto it = endDevices.Begin(); it != endDevices.End(); ++it)
+    {
+        Ptr<Node> node = *it;
+        Ptr<MobilityModel> mobility = node->GetObject<MobilityModel>();
+        Vector pos = mobility->GetPosition();
+
+        std::string mobilityType = "UNKNOWN";
+        if (mobility->GetInstanceTypeId().GetName() == "ns3::ConstantPositionMobilityModel")
+        {
+            mobilityType = "FIXED";
+        }
+        else if (mobility->GetInstanceTypeId().GetName() == "ns3::RandomWalk2dMobilityModel")
+        {
+            mobilityType = "MOBILE";
+        }
+
+        NS_LOG_INFO("[DEVICE] ID=" << node->GetId()
+                    << " | Position=(" << std::fixed << std::setprecision(2)
+                    << pos.x << ", " << pos.y << ", " << pos.z << ")m"
+                    << " | Mobility=" << mobilityType);
+    }
+    NS_LOG_INFO("============================================\n");
+}
+
+// ============================================================================
 // AGENT NOTIFICATION
 // ============================================================================
 
@@ -216,14 +250,32 @@ void OnGatewayInterferenceCallback(Ptr<const Packet> packet, uint32_t gwId)
 {
     g_totalCollisions++;
     LoraRlPacketTag tag;
-    if (packet->PeekPacketTag(tag)) NotifyAgent(tag.GetNodeId(), false);
+    if (packet->PeekPacketTag(tag))
+    {
+        NS_LOG_WARN("[RX-FAIL] GatewayID=" << gwId
+                    << " | FromNodeID=" << tag.GetNodeId()
+                    << " | seq=" << tag.GetSequenceNumber()
+                    << " | SF=" << tag.GetSF() << " TP=" << tag.GetTP()
+                    << " | Reason=INTERFERENCE"
+                    << " | TotalCollisions=" << g_totalCollisions);
+        NotifyAgent(tag.GetNodeId(), false);
+    }
 }
 
 void OnGatewayUnderSensitivityCallback(Ptr<const Packet> packet, uint32_t gwId)
 {
     g_totalUnderSensitivity++;
     LoraRlPacketTag tag;
-    if (packet->PeekPacketTag(tag)) NotifyAgent(tag.GetNodeId(), false);
+    if (packet->PeekPacketTag(tag))
+    {
+        NS_LOG_WARN("[RX-FAIL] GatewayID=" << gwId
+                    << " | FromNodeID=" << tag.GetNodeId()
+                    << " | seq=" << tag.GetSequenceNumber()
+                    << " | SF=" << tag.GetSF() << " TP=" << tag.GetTP()
+                    << " | Reason=UNDER_SENSITIVITY"
+                    << " | TotalUnderSensitivity=" << g_totalUnderSensitivity);
+        NotifyAgent(tag.GetNodeId(), false);
+    }
 }
 
 void OnEndDevicePhySendCallback(Ptr<const Packet> packet, uint32_t nodeId)
@@ -243,6 +295,34 @@ void OnEndDevicePhySendCallback(Ptr<const Packet> packet, uint32_t nodeId)
             info.received = false;
             g_packetMap[key] = info;
             g_totalSent++;
+
+            std::string posStr = "N/A";
+            if (g_endDevicesPtr)
+            {
+                for (auto it = g_endDevicesPtr->Begin(); it != g_endDevicesPtr->End(); ++it)
+                {
+                    if ((*it)->GetId() == nodeId)
+                    {
+                        Ptr<MobilityModel> mob = (*it)->GetObject<MobilityModel>();
+                        if (mob)
+                        {
+                            Vector pos = mob->GetPosition();
+                            std::ostringstream oss;
+                            oss << "(" << std::fixed << std::setprecision(1) << pos.x << ","
+                                << pos.y << "," << pos.z << ")";
+                            posStr = oss.str();
+                        }
+                        break;
+                    }
+                }
+            }
+
+            NS_LOG_INFO("[TX] NodeID=" << nodeId
+                        << " | seq=" << tag.GetSequenceNumber()
+                        << " | SF=" << tag.GetSF() << " TP=" << tag.GetTP() << "dBm"
+                        << " | Position=" << posStr
+                        << " | Size=" << packet->GetSize() << "B"
+                        << " | TotalSent=" << g_totalSent);
         }
     }
 }
@@ -403,6 +483,8 @@ int main(int argc, char* argv[])
         mobilityED.SetMobilityModel("ns3::ConstantPositionMobilityModel");
         mobilityED.Install(endDevices);
     }
+
+    LogDeviceDetails(endDevices);
 
     auto addrGen = CreateObject<LoraDeviceAddressGenerator>(uint8_t(54), uint32_t(1864));
     phyHelper.SetDeviceType(LoraPhyHelper::ED);

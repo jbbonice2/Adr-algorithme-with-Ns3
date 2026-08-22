@@ -8,6 +8,7 @@
 
 #include "dlora-agent.h"
 
+#include "ns3/double.h"
 #include "ns3/log.h"
 
 #include <algorithm>

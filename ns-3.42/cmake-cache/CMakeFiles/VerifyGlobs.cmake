@@ -10,7 +10,6 @@ set(OLD_GLOB
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/dd.cc"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/launch_all.sh"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/log_1.txt"
-  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/log_2.txt"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/log_3.txt"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/log_4.txt"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/log_5.txt"
