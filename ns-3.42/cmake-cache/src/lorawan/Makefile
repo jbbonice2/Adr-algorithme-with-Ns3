@@ -550,6 +550,30 @@ model/correlated-shadowing-propagation-loss-model.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/correlated-shadowing-propagation-loss-model.cc.s
 .PHONY : model/correlated-shadowing-propagation-loss-model.cc.s
 
+model/dlora-agent.o: model/dlora-agent.cc.o
+.PHONY : model/dlora-agent.o
+
+# target to build an object file
+model/dlora-agent.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o
+.PHONY : model/dlora-agent.cc.o
+
+model/dlora-agent.i: model/dlora-agent.cc.i
+.PHONY : model/dlora-agent.i
+
+# target to preprocess a source file
+model/dlora-agent.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.i
+.PHONY : model/dlora-agent.cc.i
+
+model/dlora-agent.s: model/dlora-agent.cc.s
+.PHONY : model/dlora-agent.s
+
+# target to generate assembly for a file
+model/dlora-agent.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.s
+.PHONY : model/dlora-agent.cc.s
+
 model/end-device-lora-phy.o: model/end-device-lora-phy.cc.o
 .PHONY : model/end-device-lora-phy.o
 
@@ -982,6 +1006,54 @@ model/lora-radio-energy-model.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-radio-energy-model.cc.s
 .PHONY : model/lora-radio-energy-model.cc.s
 
+model/lora-rl-application.o: model/lora-rl-application.cc.o
+.PHONY : model/lora-rl-application.o
+
+# target to build an object file
+model/lora-rl-application.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o
+.PHONY : model/lora-rl-application.cc.o
+
+model/lora-rl-application.i: model/lora-rl-application.cc.i
+.PHONY : model/lora-rl-application.i
+
+# target to preprocess a source file
+model/lora-rl-application.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.i
+.PHONY : model/lora-rl-application.cc.i
+
+model/lora-rl-application.s: model/lora-rl-application.cc.s
+.PHONY : model/lora-rl-application.s
+
+# target to generate assembly for a file
+model/lora-rl-application.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.s
+.PHONY : model/lora-rl-application.cc.s
+
+model/lora-rl-packet-tag.o: model/lora-rl-packet-tag.cc.o
+.PHONY : model/lora-rl-packet-tag.o
+
+# target to build an object file
+model/lora-rl-packet-tag.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o
+.PHONY : model/lora-rl-packet-tag.cc.o
+
+model/lora-rl-packet-tag.i: model/lora-rl-packet-tag.cc.i
+.PHONY : model/lora-rl-packet-tag.i
+
+# target to preprocess a source file
+model/lora-rl-packet-tag.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.i
+.PHONY : model/lora-rl-packet-tag.cc.i
+
+model/lora-rl-packet-tag.s: model/lora-rl-packet-tag.cc.s
+.PHONY : model/lora-rl-packet-tag.s
+
+# target to generate assembly for a file
+model/lora-rl-packet-tag.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.s
+.PHONY : model/lora-rl-packet-tag.cc.s
+
 model/lora-tag.o: model/lora-tag.cc.o
 .PHONY : model/lora-tag.o
 
@@ -1294,6 +1366,30 @@ model/periodic-sender.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/periodic-sender.cc.s
 .PHONY : model/periodic-sender.cc.s
 
+model/qoca-agent.o: model/qoca-agent.cc.o
+.PHONY : model/qoca-agent.o
+
+# target to build an object file
+model/qoca-agent.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o
+.PHONY : model/qoca-agent.cc.o
+
+model/qoca-agent.i: model/qoca-agent.cc.i
+.PHONY : model/qoca-agent.i
+
+# target to preprocess a source file
+model/qoca-agent.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.i
+.PHONY : model/qoca-agent.cc.i
+
+model/qoca-agent.s: model/qoca-agent.cc.s
+.PHONY : model/qoca-agent.s
+
+# target to generate assembly for a file
+model/qoca-agent.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.s
+.PHONY : model/qoca-agent.cc.s
+
 model/simple-end-device-lora-phy.o: model/simple-end-device-lora-phy.cc.o
 .PHONY : model/simple-end-device-lora-phy.o
 
@@ -1365,6 +1461,54 @@ model/sub-band.s: model/sub-band.cc.s
 model/sub-band.cc.s:
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/sub-band.cc.s
 .PHONY : model/sub-band.cc.s
+
+model/tow-agent.o: model/tow-agent.cc.o
+.PHONY : model/tow-agent.o
+
+# target to build an object file
+model/tow-agent.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o
+.PHONY : model/tow-agent.cc.o
+
+model/tow-agent.i: model/tow-agent.cc.i
+.PHONY : model/tow-agent.i
+
+# target to preprocess a source file
+model/tow-agent.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.i
+.PHONY : model/tow-agent.cc.i
+
+model/tow-agent.s: model/tow-agent.cc.s
+.PHONY : model/tow-agent.s
+
+# target to generate assembly for a file
+model/tow-agent.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.s
+.PHONY : model/tow-agent.cc.s
+
+model/ucb1-agent.o: model/ucb1-agent.cc.o
+.PHONY : model/ucb1-agent.o
+
+# target to build an object file
+model/ucb1-agent.cc.o:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o
+.PHONY : model/ucb1-agent.cc.o
+
+model/ucb1-agent.i: model/ucb1-agent.cc.i
+.PHONY : model/ucb1-agent.i
+
+# target to preprocess a source file
+model/ucb1-agent.cc.i:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.i
+.PHONY : model/ucb1-agent.cc.i
+
+model/ucb1-agent.s: model/ucb1-agent.cc.s
+.PHONY : model/ucb1-agent.s
+
+# target to generate assembly for a file
+model/ucb1-agent.cc.s:
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache && $(MAKE) $(MAKESILENT) -f src/lorawan/CMakeFiles/liblorawan-obj.dir/build.make src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.s
+.PHONY : model/ucb1-agent.cc.s
 
 test/lorawan-test-suite.o: test/lorawan-test-suite.cc.o
 .PHONY : test/lorawan-test-suite.o
@@ -1544,6 +1688,9 @@ help:
 	@echo "... model/correlated-shadowing-propagation-loss-model.o"
 	@echo "... model/correlated-shadowing-propagation-loss-model.i"
 	@echo "... model/correlated-shadowing-propagation-loss-model.s"
+	@echo "... model/dlora-agent.o"
+	@echo "... model/dlora-agent.i"
+	@echo "... model/dlora-agent.s"
 	@echo "... model/end-device-lora-phy.o"
 	@echo "... model/end-device-lora-phy.i"
 	@echo "... model/end-device-lora-phy.s"
@@ -1598,6 +1745,12 @@ help:
 	@echo "... model/lora-radio-energy-model.o"
 	@echo "... model/lora-radio-energy-model.i"
 	@echo "... model/lora-radio-energy-model.s"
+	@echo "... model/lora-rl-application.o"
+	@echo "... model/lora-rl-application.i"
+	@echo "... model/lora-rl-application.s"
+	@echo "... model/lora-rl-packet-tag.o"
+	@echo "... model/lora-rl-packet-tag.i"
+	@echo "... model/lora-rl-packet-tag.s"
 	@echo "... model/lora-tag.o"
 	@echo "... model/lora-tag.i"
 	@echo "... model/lora-tag.s"
@@ -1637,6 +1790,9 @@ help:
 	@echo "... model/periodic-sender.o"
 	@echo "... model/periodic-sender.i"
 	@echo "... model/periodic-sender.s"
+	@echo "... model/qoca-agent.o"
+	@echo "... model/qoca-agent.i"
+	@echo "... model/qoca-agent.s"
 	@echo "... model/simple-end-device-lora-phy.o"
 	@echo "... model/simple-end-device-lora-phy.i"
 	@echo "... model/simple-end-device-lora-phy.s"
@@ -1646,6 +1802,12 @@ help:
 	@echo "... model/sub-band.o"
 	@echo "... model/sub-band.i"
 	@echo "... model/sub-band.s"
+	@echo "... model/tow-agent.o"
+	@echo "... model/tow-agent.i"
+	@echo "... model/tow-agent.s"
+	@echo "... model/ucb1-agent.o"
+	@echo "... model/ucb1-agent.i"
+	@echo "... model/ucb1-agent.s"
 	@echo "... test/lorawan-test-suite.o"
 	@echo "... test/lorawan-test-suite.i"
 	@echo "... test/lorawan-test-suite.s"

@@ -6140,6 +6140,71 @@ scratch_subdir_scratch-subdir/fast:
 .PHONY : scratch_subdir_scratch-subdir/fast
 
 #=============================================================================
+# Target rules for targets named scratch_AlgoRL_d-lora-simulation
+
+# Build rule for target.
+scratch_AlgoRL_d-lora-simulation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch_AlgoRL_d-lora-simulation
+.PHONY : scratch_AlgoRL_d-lora-simulation
+
+# fast build rule for target.
+scratch_AlgoRL_d-lora-simulation/fast:
+	$(MAKE) $(MAKESILENT) -f scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_d-lora-simulation.dir/build.make scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_d-lora-simulation.dir/build
+.PHONY : scratch_AlgoRL_d-lora-simulation/fast
+
+#=============================================================================
+# Target rules for targets named scratch_AlgoRL_lora-ucb1-simulation
+
+# Build rule for target.
+scratch_AlgoRL_lora-ucb1-simulation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch_AlgoRL_lora-ucb1-simulation
+.PHONY : scratch_AlgoRL_lora-ucb1-simulation
+
+# fast build rule for target.
+scratch_AlgoRL_lora-ucb1-simulation/fast:
+	$(MAKE) $(MAKESILENT) -f scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_lora-ucb1-simulation.dir/build.make scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_lora-ucb1-simulation.dir/build
+.PHONY : scratch_AlgoRL_lora-ucb1-simulation/fast
+
+#=============================================================================
+# Target rules for targets named scratch_AlgoRL_lorawan-qoca-simulation
+
+# Build rule for target.
+scratch_AlgoRL_lorawan-qoca-simulation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch_AlgoRL_lorawan-qoca-simulation
+.PHONY : scratch_AlgoRL_lorawan-qoca-simulation
+
+# fast build rule for target.
+scratch_AlgoRL_lorawan-qoca-simulation/fast:
+	$(MAKE) $(MAKESILENT) -f scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_lorawan-qoca-simulation.dir/build.make scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_lorawan-qoca-simulation.dir/build
+.PHONY : scratch_AlgoRL_lorawan-qoca-simulation/fast
+
+#=============================================================================
+# Target rules for targets named scratch_AlgoRL_tow-lorawan-simulation
+
+# Build rule for target.
+scratch_AlgoRL_tow-lorawan-simulation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch_AlgoRL_tow-lorawan-simulation
+.PHONY : scratch_AlgoRL_tow-lorawan-simulation
+
+# fast build rule for target.
+scratch_AlgoRL_tow-lorawan-simulation/fast:
+	$(MAKE) $(MAKESILENT) -f scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_tow-lorawan-simulation.dir/build.make scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_tow-lorawan-simulation.dir/build
+.PHONY : scratch_AlgoRL_tow-lorawan-simulation/fast
+
+#=============================================================================
+# Target rules for targets named scratch_AlgoRL_unified-rl-simulation
+
+# Build rule for target.
+scratch_AlgoRL_unified-rl-simulation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scratch_AlgoRL_unified-rl-simulation
+.PHONY : scratch_AlgoRL_unified-rl-simulation
+
+# fast build rule for target.
+scratch_AlgoRL_unified-rl-simulation/fast:
+	$(MAKE) $(MAKESILENT) -f scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_unified-rl-simulation.dir/build.make scratch/AlgoRL/CMakeFiles/scratch_AlgoRL_unified-rl-simulation.dir/build
+.PHONY : scratch_AlgoRL_unified-rl-simulation/fast
+
+#=============================================================================
 # Target rules for targets named scratch-nested-subdir-lib
 
 # Build rule for target.
@@ -6592,6 +6657,11 @@ help:
 	@echo "... sample-show-progress"
 	@echo "... sample-simulator"
 	@echo "... scratch-nested-subdir-lib"
+	@echo "... scratch_AlgoRL_d-lora-simulation"
+	@echo "... scratch_AlgoRL_lora-ucb1-simulation"
+	@echo "... scratch_AlgoRL_lorawan-qoca-simulation"
+	@echo "... scratch_AlgoRL_tow-lorawan-simulation"
+	@echo "... scratch_AlgoRL_unified-rl-simulation"
 	@echo "... scratch_dd"
 	@echo "... scratch_lorawan-adr-simulation-module"
 	@echo "... scratch_nested-subdir_scratch-nested-subdir-executable"

@@ -397,8 +397,8 @@ run_scenario4() {
     # Initialiser le fichier summary
     init_scenario_summary "$summary_file"
 
-    TRAFFIC_INTERVALS=(3600 1200 600 400 300 240 200 171.43 150 133.33 120)
-    
+    # TRAFFIC_INTERVALS=(3600 1200 600 400 300 240 200 171.43 150 133.33 120)
+     TRAFFIC_INTERVALS=(171 133)
      DENSITIES_S4=(500)
     #  TRAFFIC_INTERVALS=(3600 145 72)
     # DENSITIES_S4=(4 6 8)

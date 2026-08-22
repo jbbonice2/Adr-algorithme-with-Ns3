@@ -26,25 +26,25 @@ matplotlib.use('Agg')  # Non-interactive backend for saving figures
 SCENARIO_CONFIG = {
     "density": {
         "x_param": "NumDevices",
-        "x_label": "Number of Devices",
+        "x_label": "Number of Devices (# devices)",
         "combo_params": ["MobilitySpeed", "TrafficInterval", "MaxRandomLoss"],
         "title": "Density Scenario",
     },
     "mobilite": {
         "x_param": "MobilitySpeed",
-        "x_label": "Mobility Speed (km/h)",
+        "x_label": "Devices speed (km/hour)",
         "combo_params": ["NumDevices", "TrafficInterval", "MaxRandomLoss"],
         "title": "Mobility Scenario",
     },
     "sigma": {
         "x_param": "MaxRandomLoss",
-        "x_label": "Maximum Random Loss (dB)",
+        "x_label": "Random Path Loss (db)",
         "combo_params": ["NumDevices", "MobilitySpeed", "TrafficInterval"],
         "title": "Sigma Scenario",
     },
     "intervalle_d_envoie": {
         "x_param": "TrafficInterval",
-        "x_label": "Messages per Hour (msg/h)",
+        "x_label": "Traffic Payload (# messages/hour)",
         "combo_params": ["NumDevices", "MobilitySpeed", "MaxRandomLoss"],
         "title": "Sending Interval Scenario",
     },
@@ -179,8 +179,6 @@ def plot_scenario(df, scenario_name, config, output_dir):
 
         # ── Figure 1: PDR ──
         fig_pdr, ax_pdr = plt.subplots(figsize=(10, 6))
-        fig_pdr.suptitle(f"{scenario_title} — Packet Delivery Rate (PDR)\n{combo_label}",
-                         fontsize=13, fontweight='bold')
 
         for d in algo_plot_data:
             ax_pdr.plot(d["x_vals"], d["pdr_vals"],
@@ -192,7 +190,6 @@ def plot_scenario(df, scenario_name, config, output_dir):
 
         ax_pdr.set_xlabel(x_label, fontsize=11)
         ax_pdr.set_ylabel("Packet Delivery Rate (PDR) (%)", fontsize=11)
-        ax_pdr.set_title("Packet Delivery Rate (PDR)", fontsize=11)
         ax_pdr.legend(fontsize=9, loc='best')
         ax_pdr.grid(True, alpha=0.3)
         ax_pdr.set_ylim(0, 100)
@@ -203,12 +200,15 @@ def plot_scenario(df, scenario_name, config, output_dir):
         pdr_filename = f"{scenario_name}_PDR_{combo_str}.png"
         pdr_filepath = os.path.join(scenario_out, pdr_filename)
         fig_pdr.savefig(pdr_filepath, dpi=150, bbox_inches='tight')
+        # also save PDF and EPS
+        pdr_pdf = os.path.splitext(pdr_filepath)[0] + ".pdf"
+        pdr_eps = os.path.splitext(pdr_filepath)[0] + ".eps"
+        fig_pdr.savefig(pdr_pdf, dpi=300, bbox_inches='tight')
+        fig_pdr.savefig(pdr_eps, dpi=300, bbox_inches='tight')
         plt.close(fig_pdr)
 
         # ── Figure 2: Energy ──
         fig_energy, ax_energy = plt.subplots(figsize=(10, 6))
-        fig_energy.suptitle(f"{scenario_title} — Energy Consumption\n{combo_label}",
-                            fontsize=13, fontweight='bold')
 
         for d in algo_plot_data:
             ax_energy.plot(d["x_vals"], d["energy_vals"],
@@ -220,7 +220,6 @@ def plot_scenario(df, scenario_name, config, output_dir):
 
         ax_energy.set_xlabel(x_label, fontsize=11)
         ax_energy.set_ylabel("Average Energy per Packet (mJ)", fontsize=11)
-        ax_energy.set_title("Energy Consumption", fontsize=11)
         ax_energy.legend(fontsize=9, loc='best')
         ax_energy.grid(True, alpha=0.3)
         ax_energy.set_ylim(0, 120)
@@ -231,11 +230,16 @@ def plot_scenario(df, scenario_name, config, output_dir):
         energy_filename = f"{scenario_name}_Energy_{combo_str}.png"
         energy_filepath = os.path.join(scenario_out, energy_filename)
         fig_energy.savefig(energy_filepath, dpi=150, bbox_inches='tight')
+        # also save PDF and EPS
+        energy_pdf = os.path.splitext(energy_filepath)[0] + ".pdf"
+        energy_eps = os.path.splitext(energy_filepath)[0] + ".eps"
+        fig_energy.savefig(energy_pdf, dpi=300, bbox_inches='tight')
+        fig_energy.savefig(energy_eps, dpi=300, bbox_inches='tight')
         plt.close(fig_energy)
 
         plot_count += 2
-        print(f"  [{plot_count-1:3d}] {combo_label}  -> {pdr_filename}")
-        print(f"  [{plot_count:3d}] {combo_label}  -> {energy_filename}")
+        print(f"  [{plot_count-1:3d}] {combo_label}  -> {pdr_filename}, {os.path.basename(pdr_pdf)}, {os.path.basename(pdr_eps)}")
+        print(f"  [{plot_count:3d}] {combo_label}  -> {energy_filename}, {os.path.basename(energy_pdf)}, {os.path.basename(energy_eps)}")
 
     print(f"\n  Total: {plot_count} plots saved in {scenario_out}/")
     return plot_count

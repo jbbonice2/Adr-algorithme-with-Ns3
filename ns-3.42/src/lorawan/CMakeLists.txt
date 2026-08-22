@@ -37,6 +37,12 @@ set(source_files
     model/lora-utils.cc
     model/adr-component.cc
     model/adr-lite-component.cc
+    model/lora-rl-packet-tag.cc
+    model/dlora-agent.cc
+    model/ucb1-agent.cc
+    model/qoca-agent.cc
+    model/tow-agent.cc
+    model/lora-rl-application.cc
     model/hex-grid-position-allocator.cc
     helper/lora-radio-energy-model-helper.cc
     helper/lora-helper.cc
@@ -88,6 +94,12 @@ set(header_files
     model/lora-utils.h
     model/adr-component.h
     model/adr-lite-component.h
+    model/lora-rl-packet-tag.h
+    model/dlora-agent.h
+    model/ucb1-agent.h
+    model/qoca-agent.h
+    model/tow-agent.h
+    model/lora-rl-application.h
     model/hex-grid-position-allocator.h
     helper/lora-radio-energy-model-helper.h
     helper/lora-helper.h

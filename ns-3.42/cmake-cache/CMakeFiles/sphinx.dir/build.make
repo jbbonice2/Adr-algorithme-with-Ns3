@@ -67,7 +67,7 @@ include CMakeFiles/sphinx.dir/compiler_depend.make
 include CMakeFiles/sphinx.dir/progress.make
 
 CMakeFiles/sphinx:
-	echo The following Sphinx dependencies are missing: Sphinx epstopdf convert dvipng dia. Reconfigure the project after installing them.
+	echo The following Sphinx dependencies are missing: Sphinx epstopdf dvipng dia. Reconfigure the project after installing them.
 
 sphinx: CMakeFiles/sphinx
 sphinx: CMakeFiles/sphinx.dir/build.make

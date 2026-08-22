@@ -112,6 +112,12 @@ liblorawan_EXTERNAL_OBJECTS = \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-utils.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-component.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-lite-component.cc.o" \
+"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o" \
+"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o" \
+"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o" \
+"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o" \
+"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o" \
+"/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o" \
 "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o" \
@@ -161,6 +167,12 @@ liblorawan_EXTERNAL_OBJECTS = \
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-utils.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-component.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-lite-component.cc.o
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o
+/home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o
 /home/bonice/Documents/ns-allinone-3.42/ns-3.42/build/lib/libns3.42-lorawan-default.so: src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o

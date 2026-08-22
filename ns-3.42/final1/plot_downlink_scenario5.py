@@ -54,21 +54,24 @@ for ax, speed in zip(axes, speeds):
                 label=algo, color=s["color"], marker=s["marker"],
                 linestyle=s["linestyle"], linewidth=2, markersize=7)
 
-    ax.set_title(f"Vitesse = {speed} m/s", fontsize=13, fontweight="bold")
-    ax.set_xlabel("Nombre de devices", fontsize=12)
+    ax.set_xlabel("Number of Devices (# devices)", fontsize=12)
     ax.set_ylabel("Paquets Downlink", fontsize=12)
     ax.set_ylim(y_min - y_margin, y_max + y_margin)
     ax.legend(fontsize=10)
     ax.grid(True, alpha=0.3)
     ax.tick_params(labelsize=10)
 
-fig.suptitle("Scénario 5 — Downlink Packets vs Densité\n(par vitesse de mobilité)",
-             fontsize=15, fontweight="bold", y=1.02)
+# overall suptitle removed per request
 plt.tight_layout()
 
 out_path = os.path.join(script_dir, "downlink_vs_densite_scenario5.png")
 plt.savefig(out_path, dpi=200, bbox_inches="tight")
-print(f"Graphique sauvegardé : {out_path}")
+# also save PDF and EPS
+out_path_pdf = os.path.splitext(out_path)[0] + ".pdf"
+out_path_eps = os.path.splitext(out_path)[0] + ".eps"
+plt.savefig(out_path_pdf, dpi=300, bbox_inches="tight")
+plt.savefig(out_path_eps, dpi=300, bbox_inches="tight")
+print(f"Graphique sauvegardé : {out_path}, {out_path_pdf}, {out_path_eps}")
 
 # --- Graphique combiné (toutes vitesses superposées) ---
 fig2, ax2 = plt.subplots(figsize=(10, 7))
@@ -87,9 +90,7 @@ for algo in algorithms:
                  color=s["color"], marker=s["marker"],
                  linestyle=ls, linewidth=1.8, markersize=6, alpha=0.85)
 
-ax2.set_title("Scénario 5 — Downlink Packets vs Densité (toutes vitesses)",
-              fontsize=14, fontweight="bold")
-ax2.set_xlabel("Nombre de devices", fontsize=12)
+ax2.set_xlabel("Number of Devices (# devices)", fontsize=12)
 ax2.set_ylabel("Paquets Downlink", fontsize=12)
 ax2.set_ylim(y_min - y_margin, y_max + y_margin)
 ax2.legend(fontsize=8, ncol=3, loc="upper left")
@@ -97,6 +98,11 @@ ax2.grid(True, alpha=0.3)
 
 out_path2 = os.path.join(script_dir, "downlink_vs_densite_scenario5_combined.png")
 plt.savefig(out_path2, dpi=200, bbox_inches="tight")
-print(f"Graphique combiné sauvegardé : {out_path2}")
+# also save PDF and EPS
+out_path2_pdf = os.path.splitext(out_path2)[0] + ".pdf"
+out_path2_eps = os.path.splitext(out_path2)[0] + ".eps"
+plt.savefig(out_path2_pdf, dpi=300, bbox_inches="tight")
+plt.savefig(out_path2_eps, dpi=300, bbox_inches="tight")
+print(f"Graphique combiné sauvegardé : {out_path2}, {out_path2_pdf}, {out_path2_eps}")
 
 plt.show()

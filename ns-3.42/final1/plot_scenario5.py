@@ -57,8 +57,6 @@ def main():
 
         # ── PDR Plot ──────────────────────────────────────────────────────
         fig, ax = plt.subplots(figsize=(10, 6))
-        fig.suptitle(f"Scenario 5 — {algo}\nPacket Delivery Rate (PDR)",
-                     fontsize=14, fontweight='bold')
 
         for speed in mobility_speeds:
             style = MOBILITY_STYLES.get(speed, {"color": "gray", "marker": "x", "linestyle": "-", "label": f"{speed} km/h"})
@@ -72,7 +70,7 @@ def main():
                     linestyle=style["linestyle"],
                     linewidth=2, markersize=8)
 
-        ax.set_xlabel("Number of Devices (Density)", fontsize=12)
+        ax.set_xlabel("Number of Devices (# devices)", fontsize=12)
         ax.set_ylabel("Packet Delivery Rate (PDR) (%)", fontsize=12)
         ax.legend(fontsize=10, loc='best')
         ax.grid(True, alpha=0.3)
@@ -84,15 +82,19 @@ def main():
 
         plt.tight_layout()
         fname = f"scenario5_{algo.replace('-','_')}_PDR.png"
-        fig.savefig(os.path.join(OUTPUT_DIR, fname), dpi=150, bbox_inches='tight')
+        fpath = os.path.join(OUTPUT_DIR, fname)
+        fig.savefig(fpath, dpi=150, bbox_inches='tight')
+        # also save PDF and EPS
+        fpath_pdf = os.path.splitext(fpath)[0] + ".pdf"
+        fpath_eps = os.path.splitext(fpath)[0] + ".eps"
+        fig.savefig(fpath_pdf, dpi=300, bbox_inches='tight')
+        fig.savefig(fpath_eps, dpi=300, bbox_inches='tight')
         plt.close(fig)
         plot_count += 1
-        print(f"  [{plot_count}] {fname}")
+        print(f"  [{plot_count}] {os.path.basename(fpath)}, {os.path.basename(fpath_pdf)}, {os.path.basename(fpath_eps)}")
 
         # ── Energy Plot ───────────────────────────────────────────────────
         fig, ax = plt.subplots(figsize=(10, 6))
-        fig.suptitle(f"Scenario 5 — {algo}\nEnergy Consumed (mJ)",
-                     fontsize=14, fontweight='bold')
 
         for speed in mobility_speeds:
             style = MOBILITY_STYLES.get(speed, {"color": "gray", "marker": "x", "linestyle": "-", "label": f"{speed} km/h"})
@@ -106,7 +108,7 @@ def main():
                     linestyle=style["linestyle"],
                     linewidth=2, markersize=8)
 
-        ax.set_xlabel("Number of Devices (Density)", fontsize=12)
+        ax.set_xlabel("Number of Devices (# devices)", fontsize=12)
         ax.set_ylabel("Average Energy (mJ)", fontsize=12)
         ax.legend(fontsize=10, loc='best')
         ax.grid(True, alpha=0.3)
@@ -118,10 +120,16 @@ def main():
 
         plt.tight_layout()
         fname = f"scenario5_{algo.replace('-','_')}_Energy.png"
-        fig.savefig(os.path.join(OUTPUT_DIR, fname), dpi=150, bbox_inches='tight')
+        fpath = os.path.join(OUTPUT_DIR, fname)
+        fig.savefig(fpath, dpi=150, bbox_inches='tight')
+        # also save PDF and EPS
+        fpath_pdf = os.path.splitext(fpath)[0] + ".pdf"
+        fpath_eps = os.path.splitext(fpath)[0] + ".eps"
+        fig.savefig(fpath_pdf, dpi=300, bbox_inches='tight')
+        fig.savefig(fpath_eps, dpi=300, bbox_inches='tight')
         plt.close(fig)
         plot_count += 1
-        print(f"  [{plot_count}] {fname}")
+        print(f"  [{plot_count}] {os.path.basename(fpath)}, {os.path.basename(fpath_pdf)}, {os.path.basename(fpath_eps)}")
 
     print(f"\nTotal: {plot_count} plots generated in {OUTPUT_DIR}/")
 

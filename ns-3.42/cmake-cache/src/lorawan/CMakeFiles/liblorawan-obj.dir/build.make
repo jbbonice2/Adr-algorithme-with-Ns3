@@ -601,10 +601,94 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-lite-component.cc.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/liblorawan-obj.dir/model/adr-lite-component.cc.s"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/adr-lite-component.cc -o CMakeFiles/liblorawan-obj.dir/model/adr-lite-component.cc.s
 
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-rl-packet-tag.cc
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o -MF CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o.d -o CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-rl-packet-tag.cc
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.i"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-rl-packet-tag.cc > CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.i
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.s"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-rl-packet-tag.cc -o CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.s
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/dlora-agent.cc
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o -MF CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o.d -o CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/dlora-agent.cc
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.i"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/dlora-agent.cc > CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.i
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.s"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/dlora-agent.cc -o CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.s
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/ucb1-agent.cc
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o -MF CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o.d -o CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/ucb1-agent.cc
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.i"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/ucb1-agent.cc > CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.i
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.s"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/ucb1-agent.cc -o CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.s
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/qoca-agent.cc
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o -MF CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o.d -o CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/qoca-agent.cc
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.i"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/qoca-agent.cc > CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.i
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.s"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/qoca-agent.cc -o CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.s
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/tow-agent.cc
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o -MF CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o.d -o CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/tow-agent.cc
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.i"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/tow-agent.cc > CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.i
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.s"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/tow-agent.cc -o CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.s
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-rl-application.cc
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o -MF CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o.d -o CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-rl-application.cc
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.i"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-rl-application.cc > CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.i
+
+src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.s"
+	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/lora-rl-application.cc -o CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.s
+
 src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/hex-grid-position-allocator.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o -MF CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o.d -o CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/model/hex-grid-position-allocator.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.i: cmake_force
@@ -618,7 +702,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.s
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lora-radio-energy-model-helper.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lora-radio-energy-model-helper.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.i: cmake_force
@@ -632,7 +716,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lora-helper.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lora-helper.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.i: cmake_force
@@ -646,7 +730,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.s: cmake_force
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lora-phy-helper.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lora-phy-helper.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.i: cmake_force
@@ -660,7 +744,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-phy-helper.cc.s: cmake_for
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lorawan-mac-helper.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lorawan-mac-helper.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.i: cmake_force
@@ -674,7 +758,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lorawan-mac-helper.cc.s: cmake_
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/periodic-sender-helper.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/periodic-sender-helper.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.i: cmake_force
@@ -688,7 +772,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/periodic-sender-helper.cc.s: cm
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/one-shot-sender-helper.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/one-shot-sender-helper.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.i: cmake_force
@@ -702,7 +786,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/one-shot-sender-helper.cc.s: cm
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/forwarder-helper.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/forwarder-helper.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.i: cmake_force
@@ -716,7 +800,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/forwarder-helper.cc.s: cmake_fo
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/network-server-helper.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.i: cmake_force
@@ -730,7 +814,7 @@ src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/network-server-helper.cc.s: cma
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/flags.make
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.o: /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lora-packet-tracker.cc
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.o: src/lorawan/CMakeFiles/liblorawan-obj.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.o"
 	cd /home/bonice/Documents/ns-allinone-3.42/ns-3.42/cmake-cache/src/lorawan && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.o -MF CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.o.d -o CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.o -c /home/bonice/Documents/ns-allinone-3.42/ns-3.42/src/lorawan/helper/lora-packet-tracker.cc
 
 src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-packet-tracker.cc.i: cmake_force
@@ -779,6 +863,12 @@ liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-tx-current-
 liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-utils.cc.o
 liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-component.cc.o
 liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/adr-lite-component.cc.o
+liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-packet-tag.cc.o
+liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/dlora-agent.cc.o
+liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/ucb1-agent.cc.o
+liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/qoca-agent.cc.o
+liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/tow-agent.cc.o
+liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/lora-rl-application.cc.o
 liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/model/hex-grid-position-allocator.cc.o
 liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-radio-energy-model-helper.cc.o
 liblorawan-obj: src/lorawan/CMakeFiles/liblorawan-obj.dir/helper/lora-helper.cc.o

@@ -5,6 +5,7 @@ cmake_policy(SET CMP0009 NEW)
 # scratch_subdirectories at scratch/CMakeLists.txt:83 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/**")
 set(OLD_GLOB
+  "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/AlgoRL"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/CMakeLists.txt"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/dd.cc"
   "/home/bonice/Documents/ns-allinone-3.42/ns-3.42/scratch/launch_all.sh"
